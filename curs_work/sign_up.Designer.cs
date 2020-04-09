@@ -131,6 +131,7 @@
             this.button1.TabIndex = 47;
             this.button1.Text = "Авторизація ➥";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -158,6 +159,7 @@
             this.passField.Location = new System.Drawing.Point(199, 112);
             this.passField.MaxLength = 22;
             this.passField.Name = "passField";
+            this.passField.PasswordChar = '*';
             this.passField.Size = new System.Drawing.Size(356, 30);
             this.passField.TabIndex = 50;
             // 
@@ -167,6 +169,7 @@
             this.repeatPassField.Location = new System.Drawing.Point(199, 148);
             this.repeatPassField.MaxLength = 22;
             this.repeatPassField.Name = "repeatPassField";
+            this.repeatPassField.PasswordChar = '*';
             this.repeatPassField.Size = new System.Drawing.Size(356, 30);
             this.repeatPassField.TabIndex = 51;
             // 

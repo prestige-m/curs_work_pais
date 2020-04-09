@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,18 @@ namespace curs_work
         public sign_up()
         {
             InitializeComponent();
+        }
+
+        public static string GetHash(string value)
+        {
+            using (SHA1 sha1Hash = SHA1.Create())
+            {
+                byte[] sourceBytes = Encoding.UTF8.GetBytes(value);
+                byte[] hashBytes = sha1Hash.ComputeHash(sourceBytes);
+                string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+
+                return hash;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -46,8 +59,9 @@ namespace curs_work
                         SqlParameter param = new SqlParameter("@email", SqlDbType.VarChar, 150);
                         param.Value = emailField.Text;
                         parms.Add(param);
+
                         param = new SqlParameter("@password", SqlDbType.VarChar, 150);
-                        param.Value = passField.Text;
+                        param.Value = GetHash(passField.Text);
                         parms.Add(param);
                         param = new SqlParameter("@first_name", SqlDbType.VarChar, 100);
                         param.Value = nameField.Text;
@@ -71,6 +85,13 @@ namespace curs_work
                 else Alert.ShowError("Паролі не співпадають!");
             }
             else Alert.ShowError("Заповніть усі поля!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sign_in form = new sign_in();
+            form.Show();
+            this.Hide();
         }
     }
 }
