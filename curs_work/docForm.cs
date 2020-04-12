@@ -131,7 +131,11 @@ namespace curs_work
                 "Інвертар-\nний", "за-\nводсь-\nкий", "рахунка та\nоб’єкта\nаналітич-\nного обліку\n(для відне-\nсення\nамортиза-\nційних від-\nрахуваннь)",
                 "нор-\nми\nамор-\nтиз.\nвід-\nра-\nху-\nвань", "на\nповне\nвід-\nнов-\nлен-\nня", "на\nкап.\nремонт", "Поп-\nравоч-\nний\nкоефі-\nціент", "вид", "код", 
                 "Сума\nамортиза-\nції(зносу)\nза даними\nпереоцінки\nабо за\nдокумен-\nтами\nпридбання", "Рік\nвипуску\n(побу-\nдови)", "Дата\nвведе-\nння в\nексплуа-\nтацію\n(місяць, рік)",
-                "Номер пас-\nпорта"
+                "Номер пас-\nпорта", "На підставі наказу, розпорядження", "від", "у", "Проведений огляд", "що приймається (передається) в експлуатацію від", 
+                "У момент приймання (передачі) об’єкт знаходится в", "Коротка характеристика об’єкта", "Об’єкт технічним умовам відповідає (не відповідає)",
+                "Доробка не потрібна (потрібна)", "Підсумки іспитів об’єкта", "Висновок комісії", "Додаток.", "Перелік технічної інформації", "Голова комісії", "Члени комісії",
+                "Об’єкт основних засобів прийняв", "здав", "Відмітка бухгалтерії про відкриття картки або переміщення об’єкта",
+                "Головний бухгалтер (бухгалтер)"
             };
 
             //graph.FillRectangle(Brushes.White, new Rectangle(14, 178, 137, 122));
@@ -192,6 +196,28 @@ namespace curs_work
             graph.DrawString(docText[33], font, brush, new Rectangle(932, 148, 58, 151), stringFormat);
             graph.DrawString(docText[34], font, brush, new Rectangle(991, 148, 58, 151), stringFormat);
             graph.DrawString(docText[35], font, brush, new Rectangle(1049, 148, 44, 151), stringFormat);
+
+            graph.DrawString(docText[36], font, brush, new PointF(12, 370));
+            graph.DrawString(docText[37], font, brush, new PointF(877, 370));
+            graph.DrawString(docText[38], font, brush, new PointF(12, 385));
+            graph.DrawString(docText[39], font, brush, new PointF(604, 385));
+            graph.DrawString(docText[40], font, brush, new PointF(12, 410));
+            graph.DrawString(docText[41], font, brush, new PointF(12, 424));
+            graph.DrawString(docText[42], font, brush, new PointF(12, 449));
+            graph.DrawString(docText[43], font, brush, new PointF(12, 463));
+
+            graph.DrawString(docText[44], font, brush, new PointF(12, 488));
+            graph.DrawString(docText[45], font, brush, new PointF(12, 513));
+            graph.DrawString(docText[46], font, brush, new PointF(582, 513));
+            graph.DrawString(docText[47], font, brush, new PointF(12, 527));
+            graph.DrawString(docText[48], font, brush, new PointF(75, 527));
+
+            graph.DrawString(docText[49], font, brush, new PointF(54, 550));
+            graph.DrawString(docText[50], font, brush, new PointF(54, 575));
+            graph.DrawString(docText[51], font, brush, new PointF(54, 648));
+            graph.DrawString(docText[52], font, brush, new PointF(54, 675));
+            graph.DrawString(docText[53], font, brush, new PointF(54, 712));
+            graph.DrawString(docText[54], font, brush, new PointF(707, 712));
         }
 
 
