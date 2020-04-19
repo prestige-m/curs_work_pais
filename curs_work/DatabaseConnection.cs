@@ -20,6 +20,8 @@ namespace curs_work
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["CarAccountConnectionString"].ConnectionString;
 
+        public static SqlConnection Connection { get { return new SqlConnection(connectionString); } }
+
         public static object CommandExecute(string query, SqlParameter[] parameters, Actions action, CommandType type = CommandType.Text)
         {
             object result = null;

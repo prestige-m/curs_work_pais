@@ -47,7 +47,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Act.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Act.Designer.cs">
+      <DependentUpon>Act.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alert.cs" />
+    <Compile Include="CarAccountDataSet.cs">
+      <DependentUpon>CarAccountDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarAccountDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarAccountDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarTypes.Designer.cs">
+      <DependentUpon>CarTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colors.Designer.cs">
+      <DependentUpon>Colors.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="docForm.cs">
       <SubType>Form</SubType>
@@ -55,17 +81,35 @@
     <Compile Include="docForm.Designer.cs">
       <DependentUpon>docForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Engines.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Engines.Designer.cs">
+      <DependentUpon>Engines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firms.Designer.cs">
+      <DependentUpon>Firms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelTypes.Designer.cs">
+      <DependentUpon>FuelTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models.Designer.cs">
+      <DependentUpon>Models.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,11 +125,38 @@
     <Compile Include="sign_up.Designer.cs">
       <DependentUpon>sign_up.cs</DependentUpon>
     </Compile>
+    <Compile Include="TechPassport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TechPassport.Designer.cs">
+      <DependentUpon>TechPassport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Act.resx">
+      <DependentUpon>Act.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarTypes.resx">
+      <DependentUpon>CarTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colors.resx">
+      <DependentUpon>Colors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="docForm.resx">
       <DependentUpon>docForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Engines.resx">
+      <DependentUpon>Engines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firms.resx">
+      <DependentUpon>Firms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuelTypes.resx">
+      <DependentUpon>FuelTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models.resx">
+      <DependentUpon>Models.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +173,20 @@
     <EmbeddedResource Include="sign_up.resx">
       <DependentUpon>sign_up.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TechPassport.resx">
+      <DependentUpon>TechPassport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CarAccountDataSet.xsc">
+      <DependentUpon>CarAccountDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CarAccountDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarAccountDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarAccountDataSet.xss">
+      <DependentUpon>CarAccountDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
