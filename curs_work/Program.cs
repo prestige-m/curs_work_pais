@@ -16,7 +16,7 @@ namespace curs_work
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Firms());
+            Application.Run(new docForm());
         }
     }
 }

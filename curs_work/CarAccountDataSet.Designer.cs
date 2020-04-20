@@ -24,8 +24,6 @@ namespace curs_work {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class CarAccountDataSet : global::System.Data.DataSet {
         
-        private AcceptanceActDataTable tableAcceptanceAct;
-        
         private CarModelsDataTable tableCarModels;
         
         private CarTypesDataTable tableCarTypes;
@@ -44,27 +42,31 @@ namespace curs_work {
         
         private UsersDataTable tableUsers;
         
-        private global::System.Data.DataRelation relationFK__Acceptanc__accep__52593CB8;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__booke__5441852A;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__comm___4F7CD00D;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__first__5070F446;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__hando__534D60F1;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__opera__4BAC3F29;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__recei__4D94879B;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__secon__5165187F;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__sende__4CA06362;
-        
-        private global::System.Data.DataRelation relationFK__Acceptanc__user___4AB81AF0;
+        private AcceptActDataTable tableAcceptAct;
         
         private global::System.Data.DataRelation relationFK__Engines__fuel_ty__3A81B327;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__accep__656C112C;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__booke__6754599E;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__comm___628FA481;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__firm___5CD6CB2B;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__first__6383C8BA;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__hando__66603565;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__opera__5EBF139D;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__recei__60A75C0F;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__secon__6477ECF3;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__sende__5FB337D6;
+        
+        private global::System.Data.DataRelation relationFK__AcceptAct__user___5DCAEF64;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -94,9 +96,6 @@ namespace curs_work {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AcceptanceAct"] != null)) {
-                    base.Tables.Add(new AcceptanceActDataTable(ds.Tables["AcceptanceAct"]));
-                }
                 if ((ds.Tables["CarModels"] != null)) {
                     base.Tables.Add(new CarModelsDataTable(ds.Tables["CarModels"]));
                 }
@@ -124,6 +123,9 @@ namespace curs_work {
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
+                if ((ds.Tables["AcceptAct"] != null)) {
+                    base.Tables.Add(new AcceptActDataTable(ds.Tables["AcceptAct"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -140,16 +142,6 @@ namespace curs_work {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AcceptanceActDataTable AcceptanceAct {
-            get {
-                return this.tableAcceptanceAct;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -244,6 +236,16 @@ namespace curs_work {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AcceptActDataTable AcceptAct {
+            get {
+                return this.tableAcceptAct;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -309,9 +311,6 @@ namespace curs_work {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AcceptanceAct"] != null)) {
-                    base.Tables.Add(new AcceptanceActDataTable(ds.Tables["AcceptanceAct"]));
-                }
                 if ((ds.Tables["CarModels"] != null)) {
                     base.Tables.Add(new CarModelsDataTable(ds.Tables["CarModels"]));
                 }
@@ -338,6 +337,9 @@ namespace curs_work {
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
+                }
+                if ((ds.Tables["AcceptAct"] != null)) {
+                    base.Tables.Add(new AcceptActDataTable(ds.Tables["AcceptAct"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -372,12 +374,6 @@ namespace curs_work {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAcceptanceAct = ((AcceptanceActDataTable)(base.Tables["AcceptanceAct"]));
-            if ((initTable == true)) {
-                if ((this.tableAcceptanceAct != null)) {
-                    this.tableAcceptanceAct.InitVars();
-                }
-            }
             this.tableCarModels = ((CarModelsDataTable)(base.Tables["CarModels"]));
             if ((initTable == true)) {
                 if ((this.tableCarModels != null)) {
@@ -432,17 +428,24 @@ namespace curs_work {
                     this.tableUsers.InitVars();
                 }
             }
-            this.relationFK__Acceptanc__accep__52593CB8 = this.Relations["FK__Acceptanc__accep__52593CB8"];
-            this.relationFK__Acceptanc__booke__5441852A = this.Relations["FK__Acceptanc__booke__5441852A"];
-            this.relationFK__Acceptanc__comm___4F7CD00D = this.Relations["FK__Acceptanc__comm___4F7CD00D"];
-            this.relationFK__Acceptanc__first__5070F446 = this.Relations["FK__Acceptanc__first__5070F446"];
-            this.relationFK__Acceptanc__hando__534D60F1 = this.Relations["FK__Acceptanc__hando__534D60F1"];
-            this.relationFK__Acceptanc__opera__4BAC3F29 = this.Relations["FK__Acceptanc__opera__4BAC3F29"];
-            this.relationFK__Acceptanc__recei__4D94879B = this.Relations["FK__Acceptanc__recei__4D94879B"];
-            this.relationFK__Acceptanc__secon__5165187F = this.Relations["FK__Acceptanc__secon__5165187F"];
-            this.relationFK__Acceptanc__sende__4CA06362 = this.Relations["FK__Acceptanc__sende__4CA06362"];
-            this.relationFK__Acceptanc__user___4AB81AF0 = this.Relations["FK__Acceptanc__user___4AB81AF0"];
+            this.tableAcceptAct = ((AcceptActDataTable)(base.Tables["AcceptAct"]));
+            if ((initTable == true)) {
+                if ((this.tableAcceptAct != null)) {
+                    this.tableAcceptAct.InitVars();
+                }
+            }
             this.relationFK__Engines__fuel_ty__3A81B327 = this.Relations["FK__Engines__fuel_ty__3A81B327"];
+            this.relationFK__AcceptAct__accep__656C112C = this.Relations["FK__AcceptAct__accep__656C112C"];
+            this.relationFK__AcceptAct__booke__6754599E = this.Relations["FK__AcceptAct__booke__6754599E"];
+            this.relationFK__AcceptAct__comm___628FA481 = this.Relations["FK__AcceptAct__comm___628FA481"];
+            this.relationFK__AcceptAct__firm___5CD6CB2B = this.Relations["FK__AcceptAct__firm___5CD6CB2B"];
+            this.relationFK__AcceptAct__first__6383C8BA = this.Relations["FK__AcceptAct__first__6383C8BA"];
+            this.relationFK__AcceptAct__hando__66603565 = this.Relations["FK__AcceptAct__hando__66603565"];
+            this.relationFK__AcceptAct__opera__5EBF139D = this.Relations["FK__AcceptAct__opera__5EBF139D"];
+            this.relationFK__AcceptAct__recei__60A75C0F = this.Relations["FK__AcceptAct__recei__60A75C0F"];
+            this.relationFK__AcceptAct__secon__6477ECF3 = this.Relations["FK__AcceptAct__secon__6477ECF3"];
+            this.relationFK__AcceptAct__sende__5FB337D6 = this.Relations["FK__AcceptAct__sende__5FB337D6"];
+            this.relationFK__AcceptAct__user___5DCAEF64 = this.Relations["FK__AcceptAct__user___5DCAEF64"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -453,8 +456,6 @@ namespace curs_work {
             this.Namespace = "http://tempuri.org/CarAccountDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAcceptanceAct = new AcceptanceActDataTable();
-            base.Tables.Add(this.tableAcceptanceAct);
             this.tableCarModels = new CarModelsDataTable();
             base.Tables.Add(this.tableCarModels);
             this.tableCarTypes = new CarTypesDataTable();
@@ -473,56 +474,56 @@ namespace curs_work {
             base.Tables.Add(this.tableTechPassports);
             this.tableUsers = new UsersDataTable();
             base.Tables.Add(this.tableUsers);
-            this.relationFK__Acceptanc__accep__52593CB8 = new global::System.Data.DataRelation("FK__Acceptanc__accep__52593CB8", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.accepted_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__accep__52593CB8);
-            this.relationFK__Acceptanc__booke__5441852A = new global::System.Data.DataRelation("FK__Acceptanc__booke__5441852A", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.booker_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__booke__5441852A);
-            this.relationFK__Acceptanc__comm___4F7CD00D = new global::System.Data.DataRelation("FK__Acceptanc__comm___4F7CD00D", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.comm_head_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__comm___4F7CD00D);
-            this.relationFK__Acceptanc__first__5070F446 = new global::System.Data.DataRelation("FK__Acceptanc__first__5070F446", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.first_member_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__first__5070F446);
-            this.relationFK__Acceptanc__hando__534D60F1 = new global::System.Data.DataRelation("FK__Acceptanc__hando__534D60F1", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.handover_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__hando__534D60F1);
-            this.relationFK__Acceptanc__opera__4BAC3F29 = new global::System.Data.DataRelation("FK__Acceptanc__opera__4BAC3F29", new global::System.Data.DataColumn[] {
-                        this.tableOperations.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.operation_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__opera__4BAC3F29);
-            this.relationFK__Acceptanc__recei__4D94879B = new global::System.Data.DataRelation("FK__Acceptanc__recei__4D94879B", new global::System.Data.DataColumn[] {
-                        this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.receiver_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__recei__4D94879B);
-            this.relationFK__Acceptanc__secon__5165187F = new global::System.Data.DataRelation("FK__Acceptanc__secon__5165187F", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.second_member_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__secon__5165187F);
-            this.relationFK__Acceptanc__sende__4CA06362 = new global::System.Data.DataRelation("FK__Acceptanc__sende__4CA06362", new global::System.Data.DataColumn[] {
-                        this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.sender_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__sende__4CA06362);
-            this.relationFK__Acceptanc__user___4AB81AF0 = new global::System.Data.DataRelation("FK__Acceptanc__user___4AB81AF0", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptanceAct.user_idColumn}, false);
-            this.Relations.Add(this.relationFK__Acceptanc__user___4AB81AF0);
+            this.tableAcceptAct = new AcceptActDataTable();
+            base.Tables.Add(this.tableAcceptAct);
             this.relationFK__Engines__fuel_ty__3A81B327 = new global::System.Data.DataRelation("FK__Engines__fuel_ty__3A81B327", new global::System.Data.DataColumn[] {
                         this.tableFuelTypes.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableEngines.fuel_type_idColumn}, false);
             this.Relations.Add(this.relationFK__Engines__fuel_ty__3A81B327);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAcceptanceAct() {
-            return false;
+            this.relationFK__AcceptAct__accep__656C112C = new global::System.Data.DataRelation("FK__AcceptAct__accep__656C112C", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.accepted_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__accep__656C112C);
+            this.relationFK__AcceptAct__booke__6754599E = new global::System.Data.DataRelation("FK__AcceptAct__booke__6754599E", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.booker_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__booke__6754599E);
+            this.relationFK__AcceptAct__comm___628FA481 = new global::System.Data.DataRelation("FK__AcceptAct__comm___628FA481", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.comm_head_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__comm___628FA481);
+            this.relationFK__AcceptAct__firm___5CD6CB2B = new global::System.Data.DataRelation("FK__AcceptAct__firm___5CD6CB2B", new global::System.Data.DataColumn[] {
+                        this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.firm_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__firm___5CD6CB2B);
+            this.relationFK__AcceptAct__first__6383C8BA = new global::System.Data.DataRelation("FK__AcceptAct__first__6383C8BA", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.first_member_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__first__6383C8BA);
+            this.relationFK__AcceptAct__hando__66603565 = new global::System.Data.DataRelation("FK__AcceptAct__hando__66603565", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.handover_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__hando__66603565);
+            this.relationFK__AcceptAct__opera__5EBF139D = new global::System.Data.DataRelation("FK__AcceptAct__opera__5EBF139D", new global::System.Data.DataColumn[] {
+                        this.tableOperations.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.operation_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__opera__5EBF139D);
+            this.relationFK__AcceptAct__recei__60A75C0F = new global::System.Data.DataRelation("FK__AcceptAct__recei__60A75C0F", new global::System.Data.DataColumn[] {
+                        this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.receiver_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__recei__60A75C0F);
+            this.relationFK__AcceptAct__secon__6477ECF3 = new global::System.Data.DataRelation("FK__AcceptAct__secon__6477ECF3", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.second_member_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__secon__6477ECF3);
+            this.relationFK__AcceptAct__sende__5FB337D6 = new global::System.Data.DataRelation("FK__AcceptAct__sende__5FB337D6", new global::System.Data.DataColumn[] {
+                        this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.sender_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__sende__5FB337D6);
+            this.relationFK__AcceptAct__user___5DCAEF64 = new global::System.Data.DataRelation("FK__AcceptAct__user___5DCAEF64", new global::System.Data.DataColumn[] {
+                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.user_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__user___5DCAEF64);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -576,6 +577,12 @@ namespace curs_work {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeUsers() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeAcceptAct() {
             return false;
         }
         
@@ -635,9 +642,6 @@ namespace curs_work {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AcceptanceActRowChangeEventHandler(object sender, AcceptanceActRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CarModelsRowChangeEventHandler(object sender, CarModelsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -664,842 +668,8 @@ namespace curs_work {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void UsersRowChangeEventHandler(object sender, UsersRowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AcceptanceActDataTable : global::System.Data.TypedTableBase<AcceptanceActRow> {
-            
-            private global::System.Data.DataColumn columnnumber;
-            
-            private global::System.Data.DataColumn columnissue_date;
-            
-            private global::System.Data.DataColumn columnuser_id;
-            
-            private global::System.Data.DataColumn columnoperation_id;
-            
-            private global::System.Data.DataColumn columnsender_id;
-            
-            private global::System.Data.DataColumn columnreceiver_id;
-            
-            private global::System.Data.DataColumn columndebit_bill;
-            
-            private global::System.Data.DataColumn columndebit_code;
-            
-            private global::System.Data.DataColumn columncredit_bill;
-            
-            private global::System.Data.DataColumn columncredit_code;
-            
-            private global::System.Data.DataColumn columnprimary_cost;
-            
-            private global::System.Data.DataColumn columntech_passport_id;
-            
-            private global::System.Data.DataColumn columnobject_code;
-            
-            private global::System.Data.DataColumn columnnorm_code;
-            
-            private global::System.Data.DataColumn columnfull_recover;
-            
-            private global::System.Data.DataColumn columnfull_repair;
-            
-            private global::System.Data.DataColumn columncoefficient;
-            
-            private global::System.Data.DataColumn columnequip_type;
-            
-            private global::System.Data.DataColumn columnequip_code;
-            
-            private global::System.Data.DataColumn columnwearout_sum;
-            
-            private global::System.Data.DataColumn columnexpoit_date;
-            
-            private global::System.Data.DataColumn columnorder_date;
-            
-            private global::System.Data.DataColumn columnorder_number;
-            
-            private global::System.Data.DataColumn columnobject_place;
-            
-            private global::System.Data.DataColumn columndescription;
-            
-            private global::System.Data.DataColumn columnspec_meet;
-            
-            private global::System.Data.DataColumn columnneed_refine;
-            
-            private global::System.Data.DataColumn columnresults;
-            
-            private global::System.Data.DataColumn columnconclusion;
-            
-            private global::System.Data.DataColumn columnspec_list;
-            
-            private global::System.Data.DataColumn columncomm_head_id;
-            
-            private global::System.Data.DataColumn columnfirst_member_id;
-            
-            private global::System.Data.DataColumn columnsecond_member_id;
-            
-            private global::System.Data.DataColumn columnaccepted_id;
-            
-            private global::System.Data.DataColumn columnhandover_id;
-            
-            private global::System.Data.DataColumn columnbooker_id;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActDataTable() {
-                this.TableName = "AcceptanceAct";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AcceptanceActDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AcceptanceActDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn numberColumn {
-                get {
-                    return this.columnnumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn issue_dateColumn {
-                get {
-                    return this.columnissue_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn user_idColumn {
-                get {
-                    return this.columnuser_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn operation_idColumn {
-                get {
-                    return this.columnoperation_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn sender_idColumn {
-                get {
-                    return this.columnsender_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn receiver_idColumn {
-                get {
-                    return this.columnreceiver_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn debit_billColumn {
-                get {
-                    return this.columndebit_bill;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn debit_codeColumn {
-                get {
-                    return this.columndebit_code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn credit_billColumn {
-                get {
-                    return this.columncredit_bill;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn credit_codeColumn {
-                get {
-                    return this.columncredit_code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn primary_costColumn {
-                get {
-                    return this.columnprimary_cost;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn tech_passport_idColumn {
-                get {
-                    return this.columntech_passport_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn object_codeColumn {
-                get {
-                    return this.columnobject_code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn norm_codeColumn {
-                get {
-                    return this.columnnorm_code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn full_recoverColumn {
-                get {
-                    return this.columnfull_recover;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn full_repairColumn {
-                get {
-                    return this.columnfull_repair;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn coefficientColumn {
-                get {
-                    return this.columncoefficient;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn equip_typeColumn {
-                get {
-                    return this.columnequip_type;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn equip_codeColumn {
-                get {
-                    return this.columnequip_code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn wearout_sumColumn {
-                get {
-                    return this.columnwearout_sum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn expoit_dateColumn {
-                get {
-                    return this.columnexpoit_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn order_dateColumn {
-                get {
-                    return this.columnorder_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn order_numberColumn {
-                get {
-                    return this.columnorder_number;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn object_placeColumn {
-                get {
-                    return this.columnobject_place;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descriptionColumn {
-                get {
-                    return this.columndescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn spec_meetColumn {
-                get {
-                    return this.columnspec_meet;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn need_refineColumn {
-                get {
-                    return this.columnneed_refine;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn resultsColumn {
-                get {
-                    return this.columnresults;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn conclusionColumn {
-                get {
-                    return this.columnconclusion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn spec_listColumn {
-                get {
-                    return this.columnspec_list;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn comm_head_idColumn {
-                get {
-                    return this.columncomm_head_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn first_member_idColumn {
-                get {
-                    return this.columnfirst_member_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn second_member_idColumn {
-                get {
-                    return this.columnsecond_member_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn accepted_idColumn {
-                get {
-                    return this.columnaccepted_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn handover_idColumn {
-                get {
-                    return this.columnhandover_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn booker_idColumn {
-                get {
-                    return this.columnbooker_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow this[int index] {
-                get {
-                    return ((AcceptanceActRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AcceptanceActRowChangeEventHandler AcceptanceActRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AcceptanceActRowChangeEventHandler AcceptanceActRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AcceptanceActRowChangeEventHandler AcceptanceActRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AcceptanceActRowChangeEventHandler AcceptanceActRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAcceptanceActRow(AcceptanceActRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow AddAcceptanceActRow(
-                        System.DateTime issue_date, 
-                        UsersRow parentUsersRowByFK__Acceptanc__user___4AB81AF0, 
-                        OperationsRow parentOperationsRowByFK__Acceptanc__opera__4BAC3F29, 
-                        FirmsRow parentFirmsRowByFK__Acceptanc__sende__4CA06362, 
-                        FirmsRow parentFirmsRowByFK__Acceptanc__recei__4D94879B, 
-                        int debit_bill, 
-                        int debit_code, 
-                        int credit_bill, 
-                        int credit_code, 
-                        decimal primary_cost, 
-                        string tech_passport_id, 
-                        int object_code, 
-                        int norm_code, 
-                        double full_recover, 
-                        double full_repair, 
-                        double coefficient, 
-                        string equip_type, 
-                        int equip_code, 
-                        decimal wearout_sum, 
-                        System.DateTime expoit_date, 
-                        System.DateTime order_date, 
-                        int order_number, 
-                        string object_place, 
-                        string description, 
-                        string spec_meet, 
-                        string need_refine, 
-                        string results, 
-                        string conclusion, 
-                        string spec_list, 
-                        UsersRow parentUsersRowByFK__Acceptanc__comm___4F7CD00D, 
-                        UsersRow parentUsersRowByFK__Acceptanc__first__5070F446, 
-                        UsersRow parentUsersRowByFK__Acceptanc__secon__5165187F, 
-                        UsersRow parentUsersRowByFK__Acceptanc__accep__52593CB8, 
-                        UsersRow parentUsersRowByFK__Acceptanc__hando__534D60F1, 
-                        UsersRow parentUsersRowByFK__Acceptanc__booke__5441852A) {
-                AcceptanceActRow rowAcceptanceActRow = ((AcceptanceActRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        issue_date,
-                        null,
-                        null,
-                        null,
-                        null,
-                        debit_bill,
-                        debit_code,
-                        credit_bill,
-                        credit_code,
-                        primary_cost,
-                        tech_passport_id,
-                        object_code,
-                        norm_code,
-                        full_recover,
-                        full_repair,
-                        coefficient,
-                        equip_type,
-                        equip_code,
-                        wearout_sum,
-                        expoit_date,
-                        order_date,
-                        order_number,
-                        object_place,
-                        description,
-                        spec_meet,
-                        need_refine,
-                        results,
-                        conclusion,
-                        spec_list,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        null};
-                if ((parentUsersRowByFK__Acceptanc__user___4AB81AF0 != null)) {
-                    columnValuesArray[2] = parentUsersRowByFK__Acceptanc__user___4AB81AF0[0];
-                }
-                if ((parentOperationsRowByFK__Acceptanc__opera__4BAC3F29 != null)) {
-                    columnValuesArray[3] = parentOperationsRowByFK__Acceptanc__opera__4BAC3F29[0];
-                }
-                if ((parentFirmsRowByFK__Acceptanc__sende__4CA06362 != null)) {
-                    columnValuesArray[4] = parentFirmsRowByFK__Acceptanc__sende__4CA06362[0];
-                }
-                if ((parentFirmsRowByFK__Acceptanc__recei__4D94879B != null)) {
-                    columnValuesArray[5] = parentFirmsRowByFK__Acceptanc__recei__4D94879B[0];
-                }
-                if ((parentUsersRowByFK__Acceptanc__comm___4F7CD00D != null)) {
-                    columnValuesArray[30] = parentUsersRowByFK__Acceptanc__comm___4F7CD00D[0];
-                }
-                if ((parentUsersRowByFK__Acceptanc__first__5070F446 != null)) {
-                    columnValuesArray[31] = parentUsersRowByFK__Acceptanc__first__5070F446[0];
-                }
-                if ((parentUsersRowByFK__Acceptanc__secon__5165187F != null)) {
-                    columnValuesArray[32] = parentUsersRowByFK__Acceptanc__secon__5165187F[0];
-                }
-                if ((parentUsersRowByFK__Acceptanc__accep__52593CB8 != null)) {
-                    columnValuesArray[33] = parentUsersRowByFK__Acceptanc__accep__52593CB8[0];
-                }
-                if ((parentUsersRowByFK__Acceptanc__hando__534D60F1 != null)) {
-                    columnValuesArray[34] = parentUsersRowByFK__Acceptanc__hando__534D60F1[0];
-                }
-                if ((parentUsersRowByFK__Acceptanc__booke__5441852A != null)) {
-                    columnValuesArray[35] = parentUsersRowByFK__Acceptanc__booke__5441852A[0];
-                }
-                rowAcceptanceActRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAcceptanceActRow);
-                return rowAcceptanceActRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow FindBynumber(int number) {
-                return ((AcceptanceActRow)(this.Rows.Find(new object[] {
-                            number})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                AcceptanceActDataTable cln = ((AcceptanceActDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AcceptanceActDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnnumber = base.Columns["number"];
-                this.columnissue_date = base.Columns["issue_date"];
-                this.columnuser_id = base.Columns["user_id"];
-                this.columnoperation_id = base.Columns["operation_id"];
-                this.columnsender_id = base.Columns["sender_id"];
-                this.columnreceiver_id = base.Columns["receiver_id"];
-                this.columndebit_bill = base.Columns["debit_bill"];
-                this.columndebit_code = base.Columns["debit_code"];
-                this.columncredit_bill = base.Columns["credit_bill"];
-                this.columncredit_code = base.Columns["credit_code"];
-                this.columnprimary_cost = base.Columns["primary_cost"];
-                this.columntech_passport_id = base.Columns["tech_passport_id"];
-                this.columnobject_code = base.Columns["object_code"];
-                this.columnnorm_code = base.Columns["norm_code"];
-                this.columnfull_recover = base.Columns["full_recover"];
-                this.columnfull_repair = base.Columns["full_repair"];
-                this.columncoefficient = base.Columns["coefficient"];
-                this.columnequip_type = base.Columns["equip_type"];
-                this.columnequip_code = base.Columns["equip_code"];
-                this.columnwearout_sum = base.Columns["wearout_sum"];
-                this.columnexpoit_date = base.Columns["expoit_date"];
-                this.columnorder_date = base.Columns["order_date"];
-                this.columnorder_number = base.Columns["order_number"];
-                this.columnobject_place = base.Columns["object_place"];
-                this.columndescription = base.Columns["description"];
-                this.columnspec_meet = base.Columns["spec_meet"];
-                this.columnneed_refine = base.Columns["need_refine"];
-                this.columnresults = base.Columns["results"];
-                this.columnconclusion = base.Columns["conclusion"];
-                this.columnspec_list = base.Columns["spec_list"];
-                this.columncomm_head_id = base.Columns["comm_head_id"];
-                this.columnfirst_member_id = base.Columns["first_member_id"];
-                this.columnsecond_member_id = base.Columns["second_member_id"];
-                this.columnaccepted_id = base.Columns["accepted_id"];
-                this.columnhandover_id = base.Columns["handover_id"];
-                this.columnbooker_id = base.Columns["booker_id"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnnumber = new global::System.Data.DataColumn("number", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnumber);
-                this.columnissue_date = new global::System.Data.DataColumn("issue_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnissue_date);
-                this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnuser_id);
-                this.columnoperation_id = new global::System.Data.DataColumn("operation_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnoperation_id);
-                this.columnsender_id = new global::System.Data.DataColumn("sender_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsender_id);
-                this.columnreceiver_id = new global::System.Data.DataColumn("receiver_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnreceiver_id);
-                this.columndebit_bill = new global::System.Data.DataColumn("debit_bill", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndebit_bill);
-                this.columndebit_code = new global::System.Data.DataColumn("debit_code", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndebit_code);
-                this.columncredit_bill = new global::System.Data.DataColumn("credit_bill", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncredit_bill);
-                this.columncredit_code = new global::System.Data.DataColumn("credit_code", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncredit_code);
-                this.columnprimary_cost = new global::System.Data.DataColumn("primary_cost", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprimary_cost);
-                this.columntech_passport_id = new global::System.Data.DataColumn("tech_passport_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntech_passport_id);
-                this.columnobject_code = new global::System.Data.DataColumn("object_code", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnobject_code);
-                this.columnnorm_code = new global::System.Data.DataColumn("norm_code", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnorm_code);
-                this.columnfull_recover = new global::System.Data.DataColumn("full_recover", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfull_recover);
-                this.columnfull_repair = new global::System.Data.DataColumn("full_repair", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfull_repair);
-                this.columncoefficient = new global::System.Data.DataColumn("coefficient", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncoefficient);
-                this.columnequip_type = new global::System.Data.DataColumn("equip_type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnequip_type);
-                this.columnequip_code = new global::System.Data.DataColumn("equip_code", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnequip_code);
-                this.columnwearout_sum = new global::System.Data.DataColumn("wearout_sum", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnwearout_sum);
-                this.columnexpoit_date = new global::System.Data.DataColumn("expoit_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnexpoit_date);
-                this.columnorder_date = new global::System.Data.DataColumn("order_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorder_date);
-                this.columnorder_number = new global::System.Data.DataColumn("order_number", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorder_number);
-                this.columnobject_place = new global::System.Data.DataColumn("object_place", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnobject_place);
-                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription);
-                this.columnspec_meet = new global::System.Data.DataColumn("spec_meet", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnspec_meet);
-                this.columnneed_refine = new global::System.Data.DataColumn("need_refine", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnneed_refine);
-                this.columnresults = new global::System.Data.DataColumn("results", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnresults);
-                this.columnconclusion = new global::System.Data.DataColumn("conclusion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnconclusion);
-                this.columnspec_list = new global::System.Data.DataColumn("spec_list", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnspec_list);
-                this.columncomm_head_id = new global::System.Data.DataColumn("comm_head_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncomm_head_id);
-                this.columnfirst_member_id = new global::System.Data.DataColumn("first_member_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfirst_member_id);
-                this.columnsecond_member_id = new global::System.Data.DataColumn("second_member_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsecond_member_id);
-                this.columnaccepted_id = new global::System.Data.DataColumn("accepted_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnaccepted_id);
-                this.columnhandover_id = new global::System.Data.DataColumn("handover_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhandover_id);
-                this.columnbooker_id = new global::System.Data.DataColumn("booker_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbooker_id);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnnumber}, true));
-                this.columnnumber.AutoIncrement = true;
-                this.columnnumber.AutoIncrementSeed = -1;
-                this.columnnumber.AutoIncrementStep = -1;
-                this.columnnumber.AllowDBNull = false;
-                this.columnnumber.ReadOnly = true;
-                this.columnnumber.Unique = true;
-                this.columnuser_id.AllowDBNull = false;
-                this.columnoperation_id.AllowDBNull = false;
-                this.columnsender_id.AllowDBNull = false;
-                this.columnreceiver_id.AllowDBNull = false;
-                this.columntech_passport_id.AllowDBNull = false;
-                this.columntech_passport_id.MaxLength = 150;
-                this.columnequip_type.MaxLength = 100;
-                this.columnobject_place.MaxLength = 150;
-                this.columndescription.MaxLength = 2147483647;
-                this.columnspec_meet.MaxLength = 150;
-                this.columnneed_refine.MaxLength = 150;
-                this.columnresults.MaxLength = 200;
-                this.columnconclusion.MaxLength = 200;
-                this.columnspec_list.MaxLength = 200;
-                this.columncomm_head_id.AllowDBNull = false;
-                this.columnfirst_member_id.AllowDBNull = false;
-                this.columnsecond_member_id.AllowDBNull = false;
-                this.columnaccepted_id.AllowDBNull = false;
-                this.columnhandover_id.AllowDBNull = false;
-                this.columnbooker_id.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow NewAcceptanceActRow() {
-                return ((AcceptanceActRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AcceptanceActRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AcceptanceActRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.AcceptanceActRowChanged != null)) {
-                    this.AcceptanceActRowChanged(this, new AcceptanceActRowChangeEvent(((AcceptanceActRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.AcceptanceActRowChanging != null)) {
-                    this.AcceptanceActRowChanging(this, new AcceptanceActRowChangeEvent(((AcceptanceActRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.AcceptanceActRowDeleted != null)) {
-                    this.AcceptanceActRowDeleted(this, new AcceptanceActRowChangeEvent(((AcceptanceActRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.AcceptanceActRowDeleting != null)) {
-                    this.AcceptanceActRowDeleting(this, new AcceptanceActRowChangeEvent(((AcceptanceActRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAcceptanceActRow(AcceptanceActRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CarAccountDataSet ds = new CarAccountDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AcceptanceActDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void AcceptActRowChangeEventHandler(object sender, AcceptActRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4273,931 +3443,858 @@ namespace curs_work {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class AcceptanceActRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AcceptActDataTable : global::System.Data.TypedTableBase<AcceptActRow> {
             
-            private AcceptanceActDataTable tableAcceptanceAct;
+            private global::System.Data.DataColumn columnnumber;
+            
+            private global::System.Data.DataColumn columnfirm_id;
+            
+            private global::System.Data.DataColumn columnissue_date;
+            
+            private global::System.Data.DataColumn columnuser_id;
+            
+            private global::System.Data.DataColumn columnoperation_id;
+            
+            private global::System.Data.DataColumn columnsender_id;
+            
+            private global::System.Data.DataColumn columnreceiver_id;
+            
+            private global::System.Data.DataColumn columndebit_bill;
+            
+            private global::System.Data.DataColumn columndebit_code;
+            
+            private global::System.Data.DataColumn columncredit_bill;
+            
+            private global::System.Data.DataColumn columncredit_code;
+            
+            private global::System.Data.DataColumn columnprimary_cost;
+            
+            private global::System.Data.DataColumn columntech_passport_id;
+            
+            private global::System.Data.DataColumn columnobject_code;
+            
+            private global::System.Data.DataColumn columnnorm_code;
+            
+            private global::System.Data.DataColumn columnfull_recover;
+            
+            private global::System.Data.DataColumn columnfull_repair;
+            
+            private global::System.Data.DataColumn columncoefficient;
+            
+            private global::System.Data.DataColumn columnequip_type;
+            
+            private global::System.Data.DataColumn columnequip_code;
+            
+            private global::System.Data.DataColumn columnwearout_sum;
+            
+            private global::System.Data.DataColumn columnexpoit_date;
+            
+            private global::System.Data.DataColumn columnorder_date;
+            
+            private global::System.Data.DataColumn columnorder_number;
+            
+            private global::System.Data.DataColumn columnobject_place;
+            
+            private global::System.Data.DataColumn columndescription;
+            
+            private global::System.Data.DataColumn columnspec_meet;
+            
+            private global::System.Data.DataColumn columnneed_refine;
+            
+            private global::System.Data.DataColumn columnresults;
+            
+            private global::System.Data.DataColumn columnconclusion;
+            
+            private global::System.Data.DataColumn columnspec_list;
+            
+            private global::System.Data.DataColumn columncomm_head_id;
+            
+            private global::System.Data.DataColumn columnfirst_member_id;
+            
+            private global::System.Data.DataColumn columnsecond_member_id;
+            
+            private global::System.Data.DataColumn columnaccepted_id;
+            
+            private global::System.Data.DataColumn columnhandover_id;
+            
+            private global::System.Data.DataColumn columnbooker_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AcceptanceActRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableAcceptanceAct = ((AcceptanceActDataTable)(this.Table));
+            public AcceptActDataTable() {
+                this.TableName = "AcceptAct";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int number {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.numberColumn]));
+            internal AcceptActDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
                 }
-                set {
-                    this[this.tableAcceptanceAct.numberColumn] = value;
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected AcceptActDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numberColumn {
+                get {
+                    return this.columnnumber;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime issue_date {
+            public global::System.Data.DataColumn firm_idColumn {
                 get {
+                    return this.columnfirm_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issue_dateColumn {
+                get {
+                    return this.columnissue_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn user_idColumn {
+                get {
+                    return this.columnuser_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn operation_idColumn {
+                get {
+                    return this.columnoperation_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn sender_idColumn {
+                get {
+                    return this.columnsender_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn receiver_idColumn {
+                get {
+                    return this.columnreceiver_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn debit_billColumn {
+                get {
+                    return this.columndebit_bill;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn debit_codeColumn {
+                get {
+                    return this.columndebit_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn credit_billColumn {
+                get {
+                    return this.columncredit_bill;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn credit_codeColumn {
+                get {
+                    return this.columncredit_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn primary_costColumn {
+                get {
+                    return this.columnprimary_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn tech_passport_idColumn {
+                get {
+                    return this.columntech_passport_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn object_codeColumn {
+                get {
+                    return this.columnobject_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn norm_codeColumn {
+                get {
+                    return this.columnnorm_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn full_recoverColumn {
+                get {
+                    return this.columnfull_recover;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn full_repairColumn {
+                get {
+                    return this.columnfull_repair;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn coefficientColumn {
+                get {
+                    return this.columncoefficient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn equip_typeColumn {
+                get {
+                    return this.columnequip_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn equip_codeColumn {
+                get {
+                    return this.columnequip_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn wearout_sumColumn {
+                get {
+                    return this.columnwearout_sum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn expoit_dateColumn {
+                get {
+                    return this.columnexpoit_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn order_dateColumn {
+                get {
+                    return this.columnorder_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn order_numberColumn {
+                get {
+                    return this.columnorder_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn object_placeColumn {
+                get {
+                    return this.columnobject_place;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descriptionColumn {
+                get {
+                    return this.columndescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn spec_meetColumn {
+                get {
+                    return this.columnspec_meet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn need_refineColumn {
+                get {
+                    return this.columnneed_refine;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn resultsColumn {
+                get {
+                    return this.columnresults;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn conclusionColumn {
+                get {
+                    return this.columnconclusion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn spec_listColumn {
+                get {
+                    return this.columnspec_list;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn comm_head_idColumn {
+                get {
+                    return this.columncomm_head_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn first_member_idColumn {
+                get {
+                    return this.columnfirst_member_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn second_member_idColumn {
+                get {
+                    return this.columnsecond_member_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn accepted_idColumn {
+                get {
+                    return this.columnaccepted_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn handover_idColumn {
+                get {
+                    return this.columnhandover_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn booker_idColumn {
+                get {
+                    return this.columnbooker_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow this[int index] {
+                get {
+                    return ((AcceptActRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AcceptActRowChangeEventHandler AcceptActRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AcceptActRowChangeEventHandler AcceptActRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AcceptActRowChangeEventHandler AcceptActRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AcceptActRowChangeEventHandler AcceptActRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddAcceptActRow(AcceptActRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow AddAcceptActRow(
+                        FirmsRow parentFirmsRowByFK__AcceptAct__firm___5CD6CB2B, 
+                        System.DateTime issue_date, 
+                        UsersRow parentUsersRowByFK__AcceptAct__user___5DCAEF64, 
+                        OperationsRow parentOperationsRowByFK__AcceptAct__opera__5EBF139D, 
+                        FirmsRow parentFirmsRowByFK__AcceptAct__sende__5FB337D6, 
+                        FirmsRow parentFirmsRowByFK__AcceptAct__recei__60A75C0F, 
+                        int debit_bill, 
+                        int debit_code, 
+                        int credit_bill, 
+                        int credit_code, 
+                        decimal primary_cost, 
+                        string tech_passport_id, 
+                        int object_code, 
+                        int norm_code, 
+                        double full_recover, 
+                        double full_repair, 
+                        double coefficient, 
+                        string equip_type, 
+                        int equip_code, 
+                        decimal wearout_sum, 
+                        System.DateTime expoit_date, 
+                        System.DateTime order_date, 
+                        int order_number, 
+                        string object_place, 
+                        string description, 
+                        string spec_meet, 
+                        string need_refine, 
+                        string results, 
+                        string conclusion, 
+                        string spec_list, 
+                        UsersRow parentUsersRowByFK__AcceptAct__comm___628FA481, 
+                        UsersRow parentUsersRowByFK__AcceptAct__first__6383C8BA, 
+                        UsersRow parentUsersRowByFK__AcceptAct__secon__6477ECF3, 
+                        UsersRow parentUsersRowByFK__AcceptAct__accep__656C112C, 
+                        UsersRow parentUsersRowByFK__AcceptAct__hando__66603565, 
+                        UsersRow parentUsersRowByFK__AcceptAct__booke__6754599E) {
+                AcceptActRow rowAcceptActRow = ((AcceptActRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        issue_date,
+                        null,
+                        null,
+                        null,
+                        null,
+                        debit_bill,
+                        debit_code,
+                        credit_bill,
+                        credit_code,
+                        primary_cost,
+                        tech_passport_id,
+                        object_code,
+                        norm_code,
+                        full_recover,
+                        full_repair,
+                        coefficient,
+                        equip_type,
+                        equip_code,
+                        wearout_sum,
+                        expoit_date,
+                        order_date,
+                        order_number,
+                        object_place,
+                        description,
+                        spec_meet,
+                        need_refine,
+                        results,
+                        conclusion,
+                        spec_list,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null};
+                if ((parentFirmsRowByFK__AcceptAct__firm___5CD6CB2B != null)) {
+                    columnValuesArray[1] = parentFirmsRowByFK__AcceptAct__firm___5CD6CB2B[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__user___5DCAEF64 != null)) {
+                    columnValuesArray[3] = parentUsersRowByFK__AcceptAct__user___5DCAEF64[0];
+                }
+                if ((parentOperationsRowByFK__AcceptAct__opera__5EBF139D != null)) {
+                    columnValuesArray[4] = parentOperationsRowByFK__AcceptAct__opera__5EBF139D[0];
+                }
+                if ((parentFirmsRowByFK__AcceptAct__sende__5FB337D6 != null)) {
+                    columnValuesArray[5] = parentFirmsRowByFK__AcceptAct__sende__5FB337D6[0];
+                }
+                if ((parentFirmsRowByFK__AcceptAct__recei__60A75C0F != null)) {
+                    columnValuesArray[6] = parentFirmsRowByFK__AcceptAct__recei__60A75C0F[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__comm___628FA481 != null)) {
+                    columnValuesArray[31] = parentUsersRowByFK__AcceptAct__comm___628FA481[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__first__6383C8BA != null)) {
+                    columnValuesArray[32] = parentUsersRowByFK__AcceptAct__first__6383C8BA[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__secon__6477ECF3 != null)) {
+                    columnValuesArray[33] = parentUsersRowByFK__AcceptAct__secon__6477ECF3[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__accep__656C112C != null)) {
+                    columnValuesArray[34] = parentUsersRowByFK__AcceptAct__accep__656C112C[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__hando__66603565 != null)) {
+                    columnValuesArray[35] = parentUsersRowByFK__AcceptAct__hando__66603565[0];
+                }
+                if ((parentUsersRowByFK__AcceptAct__booke__6754599E != null)) {
+                    columnValuesArray[36] = parentUsersRowByFK__AcceptAct__booke__6754599E[0];
+                }
+                rowAcceptActRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAcceptActRow);
+                return rowAcceptActRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow FindBynumber(int number) {
+                return ((AcceptActRow)(this.Rows.Find(new object[] {
+                            number})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AcceptActDataTable cln = ((AcceptActDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AcceptActDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnnumber = base.Columns["number"];
+                this.columnfirm_id = base.Columns["firm_id"];
+                this.columnissue_date = base.Columns["issue_date"];
+                this.columnuser_id = base.Columns["user_id"];
+                this.columnoperation_id = base.Columns["operation_id"];
+                this.columnsender_id = base.Columns["sender_id"];
+                this.columnreceiver_id = base.Columns["receiver_id"];
+                this.columndebit_bill = base.Columns["debit_bill"];
+                this.columndebit_code = base.Columns["debit_code"];
+                this.columncredit_bill = base.Columns["credit_bill"];
+                this.columncredit_code = base.Columns["credit_code"];
+                this.columnprimary_cost = base.Columns["primary_cost"];
+                this.columntech_passport_id = base.Columns["tech_passport_id"];
+                this.columnobject_code = base.Columns["object_code"];
+                this.columnnorm_code = base.Columns["norm_code"];
+                this.columnfull_recover = base.Columns["full_recover"];
+                this.columnfull_repair = base.Columns["full_repair"];
+                this.columncoefficient = base.Columns["coefficient"];
+                this.columnequip_type = base.Columns["equip_type"];
+                this.columnequip_code = base.Columns["equip_code"];
+                this.columnwearout_sum = base.Columns["wearout_sum"];
+                this.columnexpoit_date = base.Columns["expoit_date"];
+                this.columnorder_date = base.Columns["order_date"];
+                this.columnorder_number = base.Columns["order_number"];
+                this.columnobject_place = base.Columns["object_place"];
+                this.columndescription = base.Columns["description"];
+                this.columnspec_meet = base.Columns["spec_meet"];
+                this.columnneed_refine = base.Columns["need_refine"];
+                this.columnresults = base.Columns["results"];
+                this.columnconclusion = base.Columns["conclusion"];
+                this.columnspec_list = base.Columns["spec_list"];
+                this.columncomm_head_id = base.Columns["comm_head_id"];
+                this.columnfirst_member_id = base.Columns["first_member_id"];
+                this.columnsecond_member_id = base.Columns["second_member_id"];
+                this.columnaccepted_id = base.Columns["accepted_id"];
+                this.columnhandover_id = base.Columns["handover_id"];
+                this.columnbooker_id = base.Columns["booker_id"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnnumber = new global::System.Data.DataColumn("number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumber);
+                this.columnfirm_id = new global::System.Data.DataColumn("firm_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirm_id);
+                this.columnissue_date = new global::System.Data.DataColumn("issue_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissue_date);
+                this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_id);
+                this.columnoperation_id = new global::System.Data.DataColumn("operation_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoperation_id);
+                this.columnsender_id = new global::System.Data.DataColumn("sender_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsender_id);
+                this.columnreceiver_id = new global::System.Data.DataColumn("receiver_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreceiver_id);
+                this.columndebit_bill = new global::System.Data.DataColumn("debit_bill", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndebit_bill);
+                this.columndebit_code = new global::System.Data.DataColumn("debit_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndebit_code);
+                this.columncredit_bill = new global::System.Data.DataColumn("credit_bill", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncredit_bill);
+                this.columncredit_code = new global::System.Data.DataColumn("credit_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncredit_code);
+                this.columnprimary_cost = new global::System.Data.DataColumn("primary_cost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprimary_cost);
+                this.columntech_passport_id = new global::System.Data.DataColumn("tech_passport_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntech_passport_id);
+                this.columnobject_code = new global::System.Data.DataColumn("object_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobject_code);
+                this.columnnorm_code = new global::System.Data.DataColumn("norm_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnorm_code);
+                this.columnfull_recover = new global::System.Data.DataColumn("full_recover", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfull_recover);
+                this.columnfull_repair = new global::System.Data.DataColumn("full_repair", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfull_repair);
+                this.columncoefficient = new global::System.Data.DataColumn("coefficient", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncoefficient);
+                this.columnequip_type = new global::System.Data.DataColumn("equip_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnequip_type);
+                this.columnequip_code = new global::System.Data.DataColumn("equip_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnequip_code);
+                this.columnwearout_sum = new global::System.Data.DataColumn("wearout_sum", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwearout_sum);
+                this.columnexpoit_date = new global::System.Data.DataColumn("expoit_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexpoit_date);
+                this.columnorder_date = new global::System.Data.DataColumn("order_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnorder_date);
+                this.columnorder_number = new global::System.Data.DataColumn("order_number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnorder_number);
+                this.columnobject_place = new global::System.Data.DataColumn("object_place", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobject_place);
+                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription);
+                this.columnspec_meet = new global::System.Data.DataColumn("spec_meet", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspec_meet);
+                this.columnneed_refine = new global::System.Data.DataColumn("need_refine", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnneed_refine);
+                this.columnresults = new global::System.Data.DataColumn("results", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnresults);
+                this.columnconclusion = new global::System.Data.DataColumn("conclusion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconclusion);
+                this.columnspec_list = new global::System.Data.DataColumn("spec_list", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspec_list);
+                this.columncomm_head_id = new global::System.Data.DataColumn("comm_head_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncomm_head_id);
+                this.columnfirst_member_id = new global::System.Data.DataColumn("first_member_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirst_member_id);
+                this.columnsecond_member_id = new global::System.Data.DataColumn("second_member_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsecond_member_id);
+                this.columnaccepted_id = new global::System.Data.DataColumn("accepted_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccepted_id);
+                this.columnhandover_id = new global::System.Data.DataColumn("handover_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhandover_id);
+                this.columnbooker_id = new global::System.Data.DataColumn("booker_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbooker_id);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnnumber}, true));
+                this.columnnumber.AutoIncrement = true;
+                this.columnnumber.AutoIncrementSeed = -1;
+                this.columnnumber.AutoIncrementStep = -1;
+                this.columnnumber.AllowDBNull = false;
+                this.columnnumber.ReadOnly = true;
+                this.columnnumber.Unique = true;
+                this.columnfirm_id.AllowDBNull = false;
+                this.columnuser_id.AllowDBNull = false;
+                this.columnoperation_id.AllowDBNull = false;
+                this.columnsender_id.AllowDBNull = false;
+                this.columnreceiver_id.AllowDBNull = false;
+                this.columntech_passport_id.AllowDBNull = false;
+                this.columntech_passport_id.MaxLength = 150;
+                this.columnequip_type.MaxLength = 100;
+                this.columnobject_place.MaxLength = 150;
+                this.columndescription.MaxLength = 2147483647;
+                this.columnspec_meet.MaxLength = 150;
+                this.columnneed_refine.MaxLength = 150;
+                this.columnresults.MaxLength = 200;
+                this.columnconclusion.MaxLength = 200;
+                this.columnspec_list.MaxLength = 200;
+                this.columncomm_head_id.AllowDBNull = false;
+                this.columnfirst_member_id.AllowDBNull = false;
+                this.columnsecond_member_id.AllowDBNull = false;
+                this.columnaccepted_id.AllowDBNull = false;
+                this.columnhandover_id.AllowDBNull = false;
+                this.columnbooker_id.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow NewAcceptActRow() {
+                return ((AcceptActRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AcceptActRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AcceptActRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AcceptActRowChanged != null)) {
+                    this.AcceptActRowChanged(this, new AcceptActRowChangeEvent(((AcceptActRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AcceptActRowChanging != null)) {
+                    this.AcceptActRowChanging(this, new AcceptActRowChangeEvent(((AcceptActRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AcceptActRowDeleted != null)) {
+                    this.AcceptActRowDeleted(this, new AcceptActRowChangeEvent(((AcceptActRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AcceptActRowDeleting != null)) {
+                    this.AcceptActRowDeleting(this, new AcceptActRowChangeEvent(((AcceptActRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveAcceptActRow(AcceptActRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CarAccountDataSet ds = new CarAccountDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AcceptActDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((global::System.DateTime)(this[this.tableAcceptanceAct.issue_dateColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'issue_date\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.issue_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int user_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.user_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.user_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int operation_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.operation_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.operation_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int sender_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.sender_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.sender_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int receiver_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.receiver_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.receiver_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int debit_bill {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.debit_billColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'debit_bill\' в таблице \'AcceptanceAct\' равно DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableAcceptanceAct.debit_billColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int debit_code {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.debit_codeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'debit_code\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.debit_codeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int credit_bill {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.credit_billColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'credit_bill\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.credit_billColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int credit_code {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.credit_codeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'credit_code\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.credit_codeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal primary_cost {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableAcceptanceAct.primary_costColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'primary_cost\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.primary_costColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string tech_passport_id {
-                get {
-                    return ((string)(this[this.tableAcceptanceAct.tech_passport_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.tech_passport_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int object_code {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.object_codeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'object_code\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.object_codeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int norm_code {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.norm_codeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'norm_code\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.norm_codeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double full_recover {
-                get {
-                    try {
-                        return ((double)(this[this.tableAcceptanceAct.full_recoverColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'full_recover\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.full_recoverColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double full_repair {
-                get {
-                    try {
-                        return ((double)(this[this.tableAcceptanceAct.full_repairColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'full_repair\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.full_repairColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double coefficient {
-                get {
-                    try {
-                        return ((double)(this[this.tableAcceptanceAct.coefficientColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'coefficient\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.coefficientColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string equip_type {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.equip_typeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'equip_type\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.equip_typeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int equip_code {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.equip_codeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'equip_code\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.equip_codeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal wearout_sum {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableAcceptanceAct.wearout_sumColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'wearout_sum\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.wearout_sumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime expoit_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAcceptanceAct.expoit_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'expoit_date\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.expoit_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime order_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAcceptanceAct.order_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'order_date\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.order_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int order_number {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptanceAct.order_numberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'order_number\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.order_numberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string object_place {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.object_placeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'object_place\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.object_placeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string description {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.descriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string spec_meet {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.spec_meetColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'spec_meet\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.spec_meetColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string need_refine {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.need_refineColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'need_refine\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.need_refineColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string results {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.resultsColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'results\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.resultsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string conclusion {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.conclusionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'conclusion\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.conclusionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string spec_list {
-                get {
-                    try {
-                        return ((string)(this[this.tableAcceptanceAct.spec_listColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'spec_list\' в таблице \'AcceptanceAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptanceAct.spec_listColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int comm_head_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.comm_head_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.comm_head_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int first_member_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.first_member_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.first_member_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int second_member_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.second_member_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.second_member_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int accepted_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.accepted_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.accepted_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int handover_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.handover_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.handover_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int booker_id {
-                get {
-                    return ((int)(this[this.tableAcceptanceAct.booker_idColumn]));
-                }
-                set {
-                    this[this.tableAcceptanceAct.booker_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__accep__52593CB8 {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__accep__52593CB8"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__accep__52593CB8"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__booke__5441852A {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__booke__5441852A"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__booke__5441852A"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__comm___4F7CD00D {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__comm___4F7CD00D"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__comm___4F7CD00D"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__first__5070F446 {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__first__5070F446"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__first__5070F446"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__hando__534D60F1 {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__hando__534D60F1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__hando__534D60F1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OperationsRow OperationsRow {
-                get {
-                    return ((OperationsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__opera__4BAC3F29"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__opera__4BAC3F29"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FirmsRow FirmsRowByFK__Acceptanc__recei__4D94879B {
-                get {
-                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__recei__4D94879B"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__recei__4D94879B"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__secon__5165187F {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__secon__5165187F"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__secon__5165187F"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FirmsRow FirmsRowByFK__Acceptanc__sende__4CA06362 {
-                get {
-                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__sende__4CA06362"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__sende__4CA06362"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__Acceptanc__user___4AB81AF0 {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Acceptanc__user___4AB81AF0"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Acceptanc__user___4AB81AF0"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isissue_dateNull() {
-                return this.IsNull(this.tableAcceptanceAct.issue_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setissue_dateNull() {
-                this[this.tableAcceptanceAct.issue_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdebit_billNull() {
-                return this.IsNull(this.tableAcceptanceAct.debit_billColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdebit_billNull() {
-                this[this.tableAcceptanceAct.debit_billColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdebit_codeNull() {
-                return this.IsNull(this.tableAcceptanceAct.debit_codeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdebit_codeNull() {
-                this[this.tableAcceptanceAct.debit_codeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscredit_billNull() {
-                return this.IsNull(this.tableAcceptanceAct.credit_billColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcredit_billNull() {
-                this[this.tableAcceptanceAct.credit_billColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscredit_codeNull() {
-                return this.IsNull(this.tableAcceptanceAct.credit_codeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcredit_codeNull() {
-                this[this.tableAcceptanceAct.credit_codeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isprimary_costNull() {
-                return this.IsNull(this.tableAcceptanceAct.primary_costColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setprimary_costNull() {
-                this[this.tableAcceptanceAct.primary_costColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isobject_codeNull() {
-                return this.IsNull(this.tableAcceptanceAct.object_codeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setobject_codeNull() {
-                this[this.tableAcceptanceAct.object_codeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isnorm_codeNull() {
-                return this.IsNull(this.tableAcceptanceAct.norm_codeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setnorm_codeNull() {
-                this[this.tableAcceptanceAct.norm_codeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfull_recoverNull() {
-                return this.IsNull(this.tableAcceptanceAct.full_recoverColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfull_recoverNull() {
-                this[this.tableAcceptanceAct.full_recoverColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfull_repairNull() {
-                return this.IsNull(this.tableAcceptanceAct.full_repairColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfull_repairNull() {
-                this[this.tableAcceptanceAct.full_repairColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscoefficientNull() {
-                return this.IsNull(this.tableAcceptanceAct.coefficientColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcoefficientNull() {
-                this[this.tableAcceptanceAct.coefficientColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isequip_typeNull() {
-                return this.IsNull(this.tableAcceptanceAct.equip_typeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setequip_typeNull() {
-                this[this.tableAcceptanceAct.equip_typeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isequip_codeNull() {
-                return this.IsNull(this.tableAcceptanceAct.equip_codeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setequip_codeNull() {
-                this[this.tableAcceptanceAct.equip_codeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iswearout_sumNull() {
-                return this.IsNull(this.tableAcceptanceAct.wearout_sumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setwearout_sumNull() {
-                this[this.tableAcceptanceAct.wearout_sumColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isexpoit_dateNull() {
-                return this.IsNull(this.tableAcceptanceAct.expoit_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setexpoit_dateNull() {
-                this[this.tableAcceptanceAct.expoit_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isorder_dateNull() {
-                return this.IsNull(this.tableAcceptanceAct.order_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setorder_dateNull() {
-                this[this.tableAcceptanceAct.order_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isorder_numberNull() {
-                return this.IsNull(this.tableAcceptanceAct.order_numberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setorder_numberNull() {
-                this[this.tableAcceptanceAct.order_numberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isobject_placeNull() {
-                return this.IsNull(this.tableAcceptanceAct.object_placeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setobject_placeNull() {
-                this[this.tableAcceptanceAct.object_placeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescriptionNull() {
-                return this.IsNull(this.tableAcceptanceAct.descriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescriptionNull() {
-                this[this.tableAcceptanceAct.descriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isspec_meetNull() {
-                return this.IsNull(this.tableAcceptanceAct.spec_meetColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setspec_meetNull() {
-                this[this.tableAcceptanceAct.spec_meetColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isneed_refineNull() {
-                return this.IsNull(this.tableAcceptanceAct.need_refineColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setneed_refineNull() {
-                this[this.tableAcceptanceAct.need_refineColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsresultsNull() {
-                return this.IsNull(this.tableAcceptanceAct.resultsColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetresultsNull() {
-                this[this.tableAcceptanceAct.resultsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsconclusionNull() {
-                return this.IsNull(this.tableAcceptanceAct.conclusionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetconclusionNull() {
-                this[this.tableAcceptanceAct.conclusionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isspec_listNull() {
-                return this.IsNull(this.tableAcceptanceAct.spec_listColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setspec_listNull() {
-                this[this.tableAcceptanceAct.spec_listColumn] = global::System.Convert.DBNull;
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -5634,23 +4731,34 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__recei__4D94879B() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__recei__4D94879B"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__firm___5CD6CB2B() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__firm___5CD6CB2B"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__recei__4D94879B"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__firm___5CD6CB2B"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__sende__4CA06362() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__sende__4CA06362"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__recei__60A75C0F() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__recei__60A75C0F"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__sende__4CA06362"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__recei__60A75C0F"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__sende__5FB337D6() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__sende__5FB337D6"] == null)) {
+                    return new AcceptActRow[0];
+                }
+                else {
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__sende__5FB337D6"])));
                 }
             }
         }
@@ -5775,12 +4883,12 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRows() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__opera__4BAC3F29"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRows() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__opera__5EBF139D"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__opera__4BAC3F29"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__opera__5EBF139D"])));
                 }
             }
         }
@@ -6190,113 +5298,1030 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__accep__52593CB8() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__accep__52593CB8"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__accep__656C112C() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__accep__656C112C"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__accep__52593CB8"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__accep__656C112C"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__booke__5441852A() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__booke__5441852A"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__booke__6754599E() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__booke__6754599E"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__booke__5441852A"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__booke__6754599E"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__comm___4F7CD00D() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__comm___4F7CD00D"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__comm___628FA481() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__comm___628FA481"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__comm___4F7CD00D"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__comm___628FA481"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__first__5070F446() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__first__5070F446"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__first__6383C8BA() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__first__6383C8BA"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__first__5070F446"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__first__6383C8BA"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__hando__534D60F1() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__hando__534D60F1"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__hando__66603565() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__hando__66603565"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__hando__534D60F1"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__hando__66603565"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__secon__5165187F() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__secon__5165187F"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__secon__6477ECF3() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__secon__6477ECF3"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__secon__5165187F"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__secon__6477ECF3"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow[] GetAcceptanceActRowsByFK__Acceptanc__user___4AB81AF0() {
-                if ((this.Table.ChildRelations["FK__Acceptanc__user___4AB81AF0"] == null)) {
-                    return new AcceptanceActRow[0];
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__user___5DCAEF64() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__user___5DCAEF64"] == null)) {
+                    return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptanceActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Acceptanc__user___4AB81AF0"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__user___5DCAEF64"])));
                 }
             }
         }
         
         /// <summary>
-        ///Row event argument class
+        ///Represents strongly named DataRow class.
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AcceptanceActRowChangeEvent : global::System.EventArgs {
+        public partial class AcceptActRow : global::System.Data.DataRow {
             
-            private AcceptanceActRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
+            private AcceptActDataTable tableAcceptAct;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRowChangeEvent(AcceptanceActRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
+            internal AcceptActRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAcceptAct = ((AcceptActDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptanceActRow Row {
+            public int number {
                 get {
-                    return this.eventRow;
+                    return ((int)(this[this.tableAcceptAct.numberColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.numberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
+            public int firm_id {
                 get {
-                    return this.eventAction;
+                    return ((int)(this[this.tableAcceptAct.firm_idColumn]));
                 }
+                set {
+                    this[this.tableAcceptAct.firm_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime issue_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAcceptAct.issue_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'issue_date\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.issue_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int user_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.user_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.user_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int operation_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.operation_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.operation_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int sender_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.sender_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.sender_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int receiver_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.receiver_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.receiver_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int debit_bill {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.debit_billColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'debit_bill\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.debit_billColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int debit_code {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.debit_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'debit_code\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.debit_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int credit_bill {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.credit_billColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'credit_bill\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.credit_billColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int credit_code {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.credit_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'credit_code\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.credit_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal primary_cost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableAcceptAct.primary_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'primary_cost\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.primary_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string tech_passport_id {
+                get {
+                    return ((string)(this[this.tableAcceptAct.tech_passport_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.tech_passport_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int object_code {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.object_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'object_code\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.object_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int norm_code {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.norm_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'norm_code\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.norm_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double full_recover {
+                get {
+                    try {
+                        return ((double)(this[this.tableAcceptAct.full_recoverColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'full_recover\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.full_recoverColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double full_repair {
+                get {
+                    try {
+                        return ((double)(this[this.tableAcceptAct.full_repairColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'full_repair\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.full_repairColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double coefficient {
+                get {
+                    try {
+                        return ((double)(this[this.tableAcceptAct.coefficientColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'coefficient\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.coefficientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string equip_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.equip_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'equip_type\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.equip_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int equip_code {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.equip_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'equip_code\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.equip_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal wearout_sum {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableAcceptAct.wearout_sumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'wearout_sum\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.wearout_sumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime expoit_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAcceptAct.expoit_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'expoit_date\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.expoit_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime order_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAcceptAct.order_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'order_date\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.order_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int order_number {
+                get {
+                    try {
+                        return ((int)(this[this.tableAcceptAct.order_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'order_number\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.order_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string object_place {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.object_placeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'object_place\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.object_placeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string description {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string spec_meet {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.spec_meetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'spec_meet\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.spec_meetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string need_refine {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.need_refineColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'need_refine\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.need_refineColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string results {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.resultsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'results\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.resultsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string conclusion {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.conclusionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'conclusion\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.conclusionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string spec_list {
+                get {
+                    try {
+                        return ((string)(this[this.tableAcceptAct.spec_listColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'spec_list\' в таблице \'AcceptAct\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcceptAct.spec_listColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int comm_head_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.comm_head_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.comm_head_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int first_member_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.first_member_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.first_member_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int second_member_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.second_member_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.second_member_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int accepted_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.accepted_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.accepted_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int handover_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.handover_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.handover_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int booker_id {
+                get {
+                    return ((int)(this[this.tableAcceptAct.booker_idColumn]));
+                }
+                set {
+                    this[this.tableAcceptAct.booker_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__accep__656C112C {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__accep__656C112C"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__accep__656C112C"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__booke__6754599E {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__booke__6754599E"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__booke__6754599E"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__comm___628FA481 {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__comm___628FA481"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__comm___628FA481"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public FirmsRow FirmsRowByFK__AcceptAct__firm___5CD6CB2B {
+                get {
+                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__firm___5CD6CB2B"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__firm___5CD6CB2B"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__first__6383C8BA {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__first__6383C8BA"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__first__6383C8BA"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__hando__66603565 {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__hando__66603565"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__hando__66603565"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OperationsRow OperationsRow {
+                get {
+                    return ((OperationsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__opera__5EBF139D"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__opera__5EBF139D"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public FirmsRow FirmsRowByFK__AcceptAct__recei__60A75C0F {
+                get {
+                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__recei__60A75C0F"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__recei__60A75C0F"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__secon__6477ECF3 {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__secon__6477ECF3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__secon__6477ECF3"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public FirmsRow FirmsRowByFK__AcceptAct__sende__5FB337D6 {
+                get {
+                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__sende__5FB337D6"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__sende__5FB337D6"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UsersRow UsersRowByFK__AcceptAct__user___5DCAEF64 {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__user___5DCAEF64"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__user___5DCAEF64"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isissue_dateNull() {
+                return this.IsNull(this.tableAcceptAct.issue_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setissue_dateNull() {
+                this[this.tableAcceptAct.issue_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdebit_billNull() {
+                return this.IsNull(this.tableAcceptAct.debit_billColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdebit_billNull() {
+                this[this.tableAcceptAct.debit_billColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdebit_codeNull() {
+                return this.IsNull(this.tableAcceptAct.debit_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdebit_codeNull() {
+                this[this.tableAcceptAct.debit_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscredit_billNull() {
+                return this.IsNull(this.tableAcceptAct.credit_billColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcredit_billNull() {
+                this[this.tableAcceptAct.credit_billColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscredit_codeNull() {
+                return this.IsNull(this.tableAcceptAct.credit_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcredit_codeNull() {
+                this[this.tableAcceptAct.credit_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isprimary_costNull() {
+                return this.IsNull(this.tableAcceptAct.primary_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setprimary_costNull() {
+                this[this.tableAcceptAct.primary_costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isobject_codeNull() {
+                return this.IsNull(this.tableAcceptAct.object_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setobject_codeNull() {
+                this[this.tableAcceptAct.object_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnorm_codeNull() {
+                return this.IsNull(this.tableAcceptAct.norm_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnorm_codeNull() {
+                this[this.tableAcceptAct.norm_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfull_recoverNull() {
+                return this.IsNull(this.tableAcceptAct.full_recoverColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfull_recoverNull() {
+                this[this.tableAcceptAct.full_recoverColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfull_repairNull() {
+                return this.IsNull(this.tableAcceptAct.full_repairColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfull_repairNull() {
+                this[this.tableAcceptAct.full_repairColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscoefficientNull() {
+                return this.IsNull(this.tableAcceptAct.coefficientColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcoefficientNull() {
+                this[this.tableAcceptAct.coefficientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isequip_typeNull() {
+                return this.IsNull(this.tableAcceptAct.equip_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setequip_typeNull() {
+                this[this.tableAcceptAct.equip_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isequip_codeNull() {
+                return this.IsNull(this.tableAcceptAct.equip_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setequip_codeNull() {
+                this[this.tableAcceptAct.equip_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iswearout_sumNull() {
+                return this.IsNull(this.tableAcceptAct.wearout_sumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setwearout_sumNull() {
+                this[this.tableAcceptAct.wearout_sumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexpoit_dateNull() {
+                return this.IsNull(this.tableAcceptAct.expoit_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexpoit_dateNull() {
+                this[this.tableAcceptAct.expoit_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isorder_dateNull() {
+                return this.IsNull(this.tableAcceptAct.order_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setorder_dateNull() {
+                this[this.tableAcceptAct.order_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isorder_numberNull() {
+                return this.IsNull(this.tableAcceptAct.order_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setorder_numberNull() {
+                this[this.tableAcceptAct.order_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isobject_placeNull() {
+                return this.IsNull(this.tableAcceptAct.object_placeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setobject_placeNull() {
+                this[this.tableAcceptAct.object_placeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdescriptionNull() {
+                return this.IsNull(this.tableAcceptAct.descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdescriptionNull() {
+                this[this.tableAcceptAct.descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isspec_meetNull() {
+                return this.IsNull(this.tableAcceptAct.spec_meetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setspec_meetNull() {
+                this[this.tableAcceptAct.spec_meetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isneed_refineNull() {
+                return this.IsNull(this.tableAcceptAct.need_refineColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setneed_refineNull() {
+                this[this.tableAcceptAct.need_refineColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsresultsNull() {
+                return this.IsNull(this.tableAcceptAct.resultsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetresultsNull() {
+                this[this.tableAcceptAct.resultsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsconclusionNull() {
+                return this.IsNull(this.tableAcceptAct.conclusionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetconclusionNull() {
+                this[this.tableAcceptAct.conclusionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isspec_listNull() {
+                return this.IsNull(this.tableAcceptAct.spec_listColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setspec_listNull() {
+                this[this.tableAcceptAct.spec_listColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6605,1842 +6630,44 @@ namespace curs_work {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class AcceptActRowChangeEvent : global::System.EventArgs {
+            
+            private AcceptActRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRowChangeEvent(AcceptActRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace curs_work.CarAccountDataSetTableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AcceptanceActTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AcceptanceActTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AcceptanceAct";
-            tableMapping.ColumnMappings.Add("number", "number");
-            tableMapping.ColumnMappings.Add("issue_date", "issue_date");
-            tableMapping.ColumnMappings.Add("user_id", "user_id");
-            tableMapping.ColumnMappings.Add("operation_id", "operation_id");
-            tableMapping.ColumnMappings.Add("sender_id", "sender_id");
-            tableMapping.ColumnMappings.Add("receiver_id", "receiver_id");
-            tableMapping.ColumnMappings.Add("debit_bill", "debit_bill");
-            tableMapping.ColumnMappings.Add("debit_code", "debit_code");
-            tableMapping.ColumnMappings.Add("credit_bill", "credit_bill");
-            tableMapping.ColumnMappings.Add("credit_code", "credit_code");
-            tableMapping.ColumnMappings.Add("primary_cost", "primary_cost");
-            tableMapping.ColumnMappings.Add("tech_passport_id", "tech_passport_id");
-            tableMapping.ColumnMappings.Add("object_code", "object_code");
-            tableMapping.ColumnMappings.Add("norm_code", "norm_code");
-            tableMapping.ColumnMappings.Add("full_recover", "full_recover");
-            tableMapping.ColumnMappings.Add("full_repair", "full_repair");
-            tableMapping.ColumnMappings.Add("coefficient", "coefficient");
-            tableMapping.ColumnMappings.Add("equip_type", "equip_type");
-            tableMapping.ColumnMappings.Add("equip_code", "equip_code");
-            tableMapping.ColumnMappings.Add("wearout_sum", "wearout_sum");
-            tableMapping.ColumnMappings.Add("expoit_date", "expoit_date");
-            tableMapping.ColumnMappings.Add("order_date", "order_date");
-            tableMapping.ColumnMappings.Add("order_number", "order_number");
-            tableMapping.ColumnMappings.Add("object_place", "object_place");
-            tableMapping.ColumnMappings.Add("description", "description");
-            tableMapping.ColumnMappings.Add("spec_meet", "spec_meet");
-            tableMapping.ColumnMappings.Add("need_refine", "need_refine");
-            tableMapping.ColumnMappings.Add("results", "results");
-            tableMapping.ColumnMappings.Add("conclusion", "conclusion");
-            tableMapping.ColumnMappings.Add("spec_list", "spec_list");
-            tableMapping.ColumnMappings.Add("comm_head_id", "comm_head_id");
-            tableMapping.ColumnMappings.Add("first_member_id", "first_member_id");
-            tableMapping.ColumnMappings.Add("second_member_id", "second_member_id");
-            tableMapping.ColumnMappings.Add("accepted_id", "accepted_id");
-            tableMapping.ColumnMappings.Add("handover_id", "handover_id");
-            tableMapping.ColumnMappings.Add("booker_id", "booker_id");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[AcceptanceAct] WHERE (([number] = @Original_number) AND ((@IsN" +
-                "ull_issue_date = 1 AND [issue_date] IS NULL) OR ([issue_date] = @Original_issue_" +
-                "date)) AND ([user_id] = @Original_user_id) AND ([operation_id] = @Original_opera" +
-                "tion_id) AND ([sender_id] = @Original_sender_id) AND ([receiver_id] = @Original_" +
-                "receiver_id) AND ((@IsNull_debit_bill = 1 AND [debit_bill] IS NULL) OR ([debit_b" +
-                "ill] = @Original_debit_bill)) AND ((@IsNull_debit_code = 1 AND [debit_code] IS N" +
-                "ULL) OR ([debit_code] = @Original_debit_code)) AND ((@IsNull_credit_bill = 1 AND" +
-                " [credit_bill] IS NULL) OR ([credit_bill] = @Original_credit_bill)) AND ((@IsNul" +
-                "l_credit_code = 1 AND [credit_code] IS NULL) OR ([credit_code] = @Original_credi" +
-                "t_code)) AND ((@IsNull_primary_cost = 1 AND [primary_cost] IS NULL) OR ([primary" +
-                "_cost] = @Original_primary_cost)) AND ([tech_passport_id] = @Original_tech_passp" +
-                "ort_id) AND ((@IsNull_object_code = 1 AND [object_code] IS NULL) OR ([object_cod" +
-                "e] = @Original_object_code)) AND ((@IsNull_norm_code = 1 AND [norm_code] IS NULL" +
-                ") OR ([norm_code] = @Original_norm_code)) AND ((@IsNull_full_recover = 1 AND [fu" +
-                "ll_recover] IS NULL) OR ([full_recover] = @Original_full_recover)) AND ((@IsNull" +
-                "_full_repair = 1 AND [full_repair] IS NULL) OR ([full_repair] = @Original_full_r" +
-                "epair)) AND ((@IsNull_coefficient = 1 AND [coefficient] IS NULL) OR ([coefficien" +
-                "t] = @Original_coefficient)) AND ((@IsNull_equip_type = 1 AND [equip_type] IS NU" +
-                "LL) OR ([equip_type] = @Original_equip_type)) AND ((@IsNull_equip_code = 1 AND [" +
-                "equip_code] IS NULL) OR ([equip_code] = @Original_equip_code)) AND ((@IsNull_wea" +
-                "rout_sum = 1 AND [wearout_sum] IS NULL) OR ([wearout_sum] = @Original_wearout_su" +
-                "m)) AND ((@IsNull_expoit_date = 1 AND [expoit_date] IS NULL) OR ([expoit_date] =" +
-                " @Original_expoit_date)) AND ((@IsNull_order_date = 1 AND [order_date] IS NULL) " +
-                "OR ([order_date] = @Original_order_date)) AND ((@IsNull_order_number = 1 AND [or" +
-                "der_number] IS NULL) OR ([order_number] = @Original_order_number)) AND ((@IsNull" +
-                "_object_place = 1 AND [object_place] IS NULL) OR ([object_place] = @Original_obj" +
-                "ect_place)) AND ((@IsNull_spec_meet = 1 AND [spec_meet] IS NULL) OR ([spec_meet]" +
-                " = @Original_spec_meet)) AND ((@IsNull_need_refine = 1 AND [need_refine] IS NULL" +
-                ") OR ([need_refine] = @Original_need_refine)) AND ((@IsNull_results = 1 AND [res" +
-                "ults] IS NULL) OR ([results] = @Original_results)) AND ((@IsNull_conclusion = 1 " +
-                "AND [conclusion] IS NULL) OR ([conclusion] = @Original_conclusion)) AND ((@IsNul" +
-                "l_spec_list = 1 AND [spec_list] IS NULL) OR ([spec_list] = @Original_spec_list))" +
-                " AND ([comm_head_id] = @Original_comm_head_id) AND ([first_member_id] = @Origina" +
-                "l_first_member_id) AND ([second_member_id] = @Original_second_member_id) AND ([a" +
-                "ccepted_id] = @Original_accepted_id) AND ([handover_id] = @Original_handover_id)" +
-                " AND ([booker_id] = @Original_booker_id))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issue_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_primary_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "primary_cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_recover", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_repair", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_coefficient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_wearout_sum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wearout_sum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_expoit_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_meet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_need_refine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_results", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_conclusion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_list", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AcceptanceAct] ([issue_date], [user_id], [operation_id], [send" +
-                "er_id], [receiver_id], [debit_bill], [debit_code], [credit_bill], [credit_code]," +
-                " [primary_cost], [tech_passport_id], [object_code], [norm_code], [full_recover]," +
-                " [full_repair], [coefficient], [equip_type], [equip_code], [wearout_sum], [expoi" +
-                "t_date], [order_date], [order_number], [object_place], [description], [spec_meet" +
-                "], [need_refine], [results], [conclusion], [spec_list], [comm_head_id], [first_m" +
-                "ember_id], [second_member_id], [accepted_id], [handover_id], [booker_id]) VALUES" +
-                " (@issue_date, @user_id, @operation_id, @sender_id, @receiver_id, @debit_bill, @" +
-                "debit_code, @credit_bill, @credit_code, @primary_cost, @tech_passport_id, @objec" +
-                "t_code, @norm_code, @full_recover, @full_repair, @coefficient, @equip_type, @equ" +
-                "ip_code, @wearout_sum, @expoit_date, @order_date, @order_number, @object_place, " +
-                "@description, @spec_meet, @need_refine, @results, @conclusion, @spec_list, @comm" +
-                "_head_id, @first_member_id, @second_member_id, @accepted_id, @handover_id, @book" +
-                "er_id);\r\nSELECT number, issue_date, user_id, operation_id, sender_id, receiver_i" +
-                "d, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport" +
-                "_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type," +
-                " equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, d" +
-                "escription, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id" +
-                ", first_member_id, second_member_id, accepted_id, handover_id, booker_id FROM Ac" +
-                "ceptanceAct WHERE (number = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[AcceptanceAct] SET [issue_date] = @issue_date, [user_id] = @user_id" +
-                ", [operation_id] = @operation_id, [sender_id] = @sender_id, [receiver_id] = @rec" +
-                "eiver_id, [debit_bill] = @debit_bill, [debit_code] = @debit_code, [credit_bill] " +
-                "= @credit_bill, [credit_code] = @credit_code, [primary_cost] = @primary_cost, [t" +
-                "ech_passport_id] = @tech_passport_id, [object_code] = @object_code, [norm_code] " +
-                "= @norm_code, [full_recover] = @full_recover, [full_repair] = @full_repair, [coe" +
-                "fficient] = @coefficient, [equip_type] = @equip_type, [equip_code] = @equip_code" +
-                ", [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, [order_date] = @or" +
-                "der_date, [order_number] = @order_number, [object_place] = @object_place, [descr" +
-                "iption] = @description, [spec_meet] = @spec_meet, [need_refine] = @need_refine, " +
-                "[results] = @results, [conclusion] = @conclusion, [spec_list] = @spec_list, [com" +
-                "m_head_id] = @comm_head_id, [first_member_id] = @first_member_id, [second_member" +
-                "_id] = @second_member_id, [accepted_id] = @accepted_id, [handover_id] = @handove" +
-                "r_id, [booker_id] = @booker_id WHERE (([number] = @Original_number) AND ((@IsNul" +
-                "l_issue_date = 1 AND [issue_date] IS NULL) OR ([issue_date] = @Original_issue_da" +
-                "te)) AND ([user_id] = @Original_user_id) AND ([operation_id] = @Original_operati" +
-                "on_id) AND ([sender_id] = @Original_sender_id) AND ([receiver_id] = @Original_re" +
-                "ceiver_id) AND ((@IsNull_debit_bill = 1 AND [debit_bill] IS NULL) OR ([debit_bil" +
-                "l] = @Original_debit_bill)) AND ((@IsNull_debit_code = 1 AND [debit_code] IS NUL" +
-                "L) OR ([debit_code] = @Original_debit_code)) AND ((@IsNull_credit_bill = 1 AND [" +
-                "credit_bill] IS NULL) OR ([credit_bill] = @Original_credit_bill)) AND ((@IsNull_" +
-                "credit_code = 1 AND [credit_code] IS NULL) OR ([credit_code] = @Original_credit_" +
-                "code)) AND ((@IsNull_primary_cost = 1 AND [primary_cost] IS NULL) OR ([primary_c" +
-                "ost] = @Original_primary_cost)) AND ([tech_passport_id] = @Original_tech_passpor" +
-                "t_id) AND ((@IsNull_object_code = 1 AND [object_code] IS NULL) OR ([object_code]" +
-                " = @Original_object_code)) AND ((@IsNull_norm_code = 1 AND [norm_code] IS NULL) " +
-                "OR ([norm_code] = @Original_norm_code)) AND ((@IsNull_full_recover = 1 AND [full" +
-                "_recover] IS NULL) OR ([full_recover] = @Original_full_recover)) AND ((@IsNull_f" +
-                "ull_repair = 1 AND [full_repair] IS NULL) OR ([full_repair] = @Original_full_rep" +
-                "air)) AND ((@IsNull_coefficient = 1 AND [coefficient] IS NULL) OR ([coefficient]" +
-                " = @Original_coefficient)) AND ((@IsNull_equip_type = 1 AND [equip_type] IS NULL" +
-                ") OR ([equip_type] = @Original_equip_type)) AND ((@IsNull_equip_code = 1 AND [eq" +
-                "uip_code] IS NULL) OR ([equip_code] = @Original_equip_code)) AND ((@IsNull_wearo" +
-                "ut_sum = 1 AND [wearout_sum] IS NULL) OR ([wearout_sum] = @Original_wearout_sum)" +
-                ") AND ((@IsNull_expoit_date = 1 AND [expoit_date] IS NULL) OR ([expoit_date] = @" +
-                "Original_expoit_date)) AND ((@IsNull_order_date = 1 AND [order_date] IS NULL) OR" +
-                " ([order_date] = @Original_order_date)) AND ((@IsNull_order_number = 1 AND [orde" +
-                "r_number] IS NULL) OR ([order_number] = @Original_order_number)) AND ((@IsNull_o" +
-                "bject_place = 1 AND [object_place] IS NULL) OR ([object_place] = @Original_objec" +
-                "t_place)) AND ((@IsNull_spec_meet = 1 AND [spec_meet] IS NULL) OR ([spec_meet] =" +
-                " @Original_spec_meet)) AND ((@IsNull_need_refine = 1 AND [need_refine] IS NULL) " +
-                "OR ([need_refine] = @Original_need_refine)) AND ((@IsNull_results = 1 AND [resul" +
-                "ts] IS NULL) OR ([results] = @Original_results)) AND ((@IsNull_conclusion = 1 AN" +
-                "D [conclusion] IS NULL) OR ([conclusion] = @Original_conclusion)) AND ((@IsNull_" +
-                "spec_list = 1 AND [spec_list] IS NULL) OR ([spec_list] = @Original_spec_list)) A" +
-                "ND ([comm_head_id] = @Original_comm_head_id) AND ([first_member_id] = @Original_" +
-                "first_member_id) AND ([second_member_id] = @Original_second_member_id) AND ([acc" +
-                "epted_id] = @Original_accepted_id) AND ([handover_id] = @Original_handover_id) A" +
-                "ND ([booker_id] = @Original_booker_id));\r\nSELECT number, issue_date, user_id, op" +
-                "eration_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_" +
-                "code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full" +
-                "_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_da" +
-                "te, order_number, object_place, description, spec_meet, need_refine, results, co" +
-                "nclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_i" +
-                "d, handover_id, booker_id FROM AcceptanceAct WHERE (number = @number)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issue_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_primary_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "primary_cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_recover", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_repair", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_coefficient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_wearout_sum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wearout_sum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_expoit_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_meet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_need_refine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_results", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_conclusion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_list", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::curs_work.Properties.Settings.Default.CarAccountConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT number, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, booker_id FROM dbo.AcceptanceAct";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[AcceptanceAct] WHERE [number] = @id";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"UPDATE [dbo].[AcceptanceAct] SET [issue_date] = @issue_date, [user_id] = @user_id, [operation_id] = @operation_id, [sender_id] = @sender_id, [receiver_id] = @receiver_id, [debit_bill] = @debit_bill, [debit_code] = @debit_code, [credit_bill] = @credit_bill, [credit_code] = @credit_code, [primary_cost] = @primary_cost, [tech_passport_id] = @tech_passport_id, [object_code] = @object_code, [norm_code] = @norm_code, [full_recover] = @full_recover, [full_repair] = @full_repair, [coefficient] = @coefficient, [equip_type] = @equip_type, [equip_code] = @equip_code, [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, [order_date] = @order_date, [order_number] = @order_number, [object_place] = @object_place, [description] = @description, [spec_meet] = @spec_meet, [need_refine] = @need_refine, [results] = @results, [conclusion] = @conclusion, [spec_list] = @spec_list, [comm_head_id] = @comm_head_id, [first_member_id] = @first_member_id, [second_member_id] = @second_member_id, [accepted_id] = @accepted_id, [handover_id] = @handover_id, [booker_id] = @booker_id WHERE [number] = @Original_number";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operation_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sender_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receiver_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_bill", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_bill", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@primary_cost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tech_passport_id", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_recover", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_repair", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@coefficient", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@need_refine", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@results", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@conclusion", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_list", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comm_head_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_member_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CarAccountDataSet.AcceptanceActDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CarAccountDataSet.AcceptanceActDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            CarAccountDataSet.AcceptanceActDataTable dataTable = new CarAccountDataSet.AcceptanceActDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CarAccountDataSet.AcceptanceActDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CarAccountDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "AcceptanceAct");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    int Original_number, 
-                    global::System.Nullable<global::System.DateTime> Original_issue_date, 
-                    int Original_user_id, 
-                    int Original_operation_id, 
-                    int Original_sender_id, 
-                    int Original_receiver_id, 
-                    global::System.Nullable<int> Original_debit_bill, 
-                    global::System.Nullable<int> Original_debit_code, 
-                    global::System.Nullable<int> Original_credit_bill, 
-                    global::System.Nullable<int> Original_credit_code, 
-                    global::System.Nullable<decimal> Original_primary_cost, 
-                    string Original_tech_passport_id, 
-                    global::System.Nullable<int> Original_object_code, 
-                    global::System.Nullable<int> Original_norm_code, 
-                    global::System.Nullable<double> Original_full_recover, 
-                    global::System.Nullable<double> Original_full_repair, 
-                    global::System.Nullable<double> Original_coefficient, 
-                    string Original_equip_type, 
-                    global::System.Nullable<int> Original_equip_code, 
-                    global::System.Nullable<decimal> Original_wearout_sum, 
-                    global::System.Nullable<global::System.DateTime> Original_expoit_date, 
-                    global::System.Nullable<global::System.DateTime> Original_order_date, 
-                    global::System.Nullable<int> Original_order_number, 
-                    string Original_object_place, 
-                    string Original_spec_meet, 
-                    string Original_need_refine, 
-                    string Original_results, 
-                    string Original_conclusion, 
-                    string Original_spec_list, 
-                    int Original_comm_head_id, 
-                    int Original_first_member_id, 
-                    int Original_second_member_id, 
-                    int Original_accepted_id, 
-                    int Original_handover_id, 
-                    int Original_booker_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_number));
-            if ((Original_issue_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_issue_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_user_id));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_operation_id));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_sender_id));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_receiver_id));
-            if ((Original_debit_bill.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_debit_bill.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_debit_code.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_debit_code.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_credit_bill.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_credit_bill.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_credit_code.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_credit_code.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_primary_cost.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((decimal)(Original_primary_cost.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_tech_passport_id == null)) {
-                throw new global::System.ArgumentNullException("Original_tech_passport_id");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_tech_passport_id));
-            }
-            if ((Original_object_code.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((int)(Original_object_code.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((Original_norm_code.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((int)(Original_norm_code.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((Original_full_recover.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((double)(Original_full_recover.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((Original_full_repair.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((double)(Original_full_repair.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            if ((Original_coefficient.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((double)(Original_coefficient.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            if ((Original_equip_type == null)) {
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((string)(Original_equip_type));
-            }
-            if ((Original_equip_code.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((int)(Original_equip_code.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            if ((Original_wearout_sum.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((decimal)(Original_wearout_sum.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            if ((Original_expoit_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((System.DateTime)(Original_expoit_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            if ((Original_order_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((System.DateTime)(Original_order_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            if ((Original_order_number.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((int)(Original_order_number.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            if ((Original_object_place == null)) {
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((string)(Original_object_place));
-            }
-            if ((Original_spec_meet == null)) {
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[43].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((string)(Original_spec_meet));
-            }
-            if ((Original_need_refine == null)) {
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[45].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((string)(Original_need_refine));
-            }
-            if ((Original_results == null)) {
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[47].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((string)(Original_results));
-            }
-            if ((Original_conclusion == null)) {
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[49].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((string)(Original_conclusion));
-            }
-            if ((Original_spec_list == null)) {
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[51].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((string)(Original_spec_list));
-            }
-            this.Adapter.DeleteCommand.Parameters[52].Value = ((int)(Original_comm_head_id));
-            this.Adapter.DeleteCommand.Parameters[53].Value = ((int)(Original_first_member_id));
-            this.Adapter.DeleteCommand.Parameters[54].Value = ((int)(Original_second_member_id));
-            this.Adapter.DeleteCommand.Parameters[55].Value = ((int)(Original_accepted_id));
-            this.Adapter.DeleteCommand.Parameters[56].Value = ((int)(Original_handover_id));
-            this.Adapter.DeleteCommand.Parameters[57].Value = ((int)(Original_booker_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    global::System.Nullable<global::System.DateTime> issue_date, 
-                    int user_id, 
-                    int operation_id, 
-                    int sender_id, 
-                    int receiver_id, 
-                    global::System.Nullable<int> debit_bill, 
-                    global::System.Nullable<int> debit_code, 
-                    global::System.Nullable<int> credit_bill, 
-                    global::System.Nullable<int> credit_code, 
-                    global::System.Nullable<decimal> primary_cost, 
-                    string tech_passport_id, 
-                    global::System.Nullable<int> object_code, 
-                    global::System.Nullable<int> norm_code, 
-                    global::System.Nullable<double> full_recover, 
-                    global::System.Nullable<double> full_repair, 
-                    global::System.Nullable<double> coefficient, 
-                    string equip_type, 
-                    global::System.Nullable<int> equip_code, 
-                    global::System.Nullable<decimal> wearout_sum, 
-                    global::System.Nullable<global::System.DateTime> expoit_date, 
-                    global::System.Nullable<global::System.DateTime> order_date, 
-                    global::System.Nullable<int> order_number, 
-                    string object_place, 
-                    string description, 
-                    string spec_meet, 
-                    string need_refine, 
-                    string results, 
-                    string conclusion, 
-                    string spec_list, 
-                    int comm_head_id, 
-                    int first_member_id, 
-                    int second_member_id, 
-                    int accepted_id, 
-                    int handover_id, 
-                    int booker_id) {
-            if ((issue_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(issue_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(user_id));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(operation_id));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(sender_id));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(receiver_id));
-            if ((debit_bill.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(debit_bill.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((debit_code.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(debit_code.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((credit_bill.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(credit_bill.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((credit_code.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(credit_code.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((primary_cost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(primary_cost.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((tech_passport_id == null)) {
-                throw new global::System.ArgumentNullException("tech_passport_id");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(tech_passport_id));
-            }
-            if ((object_code.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(object_code.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((norm_code.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(norm_code.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((full_recover.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(full_recover.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((full_repair.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(full_repair.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((coefficient.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(coefficient.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((equip_type == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(equip_type));
-            }
-            if ((equip_code.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(equip_code.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((wearout_sum.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((decimal)(wearout_sum.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((expoit_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((System.DateTime)(expoit_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((order_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((System.DateTime)(order_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((order_number.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((int)(order_number.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((object_place == null)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(object_place));
-            }
-            if ((description == null)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(description));
-            }
-            if ((spec_meet == null)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(spec_meet));
-            }
-            if ((need_refine == null)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(need_refine));
-            }
-            if ((results == null)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(results));
-            }
-            if ((conclusion == null)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(conclusion));
-            }
-            if ((spec_list == null)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(spec_list));
-            }
-            this.Adapter.InsertCommand.Parameters[29].Value = ((int)(comm_head_id));
-            this.Adapter.InsertCommand.Parameters[30].Value = ((int)(first_member_id));
-            this.Adapter.InsertCommand.Parameters[31].Value = ((int)(second_member_id));
-            this.Adapter.InsertCommand.Parameters[32].Value = ((int)(accepted_id));
-            this.Adapter.InsertCommand.Parameters[33].Value = ((int)(handover_id));
-            this.Adapter.InsertCommand.Parameters[34].Value = ((int)(booker_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<global::System.DateTime> issue_date, 
-                    int user_id, 
-                    int operation_id, 
-                    int sender_id, 
-                    int receiver_id, 
-                    global::System.Nullable<int> debit_bill, 
-                    global::System.Nullable<int> debit_code, 
-                    global::System.Nullable<int> credit_bill, 
-                    global::System.Nullable<int> credit_code, 
-                    global::System.Nullable<decimal> primary_cost, 
-                    string tech_passport_id, 
-                    global::System.Nullable<int> object_code, 
-                    global::System.Nullable<int> norm_code, 
-                    global::System.Nullable<double> full_recover, 
-                    global::System.Nullable<double> full_repair, 
-                    global::System.Nullable<double> coefficient, 
-                    string equip_type, 
-                    global::System.Nullable<int> equip_code, 
-                    global::System.Nullable<decimal> wearout_sum, 
-                    global::System.Nullable<global::System.DateTime> expoit_date, 
-                    global::System.Nullable<global::System.DateTime> order_date, 
-                    global::System.Nullable<int> order_number, 
-                    string object_place, 
-                    string description, 
-                    string spec_meet, 
-                    string need_refine, 
-                    string results, 
-                    string conclusion, 
-                    string spec_list, 
-                    int comm_head_id, 
-                    int first_member_id, 
-                    int second_member_id, 
-                    int accepted_id, 
-                    int handover_id, 
-                    int booker_id, 
-                    int Original_number, 
-                    global::System.Nullable<global::System.DateTime> Original_issue_date, 
-                    int Original_user_id, 
-                    int Original_operation_id, 
-                    int Original_sender_id, 
-                    int Original_receiver_id, 
-                    global::System.Nullable<int> Original_debit_bill, 
-                    global::System.Nullable<int> Original_debit_code, 
-                    global::System.Nullable<int> Original_credit_bill, 
-                    global::System.Nullable<int> Original_credit_code, 
-                    global::System.Nullable<decimal> Original_primary_cost, 
-                    string Original_tech_passport_id, 
-                    global::System.Nullable<int> Original_object_code, 
-                    global::System.Nullable<int> Original_norm_code, 
-                    global::System.Nullable<double> Original_full_recover, 
-                    global::System.Nullable<double> Original_full_repair, 
-                    global::System.Nullable<double> Original_coefficient, 
-                    string Original_equip_type, 
-                    global::System.Nullable<int> Original_equip_code, 
-                    global::System.Nullable<decimal> Original_wearout_sum, 
-                    global::System.Nullable<global::System.DateTime> Original_expoit_date, 
-                    global::System.Nullable<global::System.DateTime> Original_order_date, 
-                    global::System.Nullable<int> Original_order_number, 
-                    string Original_object_place, 
-                    string Original_spec_meet, 
-                    string Original_need_refine, 
-                    string Original_results, 
-                    string Original_conclusion, 
-                    string Original_spec_list, 
-                    int Original_comm_head_id, 
-                    int Original_first_member_id, 
-                    int Original_second_member_id, 
-                    int Original_accepted_id, 
-                    int Original_handover_id, 
-                    int Original_booker_id, 
-                    int number) {
-            if ((issue_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(issue_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(user_id));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(operation_id));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(sender_id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(receiver_id));
-            if ((debit_bill.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(debit_bill.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((debit_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(debit_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((credit_bill.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(credit_bill.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((credit_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(credit_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((primary_cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(primary_cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((tech_passport_id == null)) {
-                throw new global::System.ArgumentNullException("tech_passport_id");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(tech_passport_id));
-            }
-            if ((object_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(object_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((norm_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(norm_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((full_recover.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(full_recover.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((full_repair.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(full_repair.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((coefficient.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(coefficient.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((equip_type == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(equip_type));
-            }
-            if ((equip_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(equip_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((wearout_sum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(wearout_sum.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((expoit_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(expoit_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((order_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(order_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((order_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(order_number.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((object_place == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(object_place));
-            }
-            if ((description == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(description));
-            }
-            if ((spec_meet == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(spec_meet));
-            }
-            if ((need_refine == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(need_refine));
-            }
-            if ((results == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(results));
-            }
-            if ((conclusion == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(conclusion));
-            }
-            if ((spec_list == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(spec_list));
-            }
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(comm_head_id));
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(first_member_id));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(second_member_id));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(accepted_id));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(handover_id));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(booker_id));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_number));
-            if ((Original_issue_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_issue_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_user_id));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_operation_id));
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_sender_id));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_receiver_id));
-            if ((Original_debit_bill.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_debit_bill.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
-            }
-            if ((Original_debit_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_debit_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
-            }
-            if ((Original_credit_bill.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Original_credit_bill.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
-            }
-            if ((Original_credit_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_credit_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
-            }
-            if ((Original_primary_cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((decimal)(Original_primary_cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
-            }
-            if ((Original_tech_passport_id == null)) {
-                throw new global::System.ArgumentNullException("Original_tech_passport_id");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_tech_passport_id));
-            }
-            if ((Original_object_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_object_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
-            }
-            if ((Original_norm_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_norm_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
-            }
-            if ((Original_full_recover.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((double)(Original_full_recover.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
-            }
-            if ((Original_full_repair.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((double)(Original_full_repair.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
-            }
-            if ((Original_coefficient.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((double)(Original_coefficient.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
-            }
-            if ((Original_equip_type == null)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_equip_type));
-            }
-            if ((Original_equip_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((int)(Original_equip_code.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
-            }
-            if ((Original_wearout_sum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((decimal)(Original_wearout_sum.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
-            }
-            if ((Original_expoit_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((System.DateTime)(Original_expoit_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
-            }
-            if ((Original_order_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((System.DateTime)(Original_order_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
-            }
-            if ((Original_order_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((int)(Original_order_number.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
-            }
-            if ((Original_object_place == null)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_object_place));
-            }
-            if ((Original_spec_meet == null)) {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_spec_meet));
-            }
-            if ((Original_need_refine == null)) {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_need_refine));
-            }
-            if ((Original_results == null)) {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_results));
-            }
-            if ((Original_conclusion == null)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_conclusion));
-            }
-            if ((Original_spec_list == null)) {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_spec_list));
-            }
-            this.Adapter.UpdateCommand.Parameters[87].Value = ((int)(Original_comm_head_id));
-            this.Adapter.UpdateCommand.Parameters[88].Value = ((int)(Original_first_member_id));
-            this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(Original_second_member_id));
-            this.Adapter.UpdateCommand.Parameters[90].Value = ((int)(Original_accepted_id));
-            this.Adapter.UpdateCommand.Parameters[91].Value = ((int)(Original_handover_id));
-            this.Adapter.UpdateCommand.Parameters[92].Value = ((int)(Original_booker_id));
-            this.Adapter.UpdateCommand.Parameters[93].Value = ((int)(number));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<global::System.DateTime> issue_date, 
-                    int user_id, 
-                    int operation_id, 
-                    int sender_id, 
-                    int receiver_id, 
-                    global::System.Nullable<int> debit_bill, 
-                    global::System.Nullable<int> debit_code, 
-                    global::System.Nullable<int> credit_bill, 
-                    global::System.Nullable<int> credit_code, 
-                    global::System.Nullable<decimal> primary_cost, 
-                    string tech_passport_id, 
-                    global::System.Nullable<int> object_code, 
-                    global::System.Nullable<int> norm_code, 
-                    global::System.Nullable<double> full_recover, 
-                    global::System.Nullable<double> full_repair, 
-                    global::System.Nullable<double> coefficient, 
-                    string equip_type, 
-                    global::System.Nullable<int> equip_code, 
-                    global::System.Nullable<decimal> wearout_sum, 
-                    global::System.Nullable<global::System.DateTime> expoit_date, 
-                    global::System.Nullable<global::System.DateTime> order_date, 
-                    global::System.Nullable<int> order_number, 
-                    string object_place, 
-                    string description, 
-                    string spec_meet, 
-                    string need_refine, 
-                    string results, 
-                    string conclusion, 
-                    string spec_list, 
-                    int comm_head_id, 
-                    int first_member_id, 
-                    int second_member_id, 
-                    int accepted_id, 
-                    int handover_id, 
-                    int booker_id, 
-                    int Original_number, 
-                    global::System.Nullable<global::System.DateTime> Original_issue_date, 
-                    int Original_user_id, 
-                    int Original_operation_id, 
-                    int Original_sender_id, 
-                    int Original_receiver_id, 
-                    global::System.Nullable<int> Original_debit_bill, 
-                    global::System.Nullable<int> Original_debit_code, 
-                    global::System.Nullable<int> Original_credit_bill, 
-                    global::System.Nullable<int> Original_credit_code, 
-                    global::System.Nullable<decimal> Original_primary_cost, 
-                    string Original_tech_passport_id, 
-                    global::System.Nullable<int> Original_object_code, 
-                    global::System.Nullable<int> Original_norm_code, 
-                    global::System.Nullable<double> Original_full_recover, 
-                    global::System.Nullable<double> Original_full_repair, 
-                    global::System.Nullable<double> Original_coefficient, 
-                    string Original_equip_type, 
-                    global::System.Nullable<int> Original_equip_code, 
-                    global::System.Nullable<decimal> Original_wearout_sum, 
-                    global::System.Nullable<global::System.DateTime> Original_expoit_date, 
-                    global::System.Nullable<global::System.DateTime> Original_order_date, 
-                    global::System.Nullable<int> Original_order_number, 
-                    string Original_object_place, 
-                    string Original_spec_meet, 
-                    string Original_need_refine, 
-                    string Original_results, 
-                    string Original_conclusion, 
-                    string Original_spec_list, 
-                    int Original_comm_head_id, 
-                    int Original_first_member_id, 
-                    int Original_second_member_id, 
-                    int Original_accepted_id, 
-                    int Original_handover_id, 
-                    int Original_booker_id) {
-            return this.Update(issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, booker_id, Original_number, Original_issue_date, Original_user_id, Original_operation_id, Original_sender_id, Original_receiver_id, Original_debit_bill, Original_debit_code, Original_credit_bill, Original_credit_code, Original_primary_cost, Original_tech_passport_id, Original_object_code, Original_norm_code, Original_full_recover, Original_full_repair, Original_coefficient, Original_equip_type, Original_equip_code, Original_wearout_sum, Original_expoit_date, Original_order_date, Original_order_number, Original_object_place, Original_spec_meet, Original_need_refine, Original_results, Original_conclusion, Original_spec_list, Original_comm_head_id, Original_first_member_id, Original_second_member_id, Original_accepted_id, Original_handover_id, Original_booker_id, Original_number);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(id));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(
-                    string issue_date, 
-                    int user_id, 
-                    int operation_id, 
-                    int sender_id, 
-                    int receiver_id, 
-                    global::System.Nullable<int> debit_bill, 
-                    global::System.Nullable<int> debit_code, 
-                    global::System.Nullable<int> credit_bill, 
-                    global::System.Nullable<int> credit_code, 
-                    global::System.Nullable<decimal> primary_cost, 
-                    string tech_passport_id, 
-                    global::System.Nullable<int> object_code, 
-                    global::System.Nullable<int> norm_code, 
-                    global::System.Nullable<double> full_recover, 
-                    global::System.Nullable<double> full_repair, 
-                    global::System.Nullable<double> coefficient, 
-                    string equip_type, 
-                    global::System.Nullable<int> equip_code, 
-                    global::System.Nullable<decimal> wearout_sum, 
-                    string expoit_date, 
-                    string order_date, 
-                    global::System.Nullable<int> order_number, 
-                    string object_place, 
-                    string description, 
-                    string spec_meet, 
-                    string need_refine, 
-                    string results, 
-                    string conclusion, 
-                    string spec_list, 
-                    int comm_head_id, 
-                    int first_member_id, 
-                    int second_member_id, 
-                    int accepted_id, 
-                    int handover_id, 
-                    int booker_id, 
-                    int Original_number) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((issue_date == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(issue_date));
-            }
-            command.Parameters[1].Value = ((int)(user_id));
-            command.Parameters[2].Value = ((int)(operation_id));
-            command.Parameters[3].Value = ((int)(sender_id));
-            command.Parameters[4].Value = ((int)(receiver_id));
-            if ((debit_bill.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(debit_bill.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((debit_code.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(debit_code.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((credit_bill.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(credit_bill.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((credit_code.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(credit_code.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((primary_cost.HasValue == true)) {
-                command.Parameters[9].Value = ((decimal)(primary_cost.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((tech_passport_id == null)) {
-                throw new global::System.ArgumentNullException("tech_passport_id");
-            }
-            else {
-                command.Parameters[10].Value = ((string)(tech_passport_id));
-            }
-            if ((object_code.HasValue == true)) {
-                command.Parameters[11].Value = ((int)(object_code.Value));
-            }
-            else {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((norm_code.HasValue == true)) {
-                command.Parameters[12].Value = ((int)(norm_code.Value));
-            }
-            else {
-                command.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((full_recover.HasValue == true)) {
-                command.Parameters[13].Value = ((double)(full_recover.Value));
-            }
-            else {
-                command.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((full_repair.HasValue == true)) {
-                command.Parameters[14].Value = ((double)(full_repair.Value));
-            }
-            else {
-                command.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((coefficient.HasValue == true)) {
-                command.Parameters[15].Value = ((double)(coefficient.Value));
-            }
-            else {
-                command.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((equip_type == null)) {
-                command.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[16].Value = ((string)(equip_type));
-            }
-            if ((equip_code.HasValue == true)) {
-                command.Parameters[17].Value = ((int)(equip_code.Value));
-            }
-            else {
-                command.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((wearout_sum.HasValue == true)) {
-                command.Parameters[18].Value = ((decimal)(wearout_sum.Value));
-            }
-            else {
-                command.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((expoit_date == null)) {
-                command.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[19].Value = ((string)(expoit_date));
-            }
-            if ((order_date == null)) {
-                command.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[20].Value = ((string)(order_date));
-            }
-            if ((order_number.HasValue == true)) {
-                command.Parameters[21].Value = ((int)(order_number.Value));
-            }
-            else {
-                command.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((object_place == null)) {
-                command.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[22].Value = ((string)(object_place));
-            }
-            if ((description == null)) {
-                command.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[23].Value = ((string)(description));
-            }
-            if ((spec_meet == null)) {
-                command.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[24].Value = ((string)(spec_meet));
-            }
-            if ((need_refine == null)) {
-                command.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[25].Value = ((string)(need_refine));
-            }
-            if ((results == null)) {
-                command.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[26].Value = ((string)(results));
-            }
-            if ((conclusion == null)) {
-                command.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[27].Value = ((string)(conclusion));
-            }
-            if ((spec_list == null)) {
-                command.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[28].Value = ((string)(spec_list));
-            }
-            command.Parameters[29].Value = ((int)(comm_head_id));
-            command.Parameters[30].Value = ((int)(first_member_id));
-            command.Parameters[31].Value = ((int)(second_member_id));
-            command.Parameters[32].Value = ((int)(accepted_id));
-            command.Parameters[33].Value = ((int)(handover_id));
-            command.Parameters[34].Value = ((int)(booker_id));
-            command.Parameters[35].Value = ((int)(Original_number));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -11919,7 +10146,7 @@ VALUES        (@Id,@Тип,@Модель,@Номер,@Рік_випуску,@В�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual CarAccountDataSet.TechPassportsDataTable GetDataBy() {
+        public virtual CarAccountDataSet.TechPassportsDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             CarAccountDataSet.TechPassportsDataTable dataTable = new CarAccountDataSet.TechPassportsDataTable();
             this.Adapter.Fill(dataTable);
@@ -12609,6 +10836,1857 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AcceptActTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public AcceptActTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AcceptAct";
+            tableMapping.ColumnMappings.Add("number", "number");
+            tableMapping.ColumnMappings.Add("firm_id", "firm_id");
+            tableMapping.ColumnMappings.Add("issue_date", "issue_date");
+            tableMapping.ColumnMappings.Add("user_id", "user_id");
+            tableMapping.ColumnMappings.Add("operation_id", "operation_id");
+            tableMapping.ColumnMappings.Add("sender_id", "sender_id");
+            tableMapping.ColumnMappings.Add("receiver_id", "receiver_id");
+            tableMapping.ColumnMappings.Add("debit_bill", "debit_bill");
+            tableMapping.ColumnMappings.Add("debit_code", "debit_code");
+            tableMapping.ColumnMappings.Add("credit_bill", "credit_bill");
+            tableMapping.ColumnMappings.Add("credit_code", "credit_code");
+            tableMapping.ColumnMappings.Add("primary_cost", "primary_cost");
+            tableMapping.ColumnMappings.Add("tech_passport_id", "tech_passport_id");
+            tableMapping.ColumnMappings.Add("object_code", "object_code");
+            tableMapping.ColumnMappings.Add("norm_code", "norm_code");
+            tableMapping.ColumnMappings.Add("full_recover", "full_recover");
+            tableMapping.ColumnMappings.Add("full_repair", "full_repair");
+            tableMapping.ColumnMappings.Add("coefficient", "coefficient");
+            tableMapping.ColumnMappings.Add("equip_type", "equip_type");
+            tableMapping.ColumnMappings.Add("equip_code", "equip_code");
+            tableMapping.ColumnMappings.Add("wearout_sum", "wearout_sum");
+            tableMapping.ColumnMappings.Add("expoit_date", "expoit_date");
+            tableMapping.ColumnMappings.Add("order_date", "order_date");
+            tableMapping.ColumnMappings.Add("order_number", "order_number");
+            tableMapping.ColumnMappings.Add("object_place", "object_place");
+            tableMapping.ColumnMappings.Add("description", "description");
+            tableMapping.ColumnMappings.Add("spec_meet", "spec_meet");
+            tableMapping.ColumnMappings.Add("need_refine", "need_refine");
+            tableMapping.ColumnMappings.Add("results", "results");
+            tableMapping.ColumnMappings.Add("conclusion", "conclusion");
+            tableMapping.ColumnMappings.Add("spec_list", "spec_list");
+            tableMapping.ColumnMappings.Add("comm_head_id", "comm_head_id");
+            tableMapping.ColumnMappings.Add("first_member_id", "first_member_id");
+            tableMapping.ColumnMappings.Add("second_member_id", "second_member_id");
+            tableMapping.ColumnMappings.Add("accepted_id", "accepted_id");
+            tableMapping.ColumnMappings.Add("handover_id", "handover_id");
+            tableMapping.ColumnMappings.Add("booker_id", "booker_id");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[AcceptAct] WHERE (([number] = @Original_number) AND ([firm_id]" +
+                " = @Original_firm_id) AND ((@IsNull_issue_date = 1 AND [issue_date] IS NULL) OR " +
+                "([issue_date] = @Original_issue_date)) AND ([user_id] = @Original_user_id) AND (" +
+                "[operation_id] = @Original_operation_id) AND ([sender_id] = @Original_sender_id)" +
+                " AND ([receiver_id] = @Original_receiver_id) AND ((@IsNull_debit_bill = 1 AND [d" +
+                "ebit_bill] IS NULL) OR ([debit_bill] = @Original_debit_bill)) AND ((@IsNull_debi" +
+                "t_code = 1 AND [debit_code] IS NULL) OR ([debit_code] = @Original_debit_code)) A" +
+                "ND ((@IsNull_credit_bill = 1 AND [credit_bill] IS NULL) OR ([credit_bill] = @Ori" +
+                "ginal_credit_bill)) AND ((@IsNull_credit_code = 1 AND [credit_code] IS NULL) OR " +
+                "([credit_code] = @Original_credit_code)) AND ((@IsNull_primary_cost = 1 AND [pri" +
+                "mary_cost] IS NULL) OR ([primary_cost] = @Original_primary_cost)) AND ([tech_pas" +
+                "sport_id] = @Original_tech_passport_id) AND ((@IsNull_object_code = 1 AND [objec" +
+                "t_code] IS NULL) OR ([object_code] = @Original_object_code)) AND ((@IsNull_norm_" +
+                "code = 1 AND [norm_code] IS NULL) OR ([norm_code] = @Original_norm_code)) AND ((" +
+                "@IsNull_full_recover = 1 AND [full_recover] IS NULL) OR ([full_recover] = @Origi" +
+                "nal_full_recover)) AND ((@IsNull_full_repair = 1 AND [full_repair] IS NULL) OR (" +
+                "[full_repair] = @Original_full_repair)) AND ((@IsNull_coefficient = 1 AND [coeff" +
+                "icient] IS NULL) OR ([coefficient] = @Original_coefficient)) AND ((@IsNull_equip" +
+                "_type = 1 AND [equip_type] IS NULL) OR ([equip_type] = @Original_equip_type)) AN" +
+                "D ((@IsNull_equip_code = 1 AND [equip_code] IS NULL) OR ([equip_code] = @Origina" +
+                "l_equip_code)) AND ((@IsNull_wearout_sum = 1 AND [wearout_sum] IS NULL) OR ([wea" +
+                "rout_sum] = @Original_wearout_sum)) AND ((@IsNull_expoit_date = 1 AND [expoit_da" +
+                "te] IS NULL) OR ([expoit_date] = @Original_expoit_date)) AND ((@IsNull_order_dat" +
+                "e = 1 AND [order_date] IS NULL) OR ([order_date] = @Original_order_date)) AND ((" +
+                "@IsNull_order_number = 1 AND [order_number] IS NULL) OR ([order_number] = @Origi" +
+                "nal_order_number)) AND ((@IsNull_object_place = 1 AND [object_place] IS NULL) OR" +
+                " ([object_place] = @Original_object_place)) AND ((@IsNull_spec_meet = 1 AND [spe" +
+                "c_meet] IS NULL) OR ([spec_meet] = @Original_spec_meet)) AND ((@IsNull_need_refi" +
+                "ne = 1 AND [need_refine] IS NULL) OR ([need_refine] = @Original_need_refine)) AN" +
+                "D ((@IsNull_results = 1 AND [results] IS NULL) OR ([results] = @Original_results" +
+                ")) AND ((@IsNull_conclusion = 1 AND [conclusion] IS NULL) OR ([conclusion] = @Or" +
+                "iginal_conclusion)) AND ((@IsNull_spec_list = 1 AND [spec_list] IS NULL) OR ([sp" +
+                "ec_list] = @Original_spec_list)) AND ([comm_head_id] = @Original_comm_head_id) A" +
+                "ND ([first_member_id] = @Original_first_member_id) AND ([second_member_id] = @Or" +
+                "iginal_second_member_id) AND ([accepted_id] = @Original_accepted_id) AND ([hando" +
+                "ver_id] = @Original_handover_id) AND ([booker_id] = @Original_booker_id))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issue_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_primary_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "primary_cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_recover", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_repair", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_coefficient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_wearout_sum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wearout_sum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_expoit_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_meet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_need_refine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_results", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_conclusion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_list", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AcceptAct] ([firm_id], [issue_date], [user_id], [operation_id]" +
+                ", [sender_id], [receiver_id], [debit_bill], [debit_code], [credit_bill], [credit" +
+                "_code], [primary_cost], [tech_passport_id], [object_code], [norm_code], [full_re" +
+                "cover], [full_repair], [coefficient], [equip_type], [equip_code], [wearout_sum]," +
+                " [expoit_date], [order_date], [order_number], [object_place], [description], [sp" +
+                "ec_meet], [need_refine], [results], [conclusion], [spec_list], [comm_head_id], [" +
+                "first_member_id], [second_member_id], [accepted_id], [handover_id], [booker_id])" +
+                " VALUES (@firm_id, @issue_date, @user_id, @operation_id, @sender_id, @receiver_i" +
+                "d, @debit_bill, @debit_code, @credit_bill, @credit_code, @primary_cost, @tech_pa" +
+                "ssport_id, @object_code, @norm_code, @full_recover, @full_repair, @coefficient, " +
+                "@equip_type, @equip_code, @wearout_sum, @expoit_date, @order_date, @order_number" +
+                ", @object_place, @description, @spec_meet, @need_refine, @results, @conclusion, " +
+                "@spec_list, @comm_head_id, @first_member_id, @second_member_id, @accepted_id, @h" +
+                "andover_id, @booker_id);\r\nSELECT number, firm_id, issue_date, user_id, operation" +
+                "_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, p" +
+                "rimary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair" +
+                ", coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, ord" +
+                "er_number, object_place, description, spec_meet, need_refine, results, conclusio" +
+                "n, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, hand" +
+                "over_id, booker_id FROM AcceptAct WHERE (number = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[AcceptAct] SET [firm_id] = @firm_id, [issue_date] = @issue_date, [u" +
+                "ser_id] = @user_id, [operation_id] = @operation_id, [sender_id] = @sender_id, [r" +
+                "eceiver_id] = @receiver_id, [debit_bill] = @debit_bill, [debit_code] = @debit_co" +
+                "de, [credit_bill] = @credit_bill, [credit_code] = @credit_code, [primary_cost] =" +
+                " @primary_cost, [tech_passport_id] = @tech_passport_id, [object_code] = @object_" +
+                "code, [norm_code] = @norm_code, [full_recover] = @full_recover, [full_repair] = " +
+                "@full_repair, [coefficient] = @coefficient, [equip_type] = @equip_type, [equip_c" +
+                "ode] = @equip_code, [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, " +
+                "[order_date] = @order_date, [order_number] = @order_number, [object_place] = @ob" +
+                "ject_place, [description] = @description, [spec_meet] = @spec_meet, [need_refine" +
+                "] = @need_refine, [results] = @results, [conclusion] = @conclusion, [spec_list] " +
+                "= @spec_list, [comm_head_id] = @comm_head_id, [first_member_id] = @first_member_" +
+                "id, [second_member_id] = @second_member_id, [accepted_id] = @accepted_id, [hando" +
+                "ver_id] = @handover_id, [booker_id] = @booker_id WHERE (([number] = @Original_nu" +
+                "mber) AND ([firm_id] = @Original_firm_id) AND ((@IsNull_issue_date = 1 AND [issu" +
+                "e_date] IS NULL) OR ([issue_date] = @Original_issue_date)) AND ([user_id] = @Ori" +
+                "ginal_user_id) AND ([operation_id] = @Original_operation_id) AND ([sender_id] = " +
+                "@Original_sender_id) AND ([receiver_id] = @Original_receiver_id) AND ((@IsNull_d" +
+                "ebit_bill = 1 AND [debit_bill] IS NULL) OR ([debit_bill] = @Original_debit_bill)" +
+                ") AND ((@IsNull_debit_code = 1 AND [debit_code] IS NULL) OR ([debit_code] = @Ori" +
+                "ginal_debit_code)) AND ((@IsNull_credit_bill = 1 AND [credit_bill] IS NULL) OR (" +
+                "[credit_bill] = @Original_credit_bill)) AND ((@IsNull_credit_code = 1 AND [credi" +
+                "t_code] IS NULL) OR ([credit_code] = @Original_credit_code)) AND ((@IsNull_prima" +
+                "ry_cost = 1 AND [primary_cost] IS NULL) OR ([primary_cost] = @Original_primary_c" +
+                "ost)) AND ([tech_passport_id] = @Original_tech_passport_id) AND ((@IsNull_object" +
+                "_code = 1 AND [object_code] IS NULL) OR ([object_code] = @Original_object_code))" +
+                " AND ((@IsNull_norm_code = 1 AND [norm_code] IS NULL) OR ([norm_code] = @Origina" +
+                "l_norm_code)) AND ((@IsNull_full_recover = 1 AND [full_recover] IS NULL) OR ([fu" +
+                "ll_recover] = @Original_full_recover)) AND ((@IsNull_full_repair = 1 AND [full_r" +
+                "epair] IS NULL) OR ([full_repair] = @Original_full_repair)) AND ((@IsNull_coeffi" +
+                "cient = 1 AND [coefficient] IS NULL) OR ([coefficient] = @Original_coefficient))" +
+                " AND ((@IsNull_equip_type = 1 AND [equip_type] IS NULL) OR ([equip_type] = @Orig" +
+                "inal_equip_type)) AND ((@IsNull_equip_code = 1 AND [equip_code] IS NULL) OR ([eq" +
+                "uip_code] = @Original_equip_code)) AND ((@IsNull_wearout_sum = 1 AND [wearout_su" +
+                "m] IS NULL) OR ([wearout_sum] = @Original_wearout_sum)) AND ((@IsNull_expoit_dat" +
+                "e = 1 AND [expoit_date] IS NULL) OR ([expoit_date] = @Original_expoit_date)) AND" +
+                " ((@IsNull_order_date = 1 AND [order_date] IS NULL) OR ([order_date] = @Original" +
+                "_order_date)) AND ((@IsNull_order_number = 1 AND [order_number] IS NULL) OR ([or" +
+                "der_number] = @Original_order_number)) AND ((@IsNull_object_place = 1 AND [objec" +
+                "t_place] IS NULL) OR ([object_place] = @Original_object_place)) AND ((@IsNull_sp" +
+                "ec_meet = 1 AND [spec_meet] IS NULL) OR ([spec_meet] = @Original_spec_meet)) AND" +
+                " ((@IsNull_need_refine = 1 AND [need_refine] IS NULL) OR ([need_refine] = @Origi" +
+                "nal_need_refine)) AND ((@IsNull_results = 1 AND [results] IS NULL) OR ([results]" +
+                " = @Original_results)) AND ((@IsNull_conclusion = 1 AND [conclusion] IS NULL) OR" +
+                " ([conclusion] = @Original_conclusion)) AND ((@IsNull_spec_list = 1 AND [spec_li" +
+                "st] IS NULL) OR ([spec_list] = @Original_spec_list)) AND ([comm_head_id] = @Orig" +
+                "inal_comm_head_id) AND ([first_member_id] = @Original_first_member_id) AND ([sec" +
+                "ond_member_id] = @Original_second_member_id) AND ([accepted_id] = @Original_acce" +
+                "pted_id) AND ([handover_id] = @Original_handover_id) AND ([booker_id] = @Origina" +
+                "l_booker_id));\r\nSELECT number, firm_id, issue_date, user_id, operation_id, sende" +
+                "r_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cos" +
+                "t, tech_passport_id, object_code, norm_code, full_recover, full_repair, coeffici" +
+                "ent, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number," +
+                " object_place, description, spec_meet, need_refine, results, conclusion, spec_li" +
+                "st, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, b" +
+                "ooker_id FROM AcceptAct WHERE (number = @number)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issue_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_user_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_operation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sender_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_receiver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_debit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_bill", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_credit_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_primary_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "primary_cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_primary_cost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tech_passport_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_norm_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_recover", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_recover", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_full_repair", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_full_repair", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_coefficient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_coefficient", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_wearout_sum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wearout_sum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_expoit_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_meet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_need_refine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_need_refine", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_results", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_results", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_conclusion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_conclusion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_list", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_spec_list", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comm_head_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_first_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::curs_work.Properties.Settings.Default.CarAccountConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT number, firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, booker_id FROM dbo.AcceptAct";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[AcceptAct] WHERE [number] = @Original_number";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"UPDATE [dbo].[AcceptAct] SET [firm_id] = @firm_id, [issue_date] = @issue_date, [user_id] = @user_id, [operation_id] = @operation_id, [sender_id] = @sender_id, [receiver_id] = @receiver_id, [debit_bill] = @debit_bill, [debit_code] = @debit_code, [credit_bill] = @credit_bill, [credit_code] = @credit_code, [primary_cost] = @primary_cost, [tech_passport_id] = @tech_passport_id, [object_code] = @object_code, [norm_code] = @norm_code, [full_recover] = @full_recover, [full_repair] = @full_repair, [coefficient] = @coefficient, [equip_type] = @equip_type, [equip_code] = @equip_code, [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, [order_date] = @order_date, [order_number] = @order_number, [object_place] = @object_place, [description] = @description, [spec_meet] = @spec_meet, [need_refine] = @need_refine, [results] = @results, [conclusion] = @conclusion, [spec_list] = @spec_list, [comm_head_id] = @comm_head_id, [first_member_id] = @first_member_id, [second_member_id] = @second_member_id, [accepted_id] = @accepted_id, [handover_id] = @handover_id, [booker_id] = @booker_id WHERE [number] = @Original_number";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firm_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "user_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@operation_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "operation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sender_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "sender_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@receiver_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "receiver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_bill", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "debit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@debit_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "debit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_bill", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "credit_bill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credit_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "credit_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@primary_cost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 15, 2, "primary_cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tech_passport_id", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "tech_passport_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "object_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@norm_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "norm_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_recover", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "full_recover", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@full_repair", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "full_repair", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@coefficient", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "coefficient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "equip_type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@need_refine", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "need_refine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@results", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "results", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@conclusion", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "conclusion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_list", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "spec_list", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comm_head_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "comm_head_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_member_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "first_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CarAccountDataSet.AcceptActDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CarAccountDataSet.AcceptActDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            CarAccountDataSet.AcceptActDataTable dataTable = new CarAccountDataSet.AcceptActDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CarAccountDataSet.AcceptActDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CarAccountDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "AcceptAct");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    int Original_number, 
+                    int Original_firm_id, 
+                    global::System.Nullable<global::System.DateTime> Original_issue_date, 
+                    int Original_user_id, 
+                    int Original_operation_id, 
+                    int Original_sender_id, 
+                    int Original_receiver_id, 
+                    global::System.Nullable<int> Original_debit_bill, 
+                    global::System.Nullable<int> Original_debit_code, 
+                    global::System.Nullable<int> Original_credit_bill, 
+                    global::System.Nullable<int> Original_credit_code, 
+                    global::System.Nullable<decimal> Original_primary_cost, 
+                    string Original_tech_passport_id, 
+                    global::System.Nullable<int> Original_object_code, 
+                    global::System.Nullable<int> Original_norm_code, 
+                    global::System.Nullable<double> Original_full_recover, 
+                    global::System.Nullable<double> Original_full_repair, 
+                    global::System.Nullable<double> Original_coefficient, 
+                    string Original_equip_type, 
+                    global::System.Nullable<int> Original_equip_code, 
+                    global::System.Nullable<decimal> Original_wearout_sum, 
+                    global::System.Nullable<global::System.DateTime> Original_expoit_date, 
+                    global::System.Nullable<global::System.DateTime> Original_order_date, 
+                    global::System.Nullable<int> Original_order_number, 
+                    string Original_object_place, 
+                    string Original_spec_meet, 
+                    string Original_need_refine, 
+                    string Original_results, 
+                    string Original_conclusion, 
+                    string Original_spec_list, 
+                    int Original_comm_head_id, 
+                    int Original_first_member_id, 
+                    int Original_second_member_id, 
+                    int Original_accepted_id, 
+                    int Original_handover_id, 
+                    int Original_booker_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_number));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_firm_id));
+            if ((Original_issue_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_issue_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_user_id));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_operation_id));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_sender_id));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_receiver_id));
+            if ((Original_debit_bill.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_debit_bill.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_debit_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_debit_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_credit_bill.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_credit_bill.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_credit_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_credit_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_primary_cost.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((decimal)(Original_primary_cost.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_tech_passport_id == null)) {
+                throw new global::System.ArgumentNullException("Original_tech_passport_id");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_tech_passport_id));
+            }
+            if ((Original_object_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_object_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_norm_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_norm_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_full_recover.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_full_recover.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_full_repair.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_full_repair.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_coefficient.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_coefficient.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_equip_type == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_equip_type));
+            }
+            if ((Original_equip_code.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((int)(Original_equip_code.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_wearout_sum.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((decimal)(Original_wearout_sum.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            if ((Original_expoit_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((System.DateTime)(Original_expoit_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_order_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((System.DateTime)(Original_order_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            if ((Original_order_number.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((int)(Original_order_number.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            if ((Original_object_place == null)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_object_place));
+            }
+            if ((Original_spec_meet == null)) {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_spec_meet));
+            }
+            if ((Original_need_refine == null)) {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_need_refine));
+            }
+            if ((Original_results == null)) {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_results));
+            }
+            if ((Original_conclusion == null)) {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_conclusion));
+            }
+            if ((Original_spec_list == null)) {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_spec_list));
+            }
+            this.Adapter.DeleteCommand.Parameters[53].Value = ((int)(Original_comm_head_id));
+            this.Adapter.DeleteCommand.Parameters[54].Value = ((int)(Original_first_member_id));
+            this.Adapter.DeleteCommand.Parameters[55].Value = ((int)(Original_second_member_id));
+            this.Adapter.DeleteCommand.Parameters[56].Value = ((int)(Original_accepted_id));
+            this.Adapter.DeleteCommand.Parameters[57].Value = ((int)(Original_handover_id));
+            this.Adapter.DeleteCommand.Parameters[58].Value = ((int)(Original_booker_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    int firm_id, 
+                    global::System.Nullable<global::System.DateTime> issue_date, 
+                    int user_id, 
+                    int operation_id, 
+                    int sender_id, 
+                    int receiver_id, 
+                    global::System.Nullable<int> debit_bill, 
+                    global::System.Nullable<int> debit_code, 
+                    global::System.Nullable<int> credit_bill, 
+                    global::System.Nullable<int> credit_code, 
+                    global::System.Nullable<decimal> primary_cost, 
+                    string tech_passport_id, 
+                    global::System.Nullable<int> object_code, 
+                    global::System.Nullable<int> norm_code, 
+                    global::System.Nullable<double> full_recover, 
+                    global::System.Nullable<double> full_repair, 
+                    global::System.Nullable<double> coefficient, 
+                    string equip_type, 
+                    global::System.Nullable<int> equip_code, 
+                    global::System.Nullable<decimal> wearout_sum, 
+                    global::System.Nullable<global::System.DateTime> expoit_date, 
+                    global::System.Nullable<global::System.DateTime> order_date, 
+                    global::System.Nullable<int> order_number, 
+                    string object_place, 
+                    string description, 
+                    string spec_meet, 
+                    string need_refine, 
+                    string results, 
+                    string conclusion, 
+                    string spec_list, 
+                    int comm_head_id, 
+                    int first_member_id, 
+                    int second_member_id, 
+                    int accepted_id, 
+                    int handover_id, 
+                    int booker_id) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(firm_id));
+            if ((issue_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(issue_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(user_id));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(operation_id));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(sender_id));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(receiver_id));
+            if ((debit_bill.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(debit_bill.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((debit_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(debit_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((credit_bill.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(credit_bill.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((credit_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(credit_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((primary_cost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(primary_cost.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((tech_passport_id == null)) {
+                throw new global::System.ArgumentNullException("tech_passport_id");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(tech_passport_id));
+            }
+            if ((object_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(object_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((norm_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(norm_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((full_recover.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(full_recover.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((full_repair.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(full_repair.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((coefficient.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(coefficient.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((equip_type == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(equip_type));
+            }
+            if ((equip_code.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(equip_code.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((wearout_sum.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((decimal)(wearout_sum.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((expoit_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((System.DateTime)(expoit_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((order_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((System.DateTime)(order_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((order_number.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(order_number.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((object_place == null)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(object_place));
+            }
+            if ((description == null)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(description));
+            }
+            if ((spec_meet == null)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(spec_meet));
+            }
+            if ((need_refine == null)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(need_refine));
+            }
+            if ((results == null)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(results));
+            }
+            if ((conclusion == null)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(conclusion));
+            }
+            if ((spec_list == null)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(spec_list));
+            }
+            this.Adapter.InsertCommand.Parameters[30].Value = ((int)(comm_head_id));
+            this.Adapter.InsertCommand.Parameters[31].Value = ((int)(first_member_id));
+            this.Adapter.InsertCommand.Parameters[32].Value = ((int)(second_member_id));
+            this.Adapter.InsertCommand.Parameters[33].Value = ((int)(accepted_id));
+            this.Adapter.InsertCommand.Parameters[34].Value = ((int)(handover_id));
+            this.Adapter.InsertCommand.Parameters[35].Value = ((int)(booker_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int firm_id, 
+                    global::System.Nullable<global::System.DateTime> issue_date, 
+                    int user_id, 
+                    int operation_id, 
+                    int sender_id, 
+                    int receiver_id, 
+                    global::System.Nullable<int> debit_bill, 
+                    global::System.Nullable<int> debit_code, 
+                    global::System.Nullable<int> credit_bill, 
+                    global::System.Nullable<int> credit_code, 
+                    global::System.Nullable<decimal> primary_cost, 
+                    string tech_passport_id, 
+                    global::System.Nullable<int> object_code, 
+                    global::System.Nullable<int> norm_code, 
+                    global::System.Nullable<double> full_recover, 
+                    global::System.Nullable<double> full_repair, 
+                    global::System.Nullable<double> coefficient, 
+                    string equip_type, 
+                    global::System.Nullable<int> equip_code, 
+                    global::System.Nullable<decimal> wearout_sum, 
+                    global::System.Nullable<global::System.DateTime> expoit_date, 
+                    global::System.Nullable<global::System.DateTime> order_date, 
+                    global::System.Nullable<int> order_number, 
+                    string object_place, 
+                    string description, 
+                    string spec_meet, 
+                    string need_refine, 
+                    string results, 
+                    string conclusion, 
+                    string spec_list, 
+                    int comm_head_id, 
+                    int first_member_id, 
+                    int second_member_id, 
+                    int accepted_id, 
+                    int handover_id, 
+                    int booker_id, 
+                    int Original_number, 
+                    int Original_firm_id, 
+                    global::System.Nullable<global::System.DateTime> Original_issue_date, 
+                    int Original_user_id, 
+                    int Original_operation_id, 
+                    int Original_sender_id, 
+                    int Original_receiver_id, 
+                    global::System.Nullable<int> Original_debit_bill, 
+                    global::System.Nullable<int> Original_debit_code, 
+                    global::System.Nullable<int> Original_credit_bill, 
+                    global::System.Nullable<int> Original_credit_code, 
+                    global::System.Nullable<decimal> Original_primary_cost, 
+                    string Original_tech_passport_id, 
+                    global::System.Nullable<int> Original_object_code, 
+                    global::System.Nullable<int> Original_norm_code, 
+                    global::System.Nullable<double> Original_full_recover, 
+                    global::System.Nullable<double> Original_full_repair, 
+                    global::System.Nullable<double> Original_coefficient, 
+                    string Original_equip_type, 
+                    global::System.Nullable<int> Original_equip_code, 
+                    global::System.Nullable<decimal> Original_wearout_sum, 
+                    global::System.Nullable<global::System.DateTime> Original_expoit_date, 
+                    global::System.Nullable<global::System.DateTime> Original_order_date, 
+                    global::System.Nullable<int> Original_order_number, 
+                    string Original_object_place, 
+                    string Original_spec_meet, 
+                    string Original_need_refine, 
+                    string Original_results, 
+                    string Original_conclusion, 
+                    string Original_spec_list, 
+                    int Original_comm_head_id, 
+                    int Original_first_member_id, 
+                    int Original_second_member_id, 
+                    int Original_accepted_id, 
+                    int Original_handover_id, 
+                    int Original_booker_id, 
+                    int number) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(firm_id));
+            if ((issue_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(issue_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(user_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(operation_id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(sender_id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(receiver_id));
+            if ((debit_bill.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(debit_bill.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((debit_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(debit_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((credit_bill.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(credit_bill.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((credit_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(credit_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((primary_cost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(primary_cost.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((tech_passport_id == null)) {
+                throw new global::System.ArgumentNullException("tech_passport_id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(tech_passport_id));
+            }
+            if ((object_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(object_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((norm_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(norm_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((full_recover.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(full_recover.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((full_repair.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(full_repair.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((coefficient.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(coefficient.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((equip_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(equip_type));
+            }
+            if ((equip_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(equip_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((wearout_sum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(wearout_sum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((expoit_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(expoit_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((order_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(order_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((order_number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(order_number.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((object_place == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(object_place));
+            }
+            if ((description == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(description));
+            }
+            if ((spec_meet == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(spec_meet));
+            }
+            if ((need_refine == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(need_refine));
+            }
+            if ((results == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(results));
+            }
+            if ((conclusion == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(conclusion));
+            }
+            if ((spec_list == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(spec_list));
+            }
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(comm_head_id));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(first_member_id));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(second_member_id));
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(accepted_id));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(handover_id));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(booker_id));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_number));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_firm_id));
+            if ((Original_issue_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_issue_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_user_id));
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_operation_id));
+            this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_sender_id));
+            this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_receiver_id));
+            if ((Original_debit_bill.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_debit_bill.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            if ((Original_debit_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Original_debit_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            if ((Original_credit_bill.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_credit_bill.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            if ((Original_credit_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_credit_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            if ((Original_primary_cost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((decimal)(Original_primary_cost.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            if ((Original_tech_passport_id == null)) {
+                throw new global::System.ArgumentNullException("Original_tech_passport_id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_tech_passport_id));
+            }
+            if ((Original_object_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_object_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            if ((Original_norm_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((int)(Original_norm_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            if ((Original_full_recover.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((double)(Original_full_recover.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            if ((Original_full_repair.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((double)(Original_full_repair.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            if ((Original_coefficient.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((double)(Original_coefficient.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            if ((Original_equip_type == null)) {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_equip_type));
+            }
+            if ((Original_equip_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((int)(Original_equip_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+            }
+            if ((Original_wearout_sum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((decimal)(Original_wearout_sum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+            }
+            if ((Original_expoit_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((System.DateTime)(Original_expoit_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
+            }
+            if ((Original_order_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((System.DateTime)(Original_order_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+            }
+            if ((Original_order_number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((int)(Original_order_number.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
+            }
+            if ((Original_object_place == null)) {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_object_place));
+            }
+            if ((Original_spec_meet == null)) {
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_spec_meet));
+            }
+            if ((Original_need_refine == null)) {
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_need_refine));
+            }
+            if ((Original_results == null)) {
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_results));
+            }
+            if ((Original_conclusion == null)) {
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_conclusion));
+            }
+            if ((Original_spec_list == null)) {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_spec_list));
+            }
+            this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(Original_comm_head_id));
+            this.Adapter.UpdateCommand.Parameters[90].Value = ((int)(Original_first_member_id));
+            this.Adapter.UpdateCommand.Parameters[91].Value = ((int)(Original_second_member_id));
+            this.Adapter.UpdateCommand.Parameters[92].Value = ((int)(Original_accepted_id));
+            this.Adapter.UpdateCommand.Parameters[93].Value = ((int)(Original_handover_id));
+            this.Adapter.UpdateCommand.Parameters[94].Value = ((int)(Original_booker_id));
+            this.Adapter.UpdateCommand.Parameters[95].Value = ((int)(number));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int firm_id, 
+                    global::System.Nullable<global::System.DateTime> issue_date, 
+                    int user_id, 
+                    int operation_id, 
+                    int sender_id, 
+                    int receiver_id, 
+                    global::System.Nullable<int> debit_bill, 
+                    global::System.Nullable<int> debit_code, 
+                    global::System.Nullable<int> credit_bill, 
+                    global::System.Nullable<int> credit_code, 
+                    global::System.Nullable<decimal> primary_cost, 
+                    string tech_passport_id, 
+                    global::System.Nullable<int> object_code, 
+                    global::System.Nullable<int> norm_code, 
+                    global::System.Nullable<double> full_recover, 
+                    global::System.Nullable<double> full_repair, 
+                    global::System.Nullable<double> coefficient, 
+                    string equip_type, 
+                    global::System.Nullable<int> equip_code, 
+                    global::System.Nullable<decimal> wearout_sum, 
+                    global::System.Nullable<global::System.DateTime> expoit_date, 
+                    global::System.Nullable<global::System.DateTime> order_date, 
+                    global::System.Nullable<int> order_number, 
+                    string object_place, 
+                    string description, 
+                    string spec_meet, 
+                    string need_refine, 
+                    string results, 
+                    string conclusion, 
+                    string spec_list, 
+                    int comm_head_id, 
+                    int first_member_id, 
+                    int second_member_id, 
+                    int accepted_id, 
+                    int handover_id, 
+                    int booker_id, 
+                    int Original_number, 
+                    int Original_firm_id, 
+                    global::System.Nullable<global::System.DateTime> Original_issue_date, 
+                    int Original_user_id, 
+                    int Original_operation_id, 
+                    int Original_sender_id, 
+                    int Original_receiver_id, 
+                    global::System.Nullable<int> Original_debit_bill, 
+                    global::System.Nullable<int> Original_debit_code, 
+                    global::System.Nullable<int> Original_credit_bill, 
+                    global::System.Nullable<int> Original_credit_code, 
+                    global::System.Nullable<decimal> Original_primary_cost, 
+                    string Original_tech_passport_id, 
+                    global::System.Nullable<int> Original_object_code, 
+                    global::System.Nullable<int> Original_norm_code, 
+                    global::System.Nullable<double> Original_full_recover, 
+                    global::System.Nullable<double> Original_full_repair, 
+                    global::System.Nullable<double> Original_coefficient, 
+                    string Original_equip_type, 
+                    global::System.Nullable<int> Original_equip_code, 
+                    global::System.Nullable<decimal> Original_wearout_sum, 
+                    global::System.Nullable<global::System.DateTime> Original_expoit_date, 
+                    global::System.Nullable<global::System.DateTime> Original_order_date, 
+                    global::System.Nullable<int> Original_order_number, 
+                    string Original_object_place, 
+                    string Original_spec_meet, 
+                    string Original_need_refine, 
+                    string Original_results, 
+                    string Original_conclusion, 
+                    string Original_spec_list, 
+                    int Original_comm_head_id, 
+                    int Original_first_member_id, 
+                    int Original_second_member_id, 
+                    int Original_accepted_id, 
+                    int Original_handover_id, 
+                    int Original_booker_id) {
+            return this.Update(firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, booker_id, Original_number, Original_firm_id, Original_issue_date, Original_user_id, Original_operation_id, Original_sender_id, Original_receiver_id, Original_debit_bill, Original_debit_code, Original_credit_bill, Original_credit_code, Original_primary_cost, Original_tech_passport_id, Original_object_code, Original_norm_code, Original_full_recover, Original_full_repair, Original_coefficient, Original_equip_type, Original_equip_code, Original_wearout_sum, Original_expoit_date, Original_order_date, Original_order_number, Original_object_place, Original_spec_meet, Original_need_refine, Original_results, Original_conclusion, Original_spec_list, Original_comm_head_id, Original_first_member_id, Original_second_member_id, Original_accepted_id, Original_handover_id, Original_booker_id, Original_number);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int Original_number) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(Original_number));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(
+                    int firm_id, 
+                    string issue_date, 
+                    int user_id, 
+                    int operation_id, 
+                    int sender_id, 
+                    int receiver_id, 
+                    global::System.Nullable<int> debit_bill, 
+                    global::System.Nullable<int> debit_code, 
+                    global::System.Nullable<int> credit_bill, 
+                    global::System.Nullable<int> credit_code, 
+                    global::System.Nullable<decimal> primary_cost, 
+                    string tech_passport_id, 
+                    global::System.Nullable<int> object_code, 
+                    global::System.Nullable<int> norm_code, 
+                    global::System.Nullable<double> full_recover, 
+                    global::System.Nullable<double> full_repair, 
+                    global::System.Nullable<double> coefficient, 
+                    string equip_type, 
+                    global::System.Nullable<int> equip_code, 
+                    global::System.Nullable<decimal> wearout_sum, 
+                    string expoit_date, 
+                    string order_date, 
+                    global::System.Nullable<int> order_number, 
+                    string object_place, 
+                    string description, 
+                    string spec_meet, 
+                    string need_refine, 
+                    string results, 
+                    string conclusion, 
+                    string spec_list, 
+                    int comm_head_id, 
+                    int first_member_id, 
+                    int second_member_id, 
+                    int accepted_id, 
+                    int handover_id, 
+                    int booker_id, 
+                    int Original_number) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(firm_id));
+            if ((issue_date == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(issue_date));
+            }
+            command.Parameters[2].Value = ((int)(user_id));
+            command.Parameters[3].Value = ((int)(operation_id));
+            command.Parameters[4].Value = ((int)(sender_id));
+            command.Parameters[5].Value = ((int)(receiver_id));
+            if ((debit_bill.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(debit_bill.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((debit_code.HasValue == true)) {
+                command.Parameters[7].Value = ((int)(debit_code.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((credit_bill.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(credit_bill.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((credit_code.HasValue == true)) {
+                command.Parameters[9].Value = ((int)(credit_code.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((primary_cost.HasValue == true)) {
+                command.Parameters[10].Value = ((decimal)(primary_cost.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((tech_passport_id == null)) {
+                throw new global::System.ArgumentNullException("tech_passport_id");
+            }
+            else {
+                command.Parameters[11].Value = ((string)(tech_passport_id));
+            }
+            if ((object_code.HasValue == true)) {
+                command.Parameters[12].Value = ((int)(object_code.Value));
+            }
+            else {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((norm_code.HasValue == true)) {
+                command.Parameters[13].Value = ((int)(norm_code.Value));
+            }
+            else {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((full_recover.HasValue == true)) {
+                command.Parameters[14].Value = ((double)(full_recover.Value));
+            }
+            else {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((full_repair.HasValue == true)) {
+                command.Parameters[15].Value = ((double)(full_repair.Value));
+            }
+            else {
+                command.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((coefficient.HasValue == true)) {
+                command.Parameters[16].Value = ((double)(coefficient.Value));
+            }
+            else {
+                command.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((equip_type == null)) {
+                command.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[17].Value = ((string)(equip_type));
+            }
+            if ((equip_code.HasValue == true)) {
+                command.Parameters[18].Value = ((int)(equip_code.Value));
+            }
+            else {
+                command.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((wearout_sum.HasValue == true)) {
+                command.Parameters[19].Value = ((decimal)(wearout_sum.Value));
+            }
+            else {
+                command.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((expoit_date == null)) {
+                command.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[20].Value = ((string)(expoit_date));
+            }
+            if ((order_date == null)) {
+                command.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[21].Value = ((string)(order_date));
+            }
+            if ((order_number.HasValue == true)) {
+                command.Parameters[22].Value = ((int)(order_number.Value));
+            }
+            else {
+                command.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((object_place == null)) {
+                command.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[23].Value = ((string)(object_place));
+            }
+            if ((description == null)) {
+                command.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[24].Value = ((string)(description));
+            }
+            if ((spec_meet == null)) {
+                command.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[25].Value = ((string)(spec_meet));
+            }
+            if ((need_refine == null)) {
+                command.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[26].Value = ((string)(need_refine));
+            }
+            if ((results == null)) {
+                command.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[27].Value = ((string)(results));
+            }
+            if ((conclusion == null)) {
+                command.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[28].Value = ((string)(conclusion));
+            }
+            if ((spec_list == null)) {
+                command.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[29].Value = ((string)(spec_list));
+            }
+            command.Parameters[30].Value = ((int)(comm_head_id));
+            command.Parameters[31].Value = ((int)(first_member_id));
+            command.Parameters[32].Value = ((int)(second_member_id));
+            command.Parameters[33].Value = ((int)(accepted_id));
+            command.Parameters[34].Value = ((int)(handover_id));
+            command.Parameters[35].Value = ((int)(booker_id));
+            command.Parameters[36].Value = ((int)(Original_number));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12619,8 +12697,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
     public partial class TableAdapterManager : global::System.ComponentModel.Component {
         
         private UpdateOrderOption _updateOrder;
-        
-        private AcceptanceActTableAdapter _acceptanceActTableAdapter;
         
         private CarModelsTableAdapter _carModelsTableAdapter;
         
@@ -12640,6 +12716,8 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
         
         private UsersTableAdapter _usersTableAdapter;
         
+        private AcceptActTableAdapter _acceptActTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -12652,20 +12730,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public AcceptanceActTableAdapter AcceptanceActTableAdapter {
-            get {
-                return this._acceptanceActTableAdapter;
-            }
-            set {
-                this._acceptanceActTableAdapter = value;
             }
         }
         
@@ -12797,6 +12861,20 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AcceptActTableAdapter AcceptActTableAdapter {
+            get {
+                return this._acceptActTableAdapter;
+            }
+            set {
+                this._acceptActTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -12813,10 +12891,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             get {
                 if ((this._connection != null)) {
                     return this._connection;
-                }
-                if (((this._acceptanceActTableAdapter != null) 
-                            && (this._acceptanceActTableAdapter.Connection != null))) {
-                    return this._acceptanceActTableAdapter.Connection;
                 }
                 if (((this._carModelsTableAdapter != null) 
                             && (this._carModelsTableAdapter.Connection != null))) {
@@ -12854,6 +12928,10 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                             && (this._usersTableAdapter.Connection != null))) {
                     return this._usersTableAdapter.Connection;
                 }
+                if (((this._acceptActTableAdapter != null) 
+                            && (this._acceptActTableAdapter.Connection != null))) {
+                    return this._acceptActTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -12867,9 +12945,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._acceptanceActTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._carModelsTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -12895,6 +12970,9 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     count = (count + 1);
                 }
                 if ((this._usersTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._acceptActTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -12944,15 +13022,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._acceptanceActTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AcceptanceAct.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._acceptanceActTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._carModelsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CarModels.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12998,6 +13067,15 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._acceptActTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AcceptAct.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._acceptActTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -13037,14 +13115,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._usersTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._acceptanceActTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AcceptanceAct.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._acceptanceActTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13088,6 +13158,14 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._acceptActTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AcceptAct.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._acceptActTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -13098,6 +13176,14 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(CarAccountDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._acceptActTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AcceptAct.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._acceptActTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._techPassportsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TechPassports.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -13135,14 +13221,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._carModelsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._acceptanceActTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AcceptanceAct.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._acceptanceActTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -13217,11 +13295,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._acceptanceActTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._acceptanceActTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
-            }
             if (((this._carModelsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._carModelsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
@@ -13267,6 +13340,11 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
+            if (((this._acceptActTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._acceptActTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager не содержит сведений о подключении. Укажите для каждого адапт" +
@@ -13299,15 +13377,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._acceptanceActTableAdapter != null)) {
-                    revertConnections.Add(this._acceptanceActTableAdapter, this._acceptanceActTableAdapter.Connection);
-                    this._acceptanceActTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._acceptanceActTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._acceptanceActTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._acceptanceActTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._acceptanceActTableAdapter.Adapter);
-                    }
-                }
                 if ((this._carModelsTableAdapter != null)) {
                     revertConnections.Add(this._carModelsTableAdapter, this._carModelsTableAdapter.Connection);
                     this._carModelsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -13389,6 +13458,15 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
                     }
                 }
+                if ((this._acceptActTableAdapter != null)) {
+                    revertConnections.Add(this._acceptActTableAdapter, this._acceptActTableAdapter.Connection);
+                    this._acceptActTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._acceptActTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._acceptActTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._acceptActTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._acceptActTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -13447,10 +13525,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._acceptanceActTableAdapter != null)) {
-                    this._acceptanceActTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._acceptanceActTableAdapter]));
-                    this._acceptanceActTableAdapter.Transaction = null;
-                }
                 if ((this._carModelsTableAdapter != null)) {
                     this._carModelsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._carModelsTableAdapter]));
                     this._carModelsTableAdapter.Transaction = null;
@@ -13486,6 +13560,10 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if ((this._usersTableAdapter != null)) {
                     this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
                     this._usersTableAdapter.Transaction = null;
+                }
+                if ((this._acceptActTableAdapter != null)) {
+                    this._acceptActTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._acceptActTableAdapter]));
+                    this._acceptActTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

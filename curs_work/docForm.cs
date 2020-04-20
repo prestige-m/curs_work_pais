@@ -12,14 +12,68 @@ namespace curs_work
 {
     public partial class docForm : Form
     {
-        string firmName = "МП \"Сигма\"";
         Graphics graph = null;
-        Brush brush = Brushes.Red;
+        Brush brush = Brushes.Black;
         Font font = new Font("Times New Roman", 10.1f, FontStyle.Regular);
         Font boldFont = new Font("Times New Roman", 10f, FontStyle.Bold);
         Font boldTitle = new Font("Times New Roman", 9f, FontStyle.Bold);
         Font small = new Font("Times New Roman", 8.5f, FontStyle.Regular);
+        Font textFont = new Font("Times New Roman", 10f, FontStyle.Bold | FontStyle.Italic);
+
+
+        string firmName = "МП \"Сигма\"";
+        int edrpou = 12345678;
+        int docNumber = 7;
+        DateTime docDate = DateTime.Now;
+        int userId = 1;
+        int operationId = 2;
+        string senderName = "МП \"Альфа\"";
+        string receiverName = "Будівельна ділянка №2";
+        int debitBill = 104;
+        int debitCode = 4;
+        int creditBill = 152;
+        int creditCode = 1;
+        //int firm_id = Convert.ToInt32(comboBox11.SelectedValue);
+        decimal primary_cost = 832680.60M;
+        int cypher = 1048567;
+        int cypher_factory = 4879;
+        int object_code = 234;
+        int norm_code = 1;
+        decimal full_recover = 0.125M;
+        int full_repair = 0;
+        double coefficient = 0.0;
+        string equip_type = "Будтехніка";
+        int equip_code = 274;
+        decimal wearout_sum = 0.0M;
+        int release_year = 2020;
+        DateTime expoit_date = DateTime.Now;
         
+        string tech_passport_id = "567";
+        string user_position = "керівника підприємства № 132";
+        DateTime order_date = DateTime.Now;
+
+        int order_number = 1;
+        string object_place = "у приміщенні будівельной ділянки №3";
+        string object_name = "бетонозмішувача";
+        string place = "у виробничій споруди будівельної ділянки №3";
+        string description = "бетонозмішувач місткістю 3м";
+        string spec_meet = "відповідає";
+        string need_refine = "не потрібна";
+        string results = "знаходиться в робочому стані в повній комплектації";
+        string conclusion = "прийняти в експлуатацію";
+        string spec_list = "технічний паспорт, інструкція по експлуатації";
+        string comm_head_name = "Р.Т. Расулов";
+        string comm_head_position = "головний інженер";
+        string first_member_name = "І.Л.Гусєва";
+        string first_member_position = "головний бухгалтер";
+        string second_member_name = "Я.І. Портнов";
+        string second_member_position = "механік";
+        string accepted_name = "Н.Д. Абраменко";
+        string accepted_position = "начальник будділянки №3";
+        string handover_name = "С.Н. Матюхін";
+        string handover_position = "комірник";
+        int booker_id = 1;
+
 
         public docForm()
         {
@@ -138,17 +192,15 @@ namespace curs_work
                 "Головний бухгалтер (бухгалтер)"
             };
 
-            //graph.FillRectangle(Brushes.White, new Rectangle(14, 178, 137, 122));
-            //graph.FillRectangle(Brushes.White, new Rectangle(934, 150, 56, 149));
-            //graph.FillRectangle(Brushes.White, new Rectangle(324, 150, 62, 149));
-            //graph.FillRectangle(Brushes.White, new Rectangle(709, 150, 51, 149));
-            //graph.FillRectangle(Brushes.White, new Rectangle(859, 150, 72, 149));
-            //graph.FillRectangle(Brushes.White, new Rectangle(859, 150, 72, 149));
-            //graph.FillRectangle(Brushes.White, new Rectangle(992, 150, 56, 149));
-            //graph.FillRectangle(Brushes.White, new Rectangle(1051, 150, 41, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(14, 178, 137, 122));
+            graph.FillRectangle(Brushes.White, new Rectangle(934, 150, 56, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(324, 150, 62, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(709, 150, 51, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(859, 150, 72, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(859, 150, 72, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(992, 150, 56, 149));
+            graph.FillRectangle(Brushes.White, new Rectangle(1051, 150, 41, 149));
 
-
-            graph.DrawString(firmName, boldFont, brush, new PointF(50, 24));
             graph.DrawString(docText[0], small, brush, new PointF(65, 40));
             graph.DrawString(docText[1], font, brush, new PointF(12, 54));
             graph.DrawString(docText[2], boldFont, brush, new PointF(705, 25));
@@ -218,12 +270,85 @@ namespace curs_work
             graph.DrawString(docText[52], font, brush, new PointF(54, 675));
             graph.DrawString(docText[53], font, brush, new PointF(54, 712));
             graph.DrawString(docText[54], font, brush, new PointF(707, 712));
+
+            graph.DrawString("1", small, brush, new PointF(43, 302));
+            graph.DrawString("2", small, brush, new PointF(112, 302));
+            graph.DrawString("3", small, brush, new PointF(171, 302));
+            graph.DrawString("4", small, brush, new PointF(214, 302));
+            graph.DrawString("5", small, brush, new PointF(257, 302));
+            graph.DrawString("6", small, brush, new PointF(300, 302));
+            graph.DrawString("7", small, brush, new PointF(353, 302));
+            graph.DrawString("8", small, brush, new PointF(417, 302));
+            graph.DrawString("9", small, brush, new PointF(476, 302));
+            graph.DrawString("10", small, brush, new PointF(538, 302));
+            graph.DrawString("11", small, brush, new PointF(598, 302));
+            graph.DrawString("12", small, brush, new PointF(638, 302));
+            graph.DrawString("13", small, brush, new PointF(681, 302));
+            graph.DrawString("14", small, brush, new PointF(730, 302));
+            graph.DrawString("15", small, brush, new PointF(784, 302));
+            graph.DrawString("16", small, brush, new PointF(833, 302));
+            graph.DrawString("17", small, brush, new PointF(891, 302));
+            graph.DrawString("18", small, brush, new PointF(958, 302));
+            graph.DrawString("19", small, brush, new PointF(1017, 302));
+            graph.DrawString("20", small, brush, new PointF(1067, 302));
+
+            //fill up
+            graph.DrawString(firmName, textFont, brush, new PointF(50, 24));
+            graph.DrawString(edrpou.ToString(), textFont, brush, new PointF(206, 54));
+            graph.DrawString(docNumber.ToString(), textFont, brush, new PointF(636, 134));
+            graph.DrawString(docDate.ToShortDateString() + " р.", textFont, brush, new PointF(694, 134));
+            graph.DrawString(userId.ToString(), textFont, brush, new PointF(878, 134));
+            graph.DrawString(operationId.ToString(), textFont, brush, new PointF(1025, 134));
+            graph.DrawString(senderName, textFont, brush, new Rectangle(15, 317, 62, 43), stringFormat);
+            graph.DrawString(receiverName, textFont, brush, new Rectangle(79, 317, 75, 43), stringFormat);
+            graph.DrawString(debitBill.ToString(), textFont, brush, new Rectangle(152, 315, 40, 46), stringFormat);
+            graph.DrawString(debitCode.ToString(), textFont, brush, new Rectangle(194, 315, 40, 46), stringFormat);
+            graph.DrawString(creditBill.ToString(), textFont, brush, new Rectangle(238, 315, 40, 46), stringFormat);
+            graph.DrawString(creditCode.ToString(), textFont, brush, new Rectangle(280, 315, 40, 46), stringFormat);
+            graph.DrawString(primary_cost.ToString(), textFont, brush, new Rectangle(322, 315, 65, 46), stringFormat);
+            graph.DrawString(cypher.ToString(), textFont, brush, new Rectangle(385, 315, 65, 46), stringFormat);
+            graph.DrawString(cypher_factory.ToString(), textFont, brush, new Rectangle(451, 315, 51, 46), stringFormat);
+            graph.DrawString($"{object_code}", textFont, brush, new Rectangle(504, 315, 75, 46), stringFormat);
+            graph.DrawString($"0{norm_code}", textFont, brush, new Rectangle(579, 315, 42, 46), stringFormat);
+
+            graph.DrawString(string.Format("{0:0.00}", full_recover), textFont, brush, new Rectangle(622, 315, 42, 46), stringFormat);
+            graph.DrawString($"{full_repair}", textFont, brush, new Rectangle(663, 315, 42, 46), stringFormat);
+            graph.DrawString(string.Format("{0:0.0}", coefficient), textFont, brush, new Rectangle(706, 315, 54, 46), stringFormat);
+            graph.DrawString($"{equip_type}", textFont, brush, new Rectangle(761, 315, 55, 46), stringFormat);
+            graph.DrawString($"{equip_code}", textFont, brush, new Rectangle(814, 315, 44, 46), stringFormat);
+            graph.DrawString($"{wearout_sum}", textFont, brush, new Rectangle(856, 315, 76, 46), stringFormat);
+            graph.DrawString($"{release_year}", textFont, brush, new Rectangle(932, 315, 60, 46), stringFormat);
+            graph.DrawString($"{expoit_date.ToShortDateString()}", textFont, brush, new Rectangle(990, 315, 60, 46), stringFormat);
+            graph.DrawString($"{tech_passport_id}", textFont, brush, new Rectangle(1050, 315, 42, 46), stringFormat);
+
+            graph.DrawString($"{user_position}", textFont, brush, new PointF(228, 368));
+            graph.DrawString($"{order_date.ToShortDateString()} р.", textFont, brush, new PointF(907, 368));
+            graph.DrawString($"{object_place}", textFont, brush, new PointF(41, 383));
+            graph.DrawString($"{object_name}", textFont, brush, new PointF(724, 383));
+            graph.DrawString($"{firmName}", textFont, brush, new PointF(327, 410));
+            graph.DrawString($"{place}", textFont, brush, new PointF(349, 425));
+            graph.DrawString($"{description}", textFont, brush, new PointF(215, 448));
+            graph.DrawString($"{spec_meet}", textFont, brush, new PointF(373, 462));
+            graph.DrawString($"{need_refine}", textFont, brush, new PointF(282, 489));
+            graph.DrawString($"{results}", textFont, brush, new PointF(206, 511));
+            graph.DrawString($"{conclusion}", textFont, brush, new PointF(720, 511));
+            graph.DrawString($"{spec_list}", textFont, brush, new PointF(268, 526));
+            graph.DrawString($"{comm_head_position}", textFont, brush, new PointF(170, 548));
+            graph.DrawString($"{comm_head_name}", textFont, brush, new PointF(802, 548));
+            graph.DrawString($"{first_member_position}", textFont, brush, new PointF(170, 572));
+            graph.DrawString($"{first_member_name}", textFont, brush, new PointF(802, 572));
+            graph.DrawString($"{second_member_position}", textFont, brush, new PointF(170, 596));
+            graph.DrawString($"{second_member_name}", textFont, brush, new PointF(802, 596));
+            graph.DrawString($"{accepted_position}", textFont, brush, new PointF(267, 646));
+            graph.DrawString($"{accepted_name}", textFont, brush, new PointF(802, 646));
+            graph.DrawString($"{handover_position}", textFont, brush, new PointF(267, 672));
+            graph.DrawString($"{handover_name}", textFont, brush, new PointF(802, 672));
+            graph.DrawString($"{docDate.ToShortDateString()} р.", textFont, brush, new PointF(460, 710));
         }
 
 
         private void docForm_MouseMove(object sender, MouseEventArgs e)
         {
-            label1.Text = $"X = {e.X}; Y = {e.Y}";
         }
     }
 }
