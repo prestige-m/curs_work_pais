@@ -51,6 +51,7 @@
             this.MaximizeBox = false;
             this.Name = "docForm";
             this.Text = "docForm";
+            this.Load += new System.EventHandler(this.docForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.docForm_Paint);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.docForm_MouseMove);
             this.ResumeLayout(false);

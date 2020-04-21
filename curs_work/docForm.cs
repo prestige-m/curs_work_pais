@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,9 +76,91 @@ namespace curs_work
         int booker_id = 1;
 
 
-        public docForm()
+        public docForm(string firmName, int edrpou, int docNumber, DateTime docDate, int userId, int operationId, string senderName, string receiverName, int debitBill, int debitCode, int creditBill,
+                            int creditCode, decimal primary_cost, int cypher, int cypher_factory, int object_code, int norm_code,decimal full_recover, int full_repair, double coefficient, string equip_type,
+                            int equip_code, decimal wearout_sum, int release_year, DateTime expoit_date, string tech_passport_id, string user_position, DateTime order_date, string object_place,
+                            string description, string spec_meet, string need_refine, string results, string conclusion, string spec_list, string comm_head_name, string comm_head_position,
+                            string first_member_name, string first_member_position, string second_member_name, string second_member_position, string accepted_name, string accepted_position,
+                            string handover_name, string handover_position)
         {
             InitializeComponent();
+            this.firmName = firmName;
+            this.edrpou = edrpou;
+            this.docNumber = docNumber;
+            this.docDate = docDate;
+            this.userId = userId;
+            this.operationId = operationId;
+            this.senderName = senderName;
+            this.receiverName = receiverName;
+            this.debitBill = debitBill;
+            this.debitCode = debitCode;
+            this.creditBill = creditBill;
+            this.creditCode = creditCode;
+            this.primary_cost = primary_cost;
+            this.cypher = cypher;
+            this.cypher_factory = cypher_factory;
+            this.object_code = object_code;
+            this.norm_code = norm_code;
+            this.full_recover = full_recover;
+            this.full_repair = full_repair;
+            this.coefficient = coefficient;
+            this.equip_type = equip_type;
+            this.equip_code = equip_code;
+            this.wearout_sum = wearout_sum;
+            this.release_year = release_year;
+            this.expoit_date = expoit_date;
+
+            this.tech_passport_id = tech_passport_id;
+            this.user_position = user_position;
+            this.order_date = order_date;
+            this.object_place = object_place;
+            this.object_name = "бетонозмішувача";
+            this.place = "";
+            this.description = description;
+            this.spec_meet = spec_meet;
+            this.need_refine = need_refine;
+            this.results = results;
+            this.conclusion = conclusion;
+            this.spec_list = spec_list;
+            this.comm_head_name = comm_head_name;
+            this.comm_head_position = comm_head_position;
+            this.first_member_name = first_member_name;
+            this.first_member_position = first_member_position;
+            this.second_member_name = second_member_name;
+            this.second_member_position = second_member_position;
+            this.accepted_name = accepted_name;
+            this.accepted_position = accepted_position;
+            this.handover_name = handover_name;
+            this.handover_position = handover_position;
+            int booker_id = 1;
+        }
+
+        public void PrintForm()
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(PrintImage);
+
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print(); 
+        }
+
+        void PrintImage(object o, PrintPageEventArgs e)
+        {
+            int x = SystemInformation.WorkingArea.X;
+            int y = SystemInformation.WorkingArea.Y;
+            int width = this.Width;
+            int height = this.Height;
+
+            Rectangle bounds = new Rectangle(x, y, width, height);
+
+            Bitmap img = new Bitmap(width, height);
+
+            this.DrawToBitmap(img, bounds);
+            Point p = new Point(100, 100);
+            e.Graphics.DrawImage(img, p);
         }
 
         public void DrawVertical(Pen pen, int x, int y1, int y2)
@@ -349,6 +432,11 @@ namespace curs_work
 
         private void docForm_MouseMove(object sender, MouseEventArgs e)
         {
+        }
+
+        private void docForm_Load(object sender, EventArgs e)
+        {
+            PrintForm();
         }
     }
 }

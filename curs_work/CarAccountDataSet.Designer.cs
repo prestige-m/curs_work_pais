@@ -44,29 +44,31 @@ namespace curs_work {
         
         private AcceptActDataTable tableAcceptAct;
         
+        private OrdersDataTable tableOrders;
+        
         private global::System.Data.DataRelation relationFK__Engines__fuel_ty__3A81B327;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__accep__656C112C;
+        private global::System.Data.DataRelation relationFK__AcceptAct__accep__7C4F7684;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__booke__6754599E;
+        private global::System.Data.DataRelation relationFK__AcceptAct__comm___797309D9;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__comm___628FA481;
+        private global::System.Data.DataRelation relationFK__AcceptAct__firm___73BA3083;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__firm___5CD6CB2B;
+        private global::System.Data.DataRelation relationFK__AcceptAct__first__7A672E12;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__first__6383C8BA;
+        private global::System.Data.DataRelation relationFK__AcceptAct__hando__7D439ABD;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__hando__66603565;
+        private global::System.Data.DataRelation relationFK__AcceptAct__opera__75A278F5;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__opera__5EBF139D;
+        private global::System.Data.DataRelation relationFK__AcceptAct__recei__778AC167;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__recei__60A75C0F;
+        private global::System.Data.DataRelation relationFK__AcceptAct__secon__7B5B524B;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__secon__6477ECF3;
+        private global::System.Data.DataRelation relationFK__AcceptAct__sende__76969D2E;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__sende__5FB337D6;
+        private global::System.Data.DataRelation relationFK__AcceptAct__user___74AE54BC;
         
-        private global::System.Data.DataRelation relationFK__AcceptAct__user___5DCAEF64;
+        private global::System.Data.DataRelation relationFK__AcceptAct__order__7E37BEF6;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -125,6 +127,9 @@ namespace curs_work {
                 }
                 if ((ds.Tables["AcceptAct"] != null)) {
                     base.Tables.Add(new AcceptActDataTable(ds.Tables["AcceptAct"]));
+                }
+                if ((ds.Tables["Orders"] != null)) {
+                    base.Tables.Add(new OrdersDataTable(ds.Tables["Orders"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -246,6 +251,16 @@ namespace curs_work {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public OrdersDataTable Orders {
+            get {
+                return this.tableOrders;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -341,6 +356,9 @@ namespace curs_work {
                 if ((ds.Tables["AcceptAct"] != null)) {
                     base.Tables.Add(new AcceptActDataTable(ds.Tables["AcceptAct"]));
                 }
+                if ((ds.Tables["Orders"] != null)) {
+                    base.Tables.Add(new OrdersDataTable(ds.Tables["Orders"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -434,18 +452,24 @@ namespace curs_work {
                     this.tableAcceptAct.InitVars();
                 }
             }
+            this.tableOrders = ((OrdersDataTable)(base.Tables["Orders"]));
+            if ((initTable == true)) {
+                if ((this.tableOrders != null)) {
+                    this.tableOrders.InitVars();
+                }
+            }
             this.relationFK__Engines__fuel_ty__3A81B327 = this.Relations["FK__Engines__fuel_ty__3A81B327"];
-            this.relationFK__AcceptAct__accep__656C112C = this.Relations["FK__AcceptAct__accep__656C112C"];
-            this.relationFK__AcceptAct__booke__6754599E = this.Relations["FK__AcceptAct__booke__6754599E"];
-            this.relationFK__AcceptAct__comm___628FA481 = this.Relations["FK__AcceptAct__comm___628FA481"];
-            this.relationFK__AcceptAct__firm___5CD6CB2B = this.Relations["FK__AcceptAct__firm___5CD6CB2B"];
-            this.relationFK__AcceptAct__first__6383C8BA = this.Relations["FK__AcceptAct__first__6383C8BA"];
-            this.relationFK__AcceptAct__hando__66603565 = this.Relations["FK__AcceptAct__hando__66603565"];
-            this.relationFK__AcceptAct__opera__5EBF139D = this.Relations["FK__AcceptAct__opera__5EBF139D"];
-            this.relationFK__AcceptAct__recei__60A75C0F = this.Relations["FK__AcceptAct__recei__60A75C0F"];
-            this.relationFK__AcceptAct__secon__6477ECF3 = this.Relations["FK__AcceptAct__secon__6477ECF3"];
-            this.relationFK__AcceptAct__sende__5FB337D6 = this.Relations["FK__AcceptAct__sende__5FB337D6"];
-            this.relationFK__AcceptAct__user___5DCAEF64 = this.Relations["FK__AcceptAct__user___5DCAEF64"];
+            this.relationFK__AcceptAct__accep__7C4F7684 = this.Relations["FK__AcceptAct__accep__7C4F7684"];
+            this.relationFK__AcceptAct__comm___797309D9 = this.Relations["FK__AcceptAct__comm___797309D9"];
+            this.relationFK__AcceptAct__firm___73BA3083 = this.Relations["FK__AcceptAct__firm___73BA3083"];
+            this.relationFK__AcceptAct__first__7A672E12 = this.Relations["FK__AcceptAct__first__7A672E12"];
+            this.relationFK__AcceptAct__hando__7D439ABD = this.Relations["FK__AcceptAct__hando__7D439ABD"];
+            this.relationFK__AcceptAct__opera__75A278F5 = this.Relations["FK__AcceptAct__opera__75A278F5"];
+            this.relationFK__AcceptAct__recei__778AC167 = this.Relations["FK__AcceptAct__recei__778AC167"];
+            this.relationFK__AcceptAct__secon__7B5B524B = this.Relations["FK__AcceptAct__secon__7B5B524B"];
+            this.relationFK__AcceptAct__sende__76969D2E = this.Relations["FK__AcceptAct__sende__76969D2E"];
+            this.relationFK__AcceptAct__user___74AE54BC = this.Relations["FK__AcceptAct__user___74AE54BC"];
+            this.relationFK__AcceptAct__order__7E37BEF6 = this.Relations["FK__AcceptAct__order__7E37BEF6"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -476,54 +500,56 @@ namespace curs_work {
             base.Tables.Add(this.tableUsers);
             this.tableAcceptAct = new AcceptActDataTable();
             base.Tables.Add(this.tableAcceptAct);
+            this.tableOrders = new OrdersDataTable();
+            base.Tables.Add(this.tableOrders);
             this.relationFK__Engines__fuel_ty__3A81B327 = new global::System.Data.DataRelation("FK__Engines__fuel_ty__3A81B327", new global::System.Data.DataColumn[] {
                         this.tableFuelTypes.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableEngines.fuel_type_idColumn}, false);
             this.Relations.Add(this.relationFK__Engines__fuel_ty__3A81B327);
-            this.relationFK__AcceptAct__accep__656C112C = new global::System.Data.DataRelation("FK__AcceptAct__accep__656C112C", new global::System.Data.DataColumn[] {
+            this.relationFK__AcceptAct__accep__7C4F7684 = new global::System.Data.DataRelation("FK__AcceptAct__accep__7C4F7684", new global::System.Data.DataColumn[] {
                         this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.accepted_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__accep__656C112C);
-            this.relationFK__AcceptAct__booke__6754599E = new global::System.Data.DataRelation("FK__AcceptAct__booke__6754599E", new global::System.Data.DataColumn[] {
-                        this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAcceptAct.booker_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__booke__6754599E);
-            this.relationFK__AcceptAct__comm___628FA481 = new global::System.Data.DataRelation("FK__AcceptAct__comm___628FA481", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__accep__7C4F7684);
+            this.relationFK__AcceptAct__comm___797309D9 = new global::System.Data.DataRelation("FK__AcceptAct__comm___797309D9", new global::System.Data.DataColumn[] {
                         this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.comm_head_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__comm___628FA481);
-            this.relationFK__AcceptAct__firm___5CD6CB2B = new global::System.Data.DataRelation("FK__AcceptAct__firm___5CD6CB2B", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__comm___797309D9);
+            this.relationFK__AcceptAct__firm___73BA3083 = new global::System.Data.DataRelation("FK__AcceptAct__firm___73BA3083", new global::System.Data.DataColumn[] {
                         this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.firm_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__firm___5CD6CB2B);
-            this.relationFK__AcceptAct__first__6383C8BA = new global::System.Data.DataRelation("FK__AcceptAct__first__6383C8BA", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__firm___73BA3083);
+            this.relationFK__AcceptAct__first__7A672E12 = new global::System.Data.DataRelation("FK__AcceptAct__first__7A672E12", new global::System.Data.DataColumn[] {
                         this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.first_member_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__first__6383C8BA);
-            this.relationFK__AcceptAct__hando__66603565 = new global::System.Data.DataRelation("FK__AcceptAct__hando__66603565", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__first__7A672E12);
+            this.relationFK__AcceptAct__hando__7D439ABD = new global::System.Data.DataRelation("FK__AcceptAct__hando__7D439ABD", new global::System.Data.DataColumn[] {
                         this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.handover_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__hando__66603565);
-            this.relationFK__AcceptAct__opera__5EBF139D = new global::System.Data.DataRelation("FK__AcceptAct__opera__5EBF139D", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__hando__7D439ABD);
+            this.relationFK__AcceptAct__opera__75A278F5 = new global::System.Data.DataRelation("FK__AcceptAct__opera__75A278F5", new global::System.Data.DataColumn[] {
                         this.tableOperations.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.operation_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__opera__5EBF139D);
-            this.relationFK__AcceptAct__recei__60A75C0F = new global::System.Data.DataRelation("FK__AcceptAct__recei__60A75C0F", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__opera__75A278F5);
+            this.relationFK__AcceptAct__recei__778AC167 = new global::System.Data.DataRelation("FK__AcceptAct__recei__778AC167", new global::System.Data.DataColumn[] {
                         this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.receiver_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__recei__60A75C0F);
-            this.relationFK__AcceptAct__secon__6477ECF3 = new global::System.Data.DataRelation("FK__AcceptAct__secon__6477ECF3", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__recei__778AC167);
+            this.relationFK__AcceptAct__secon__7B5B524B = new global::System.Data.DataRelation("FK__AcceptAct__secon__7B5B524B", new global::System.Data.DataColumn[] {
                         this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.second_member_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__secon__6477ECF3);
-            this.relationFK__AcceptAct__sende__5FB337D6 = new global::System.Data.DataRelation("FK__AcceptAct__sende__5FB337D6", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__secon__7B5B524B);
+            this.relationFK__AcceptAct__sende__76969D2E = new global::System.Data.DataRelation("FK__AcceptAct__sende__76969D2E", new global::System.Data.DataColumn[] {
                         this.tableFirms.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.sender_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__sende__5FB337D6);
-            this.relationFK__AcceptAct__user___5DCAEF64 = new global::System.Data.DataRelation("FK__AcceptAct__user___5DCAEF64", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__AcceptAct__sende__76969D2E);
+            this.relationFK__AcceptAct__user___74AE54BC = new global::System.Data.DataRelation("FK__AcceptAct__user___74AE54BC", new global::System.Data.DataColumn[] {
                         this.tableUsers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAcceptAct.user_idColumn}, false);
-            this.Relations.Add(this.relationFK__AcceptAct__user___5DCAEF64);
+            this.Relations.Add(this.relationFK__AcceptAct__user___74AE54BC);
+            this.relationFK__AcceptAct__order__7E37BEF6 = new global::System.Data.DataRelation("FK__AcceptAct__order__7E37BEF6", new global::System.Data.DataColumn[] {
+                        this.tableOrders.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAcceptAct.order_idColumn}, false);
+            this.Relations.Add(this.relationFK__AcceptAct__order__7E37BEF6);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -583,6 +609,12 @@ namespace curs_work {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeAcceptAct() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeOrders() {
             return false;
         }
         
@@ -670,6 +702,9 @@ namespace curs_work {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void AcceptActRowChangeEventHandler(object sender, AcceptActRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void OrdersRowChangeEventHandler(object sender, OrdersRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3493,10 +3528,6 @@ namespace curs_work {
             
             private global::System.Data.DataColumn columnexpoit_date;
             
-            private global::System.Data.DataColumn columnorder_date;
-            
-            private global::System.Data.DataColumn columnorder_number;
-            
             private global::System.Data.DataColumn columnobject_place;
             
             private global::System.Data.DataColumn columndescription;
@@ -3521,7 +3552,7 @@ namespace curs_work {
             
             private global::System.Data.DataColumn columnhandover_id;
             
-            private global::System.Data.DataColumn columnbooker_id;
+            private global::System.Data.DataColumn columnorder_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3734,22 +3765,6 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn order_dateColumn {
-                get {
-                    return this.columnorder_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn order_numberColumn {
-                get {
-                    return this.columnorder_number;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn object_placeColumn {
                 get {
                     return this.columnobject_place;
@@ -3846,9 +3861,9 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn booker_idColumn {
+            public global::System.Data.DataColumn order_idColumn {
                 get {
-                    return this.columnbooker_id;
+                    return this.columnorder_id;
                 }
             }
             
@@ -3890,12 +3905,12 @@ namespace curs_work {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AcceptActRow AddAcceptActRow(
-                        FirmsRow parentFirmsRowByFK__AcceptAct__firm___5CD6CB2B, 
+                        FirmsRow parentFirmsRowByFK__AcceptAct__firm___73BA3083, 
                         System.DateTime issue_date, 
-                        UsersRow parentUsersRowByFK__AcceptAct__user___5DCAEF64, 
-                        OperationsRow parentOperationsRowByFK__AcceptAct__opera__5EBF139D, 
-                        FirmsRow parentFirmsRowByFK__AcceptAct__sende__5FB337D6, 
-                        FirmsRow parentFirmsRowByFK__AcceptAct__recei__60A75C0F, 
+                        UsersRow parentUsersRowByFK__AcceptAct__user___74AE54BC, 
+                        OperationsRow parentOperationsRowByFK__AcceptAct__opera__75A278F5, 
+                        FirmsRow parentFirmsRowByFK__AcceptAct__sende__76969D2E, 
+                        FirmsRow parentFirmsRowByFK__AcceptAct__recei__778AC167, 
                         int debit_bill, 
                         int debit_code, 
                         int credit_bill, 
@@ -3911,8 +3926,6 @@ namespace curs_work {
                         int equip_code, 
                         decimal wearout_sum, 
                         System.DateTime expoit_date, 
-                        System.DateTime order_date, 
-                        int order_number, 
                         string object_place, 
                         string description, 
                         string spec_meet, 
@@ -3920,12 +3933,12 @@ namespace curs_work {
                         string results, 
                         string conclusion, 
                         string spec_list, 
-                        UsersRow parentUsersRowByFK__AcceptAct__comm___628FA481, 
-                        UsersRow parentUsersRowByFK__AcceptAct__first__6383C8BA, 
-                        UsersRow parentUsersRowByFK__AcceptAct__secon__6477ECF3, 
-                        UsersRow parentUsersRowByFK__AcceptAct__accep__656C112C, 
-                        UsersRow parentUsersRowByFK__AcceptAct__hando__66603565, 
-                        UsersRow parentUsersRowByFK__AcceptAct__booke__6754599E) {
+                        UsersRow parentUsersRowByFK__AcceptAct__comm___797309D9, 
+                        UsersRow parentUsersRowByFK__AcceptAct__first__7A672E12, 
+                        UsersRow parentUsersRowByFK__AcceptAct__secon__7B5B524B, 
+                        UsersRow parentUsersRowByFK__AcceptAct__accep__7C4F7684, 
+                        UsersRow parentUsersRowByFK__AcceptAct__hando__7D439ABD, 
+                        OrdersRow parentOrdersRowByFK__AcceptAct__order__7E37BEF6) {
                 AcceptActRow rowAcceptActRow = ((AcceptActRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3950,8 +3963,6 @@ namespace curs_work {
                         equip_code,
                         wearout_sum,
                         expoit_date,
-                        order_date,
-                        order_number,
                         object_place,
                         description,
                         spec_meet,
@@ -3965,38 +3976,38 @@ namespace curs_work {
                         null,
                         null,
                         null};
-                if ((parentFirmsRowByFK__AcceptAct__firm___5CD6CB2B != null)) {
-                    columnValuesArray[1] = parentFirmsRowByFK__AcceptAct__firm___5CD6CB2B[0];
+                if ((parentFirmsRowByFK__AcceptAct__firm___73BA3083 != null)) {
+                    columnValuesArray[1] = parentFirmsRowByFK__AcceptAct__firm___73BA3083[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__user___5DCAEF64 != null)) {
-                    columnValuesArray[3] = parentUsersRowByFK__AcceptAct__user___5DCAEF64[0];
+                if ((parentUsersRowByFK__AcceptAct__user___74AE54BC != null)) {
+                    columnValuesArray[3] = parentUsersRowByFK__AcceptAct__user___74AE54BC[0];
                 }
-                if ((parentOperationsRowByFK__AcceptAct__opera__5EBF139D != null)) {
-                    columnValuesArray[4] = parentOperationsRowByFK__AcceptAct__opera__5EBF139D[0];
+                if ((parentOperationsRowByFK__AcceptAct__opera__75A278F5 != null)) {
+                    columnValuesArray[4] = parentOperationsRowByFK__AcceptAct__opera__75A278F5[0];
                 }
-                if ((parentFirmsRowByFK__AcceptAct__sende__5FB337D6 != null)) {
-                    columnValuesArray[5] = parentFirmsRowByFK__AcceptAct__sende__5FB337D6[0];
+                if ((parentFirmsRowByFK__AcceptAct__sende__76969D2E != null)) {
+                    columnValuesArray[5] = parentFirmsRowByFK__AcceptAct__sende__76969D2E[0];
                 }
-                if ((parentFirmsRowByFK__AcceptAct__recei__60A75C0F != null)) {
-                    columnValuesArray[6] = parentFirmsRowByFK__AcceptAct__recei__60A75C0F[0];
+                if ((parentFirmsRowByFK__AcceptAct__recei__778AC167 != null)) {
+                    columnValuesArray[6] = parentFirmsRowByFK__AcceptAct__recei__778AC167[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__comm___628FA481 != null)) {
-                    columnValuesArray[31] = parentUsersRowByFK__AcceptAct__comm___628FA481[0];
+                if ((parentUsersRowByFK__AcceptAct__comm___797309D9 != null)) {
+                    columnValuesArray[29] = parentUsersRowByFK__AcceptAct__comm___797309D9[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__first__6383C8BA != null)) {
-                    columnValuesArray[32] = parentUsersRowByFK__AcceptAct__first__6383C8BA[0];
+                if ((parentUsersRowByFK__AcceptAct__first__7A672E12 != null)) {
+                    columnValuesArray[30] = parentUsersRowByFK__AcceptAct__first__7A672E12[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__secon__6477ECF3 != null)) {
-                    columnValuesArray[33] = parentUsersRowByFK__AcceptAct__secon__6477ECF3[0];
+                if ((parentUsersRowByFK__AcceptAct__secon__7B5B524B != null)) {
+                    columnValuesArray[31] = parentUsersRowByFK__AcceptAct__secon__7B5B524B[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__accep__656C112C != null)) {
-                    columnValuesArray[34] = parentUsersRowByFK__AcceptAct__accep__656C112C[0];
+                if ((parentUsersRowByFK__AcceptAct__accep__7C4F7684 != null)) {
+                    columnValuesArray[32] = parentUsersRowByFK__AcceptAct__accep__7C4F7684[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__hando__66603565 != null)) {
-                    columnValuesArray[35] = parentUsersRowByFK__AcceptAct__hando__66603565[0];
+                if ((parentUsersRowByFK__AcceptAct__hando__7D439ABD != null)) {
+                    columnValuesArray[33] = parentUsersRowByFK__AcceptAct__hando__7D439ABD[0];
                 }
-                if ((parentUsersRowByFK__AcceptAct__booke__6754599E != null)) {
-                    columnValuesArray[36] = parentUsersRowByFK__AcceptAct__booke__6754599E[0];
+                if ((parentOrdersRowByFK__AcceptAct__order__7E37BEF6 != null)) {
+                    columnValuesArray[34] = parentOrdersRowByFK__AcceptAct__order__7E37BEF6[0];
                 }
                 rowAcceptActRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAcceptActRow);
@@ -4049,8 +4060,6 @@ namespace curs_work {
                 this.columnequip_code = base.Columns["equip_code"];
                 this.columnwearout_sum = base.Columns["wearout_sum"];
                 this.columnexpoit_date = base.Columns["expoit_date"];
-                this.columnorder_date = base.Columns["order_date"];
-                this.columnorder_number = base.Columns["order_number"];
                 this.columnobject_place = base.Columns["object_place"];
                 this.columndescription = base.Columns["description"];
                 this.columnspec_meet = base.Columns["spec_meet"];
@@ -4063,7 +4072,7 @@ namespace curs_work {
                 this.columnsecond_member_id = base.Columns["second_member_id"];
                 this.columnaccepted_id = base.Columns["accepted_id"];
                 this.columnhandover_id = base.Columns["handover_id"];
-                this.columnbooker_id = base.Columns["booker_id"];
+                this.columnorder_id = base.Columns["order_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4113,10 +4122,6 @@ namespace curs_work {
                 base.Columns.Add(this.columnwearout_sum);
                 this.columnexpoit_date = new global::System.Data.DataColumn("expoit_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnexpoit_date);
-                this.columnorder_date = new global::System.Data.DataColumn("order_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorder_date);
-                this.columnorder_number = new global::System.Data.DataColumn("order_number", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorder_number);
                 this.columnobject_place = new global::System.Data.DataColumn("object_place", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnobject_place);
                 this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4141,8 +4146,8 @@ namespace curs_work {
                 base.Columns.Add(this.columnaccepted_id);
                 this.columnhandover_id = new global::System.Data.DataColumn("handover_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhandover_id);
-                this.columnbooker_id = new global::System.Data.DataColumn("booker_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbooker_id);
+                this.columnorder_id = new global::System.Data.DataColumn("order_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnorder_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnnumber}, true));
                 this.columnnumber.AutoIncrement = true;
@@ -4171,7 +4176,7 @@ namespace curs_work {
                 this.columnsecond_member_id.AllowDBNull = false;
                 this.columnaccepted_id.AllowDBNull = false;
                 this.columnhandover_id.AllowDBNull = false;
-                this.columnbooker_id.AllowDBNull = false;
+                this.columnorder_id.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4258,6 +4263,297 @@ namespace curs_work {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "AcceptActDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class OrdersDataTable : global::System.Data.TypedTableBase<OrdersRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columndate;
+            
+            private global::System.Data.DataColumn columnmessage;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersDataTable() {
+                this.TableName = "Orders";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal OrdersDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected OrdersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dateColumn {
+                get {
+                    return this.columndate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn messageColumn {
+                get {
+                    return this.columnmessage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRow this[int index] {
+                get {
+                    return ((OrdersRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrdersRowChangeEventHandler OrdersRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrdersRowChangeEventHandler OrdersRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrdersRowChangeEventHandler OrdersRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event OrdersRowChangeEventHandler OrdersRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddOrdersRow(OrdersRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRow AddOrdersRow(System.DateTime date, string message) {
+                OrdersRow rowOrdersRow = ((OrdersRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        date,
+                        message};
+                rowOrdersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrdersRow);
+                return rowOrdersRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRow FindByid(int id) {
+                return ((OrdersRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                OrdersDataTable cln = ((OrdersDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new OrdersDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columndate = base.Columns["date"];
+                this.columnmessage = base.Columns["message"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate);
+                this.columnmessage = new global::System.Data.DataColumn("message", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmessage);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+                this.columnmessage.MaxLength = 1000;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRow NewOrdersRow() {
+                return ((OrdersRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new OrdersRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(OrdersRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.OrdersRowChanged != null)) {
+                    this.OrdersRowChanged(this, new OrdersRowChangeEvent(((OrdersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.OrdersRowChanging != null)) {
+                    this.OrdersRowChanging(this, new OrdersRowChangeEvent(((OrdersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.OrdersRowDeleted != null)) {
+                    this.OrdersRowDeleted(this, new OrdersRowChangeEvent(((OrdersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.OrdersRowDeleting != null)) {
+                    this.OrdersRowDeleting(this, new OrdersRowChangeEvent(((OrdersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveOrdersRow(OrdersRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CarAccountDataSet ds = new CarAccountDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "OrdersDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4731,34 +5027,34 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__firm___5CD6CB2B() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__firm___5CD6CB2B"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__firm___73BA3083() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__firm___73BA3083"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__firm___5CD6CB2B"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__firm___73BA3083"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__recei__60A75C0F() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__recei__60A75C0F"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__recei__778AC167() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__recei__778AC167"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__recei__60A75C0F"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__recei__778AC167"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__sende__5FB337D6() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__sende__5FB337D6"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__sende__76969D2E() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__sende__76969D2E"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__sende__5FB337D6"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__sende__76969D2E"])));
                 }
             }
         }
@@ -4884,11 +5180,11 @@ namespace curs_work {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AcceptActRow[] GetAcceptActRows() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__opera__5EBF139D"] == null)) {
+                if ((this.Table.ChildRelations["FK__AcceptAct__opera__75A278F5"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__opera__5EBF139D"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__opera__75A278F5"])));
                 }
             }
         }
@@ -5298,78 +5594,67 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__accep__656C112C() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__accep__656C112C"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__accep__7C4F7684() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__accep__7C4F7684"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__accep__656C112C"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__accep__7C4F7684"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__booke__6754599E() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__booke__6754599E"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__comm___797309D9() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__comm___797309D9"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__booke__6754599E"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__comm___797309D9"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__comm___628FA481() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__comm___628FA481"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__first__7A672E12() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__first__7A672E12"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__comm___628FA481"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__first__7A672E12"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__first__6383C8BA() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__first__6383C8BA"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__hando__7D439ABD() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__hando__7D439ABD"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__first__6383C8BA"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__hando__7D439ABD"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__hando__66603565() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__hando__66603565"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__secon__7B5B524B() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__secon__7B5B524B"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__hando__66603565"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__secon__7B5B524B"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__secon__6477ECF3() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__secon__6477ECF3"] == null)) {
+            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__user___74AE54BC() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__user___74AE54BC"] == null)) {
                     return new AcceptActRow[0];
                 }
                 else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__secon__6477ECF3"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AcceptActRow[] GetAcceptActRowsByFK__AcceptAct__user___5DCAEF64() {
-                if ((this.Table.ChildRelations["FK__AcceptAct__user___5DCAEF64"] == null)) {
-                    return new AcceptActRow[0];
-                }
-                else {
-                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__user___5DCAEF64"])));
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__user___74AE54BC"])));
                 }
             }
         }
@@ -5707,38 +5992,6 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime order_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAcceptAct.order_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'order_date\' в таблице \'AcceptAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptAct.order_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int order_number {
-                get {
-                    try {
-                        return ((int)(this[this.tableAcceptAct.order_numberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'order_number\' в таблице \'AcceptAct\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAcceptAct.order_numberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string object_place {
                 get {
                     try {
@@ -5906,78 +6159,67 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int booker_id {
+            public int order_id {
                 get {
-                    return ((int)(this[this.tableAcceptAct.booker_idColumn]));
+                    return ((int)(this[this.tableAcceptAct.order_idColumn]));
                 }
                 set {
-                    this[this.tableAcceptAct.booker_idColumn] = value;
+                    this[this.tableAcceptAct.order_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__accep__656C112C {
+            public UsersRow UsersRowByFK__AcceptAct__accep__7C4F7684 {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__accep__656C112C"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__accep__7C4F7684"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__accep__656C112C"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__accep__7C4F7684"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__booke__6754599E {
+            public UsersRow UsersRowByFK__AcceptAct__comm___797309D9 {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__booke__6754599E"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__comm___797309D9"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__booke__6754599E"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__comm___797309D9"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__comm___628FA481 {
+            public FirmsRow FirmsRowByFK__AcceptAct__firm___73BA3083 {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__comm___628FA481"])));
+                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__firm___73BA3083"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__comm___628FA481"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__firm___73BA3083"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FirmsRow FirmsRowByFK__AcceptAct__firm___5CD6CB2B {
+            public UsersRow UsersRowByFK__AcceptAct__first__7A672E12 {
                 get {
-                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__firm___5CD6CB2B"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__first__7A672E12"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__firm___5CD6CB2B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__first__7A672E12"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__first__6383C8BA {
+            public UsersRow UsersRowByFK__AcceptAct__hando__7D439ABD {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__first__6383C8BA"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__hando__7D439ABD"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__first__6383C8BA"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__hando__66603565 {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__hando__66603565"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__hando__66603565"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__hando__7D439ABD"]);
                 }
             }
             
@@ -5985,54 +6227,65 @@ namespace curs_work {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public OperationsRow OperationsRow {
                 get {
-                    return ((OperationsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__opera__5EBF139D"])));
+                    return ((OperationsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__opera__75A278F5"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__opera__5EBF139D"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__opera__75A278F5"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FirmsRow FirmsRowByFK__AcceptAct__recei__60A75C0F {
+            public FirmsRow FirmsRowByFK__AcceptAct__recei__778AC167 {
                 get {
-                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__recei__60A75C0F"])));
+                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__recei__778AC167"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__recei__60A75C0F"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__recei__778AC167"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__secon__6477ECF3 {
+            public UsersRow UsersRowByFK__AcceptAct__secon__7B5B524B {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__secon__6477ECF3"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__secon__7B5B524B"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__secon__6477ECF3"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__secon__7B5B524B"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FirmsRow FirmsRowByFK__AcceptAct__sende__5FB337D6 {
+            public FirmsRow FirmsRowByFK__AcceptAct__sende__76969D2E {
                 get {
-                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__sende__5FB337D6"])));
+                    return ((FirmsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__sende__76969D2E"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__sende__5FB337D6"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__sende__76969D2E"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsersRow UsersRowByFK__AcceptAct__user___5DCAEF64 {
+            public UsersRow UsersRowByFK__AcceptAct__user___74AE54BC {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__user___5DCAEF64"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__user___74AE54BC"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__user___5DCAEF64"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__user___74AE54BC"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRow OrdersRow {
+                get {
+                    return ((OrdersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AcceptAct__order__7E37BEF6"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__AcceptAct__order__7E37BEF6"]);
                 }
             }
             
@@ -6218,30 +6471,6 @@ namespace curs_work {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isorder_dateNull() {
-                return this.IsNull(this.tableAcceptAct.order_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setorder_dateNull() {
-                this[this.tableAcceptAct.order_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isorder_numberNull() {
-                return this.IsNull(this.tableAcceptAct.order_numberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setorder_numberNull() {
-                this[this.tableAcceptAct.order_numberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isobject_placeNull() {
                 return this.IsNull(this.tableAcceptAct.object_placeColumn);
             }
@@ -6322,6 +6551,99 @@ namespace curs_work {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setspec_listNull() {
                 this[this.tableAcceptAct.spec_listColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class OrdersRow : global::System.Data.DataRow {
+            
+            private OrdersDataTable tableOrders;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal OrdersRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableOrders = ((OrdersDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableOrders.idColumn]));
+                }
+                set {
+                    this[this.tableOrders.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableOrders.dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'date\' в таблице \'Orders\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders.dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string message {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrders.messageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'message\' в таблице \'Orders\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders.messageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdateNull() {
+                return this.IsNull(this.tableOrders.dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdateNull() {
+                this[this.tableOrders.dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmessageNull() {
+                return this.IsNull(this.tableOrders.messageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmessageNull() {
+                this[this.tableOrders.messageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AcceptActRow[] GetAcceptActRows() {
+                if ((this.Table.ChildRelations["FK__AcceptAct__order__7E37BEF6"] == null)) {
+                    return new AcceptActRow[0];
+                }
+                else {
+                    return ((AcceptActRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AcceptAct__order__7E37BEF6"])));
+                }
             }
         }
         
@@ -6651,6 +6973,40 @@ namespace curs_work {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AcceptActRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class OrdersRowChangeEvent : global::System.EventArgs {
+            
+            private OrdersRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRowChangeEvent(OrdersRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public OrdersRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -10978,8 +11334,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             tableMapping.ColumnMappings.Add("equip_code", "equip_code");
             tableMapping.ColumnMappings.Add("wearout_sum", "wearout_sum");
             tableMapping.ColumnMappings.Add("expoit_date", "expoit_date");
-            tableMapping.ColumnMappings.Add("order_date", "order_date");
-            tableMapping.ColumnMappings.Add("order_number", "order_number");
             tableMapping.ColumnMappings.Add("object_place", "object_place");
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("spec_meet", "spec_meet");
@@ -10992,7 +11346,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             tableMapping.ColumnMappings.Add("second_member_id", "second_member_id");
             tableMapping.ColumnMappings.Add("accepted_id", "accepted_id");
             tableMapping.ColumnMappings.Add("handover_id", "handover_id");
-            tableMapping.ColumnMappings.Add("booker_id", "booker_id");
+            tableMapping.ColumnMappings.Add("order_id", "order_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -11018,20 +11372,18 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 "D ((@IsNull_equip_code = 1 AND [equip_code] IS NULL) OR ([equip_code] = @Origina" +
                 "l_equip_code)) AND ((@IsNull_wearout_sum = 1 AND [wearout_sum] IS NULL) OR ([wea" +
                 "rout_sum] = @Original_wearout_sum)) AND ((@IsNull_expoit_date = 1 AND [expoit_da" +
-                "te] IS NULL) OR ([expoit_date] = @Original_expoit_date)) AND ((@IsNull_order_dat" +
-                "e = 1 AND [order_date] IS NULL) OR ([order_date] = @Original_order_date)) AND ((" +
-                "@IsNull_order_number = 1 AND [order_number] IS NULL) OR ([order_number] = @Origi" +
-                "nal_order_number)) AND ((@IsNull_object_place = 1 AND [object_place] IS NULL) OR" +
-                " ([object_place] = @Original_object_place)) AND ((@IsNull_spec_meet = 1 AND [spe" +
-                "c_meet] IS NULL) OR ([spec_meet] = @Original_spec_meet)) AND ((@IsNull_need_refi" +
-                "ne = 1 AND [need_refine] IS NULL) OR ([need_refine] = @Original_need_refine)) AN" +
-                "D ((@IsNull_results = 1 AND [results] IS NULL) OR ([results] = @Original_results" +
-                ")) AND ((@IsNull_conclusion = 1 AND [conclusion] IS NULL) OR ([conclusion] = @Or" +
-                "iginal_conclusion)) AND ((@IsNull_spec_list = 1 AND [spec_list] IS NULL) OR ([sp" +
-                "ec_list] = @Original_spec_list)) AND ([comm_head_id] = @Original_comm_head_id) A" +
-                "ND ([first_member_id] = @Original_first_member_id) AND ([second_member_id] = @Or" +
-                "iginal_second_member_id) AND ([accepted_id] = @Original_accepted_id) AND ([hando" +
-                "ver_id] = @Original_handover_id) AND ([booker_id] = @Original_booker_id))";
+                "te] IS NULL) OR ([expoit_date] = @Original_expoit_date)) AND ((@IsNull_object_pl" +
+                "ace = 1 AND [object_place] IS NULL) OR ([object_place] = @Original_object_place)" +
+                ") AND ((@IsNull_spec_meet = 1 AND [spec_meet] IS NULL) OR ([spec_meet] = @Origin" +
+                "al_spec_meet)) AND ((@IsNull_need_refine = 1 AND [need_refine] IS NULL) OR ([nee" +
+                "d_refine] = @Original_need_refine)) AND ((@IsNull_results = 1 AND [results] IS N" +
+                "ULL) OR ([results] = @Original_results)) AND ((@IsNull_conclusion = 1 AND [concl" +
+                "usion] IS NULL) OR ([conclusion] = @Original_conclusion)) AND ((@IsNull_spec_lis" +
+                "t = 1 AND [spec_list] IS NULL) OR ([spec_list] = @Original_spec_list)) AND ([com" +
+                "m_head_id] = @Original_comm_head_id) AND ([first_member_id] = @Original_first_me" +
+                "mber_id) AND ([second_member_id] = @Original_second_member_id) AND ([accepted_id" +
+                "] = @Original_accepted_id) AND ([handover_id] = @Original_handover_id) AND ([ord" +
+                "er_id] = @Original_order_id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -11070,10 +11422,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_expoit_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_meet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -11091,29 +11439,28 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AcceptAct] ([firm_id], [issue_date], [user_id], [operation_id]" +
                 ", [sender_id], [receiver_id], [debit_bill], [debit_code], [credit_bill], [credit" +
                 "_code], [primary_cost], [tech_passport_id], [object_code], [norm_code], [full_re" +
                 "cover], [full_repair], [coefficient], [equip_type], [equip_code], [wearout_sum]," +
-                " [expoit_date], [order_date], [order_number], [object_place], [description], [sp" +
-                "ec_meet], [need_refine], [results], [conclusion], [spec_list], [comm_head_id], [" +
-                "first_member_id], [second_member_id], [accepted_id], [handover_id], [booker_id])" +
-                " VALUES (@firm_id, @issue_date, @user_id, @operation_id, @sender_id, @receiver_i" +
-                "d, @debit_bill, @debit_code, @credit_bill, @credit_code, @primary_cost, @tech_pa" +
-                "ssport_id, @object_code, @norm_code, @full_recover, @full_repair, @coefficient, " +
-                "@equip_type, @equip_code, @wearout_sum, @expoit_date, @order_date, @order_number" +
-                ", @object_place, @description, @spec_meet, @need_refine, @results, @conclusion, " +
-                "@spec_list, @comm_head_id, @first_member_id, @second_member_id, @accepted_id, @h" +
-                "andover_id, @booker_id);\r\nSELECT number, firm_id, issue_date, user_id, operation" +
-                "_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, p" +
-                "rimary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair" +
-                ", coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, ord" +
-                "er_number, object_place, description, spec_meet, need_refine, results, conclusio" +
-                "n, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, hand" +
-                "over_id, booker_id FROM AcceptAct WHERE (number = SCOPE_IDENTITY())";
+                " [expoit_date], [object_place], [description], [spec_meet], [need_refine], [resu" +
+                "lts], [conclusion], [spec_list], [comm_head_id], [first_member_id], [second_memb" +
+                "er_id], [accepted_id], [handover_id], [order_id]) VALUES (@firm_id, @issue_date," +
+                " @user_id, @operation_id, @sender_id, @receiver_id, @debit_bill, @debit_code, @c" +
+                "redit_bill, @credit_code, @primary_cost, @tech_passport_id, @object_code, @norm_" +
+                "code, @full_recover, @full_repair, @coefficient, @equip_type, @equip_code, @wear" +
+                "out_sum, @expoit_date, @object_place, @description, @spec_meet, @need_refine, @r" +
+                "esults, @conclusion, @spec_list, @comm_head_id, @first_member_id, @second_member" +
+                "_id, @accepted_id, @handover_id, @order_id);\r\nSELECT number, firm_id, issue_date" +
+                ", user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_" +
+                "bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_" +
+                "recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_d" +
+                "ate, object_place, description, spec_meet, need_refine, results, conclusion, spe" +
+                "c_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_i" +
+                "d, order_id FROM AcceptAct WHERE (number = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11136,8 +11483,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11150,7 +11495,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[AcceptAct] SET [firm_id] = @firm_id, [issue_date] = @issue_date, [u" +
@@ -11161,54 +11506,50 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 "code, [norm_code] = @norm_code, [full_recover] = @full_recover, [full_repair] = " +
                 "@full_repair, [coefficient] = @coefficient, [equip_type] = @equip_type, [equip_c" +
                 "ode] = @equip_code, [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, " +
-                "[order_date] = @order_date, [order_number] = @order_number, [object_place] = @ob" +
-                "ject_place, [description] = @description, [spec_meet] = @spec_meet, [need_refine" +
-                "] = @need_refine, [results] = @results, [conclusion] = @conclusion, [spec_list] " +
-                "= @spec_list, [comm_head_id] = @comm_head_id, [first_member_id] = @first_member_" +
-                "id, [second_member_id] = @second_member_id, [accepted_id] = @accepted_id, [hando" +
-                "ver_id] = @handover_id, [booker_id] = @booker_id WHERE (([number] = @Original_nu" +
-                "mber) AND ([firm_id] = @Original_firm_id) AND ((@IsNull_issue_date = 1 AND [issu" +
-                "e_date] IS NULL) OR ([issue_date] = @Original_issue_date)) AND ([user_id] = @Ori" +
-                "ginal_user_id) AND ([operation_id] = @Original_operation_id) AND ([sender_id] = " +
-                "@Original_sender_id) AND ([receiver_id] = @Original_receiver_id) AND ((@IsNull_d" +
-                "ebit_bill = 1 AND [debit_bill] IS NULL) OR ([debit_bill] = @Original_debit_bill)" +
-                ") AND ((@IsNull_debit_code = 1 AND [debit_code] IS NULL) OR ([debit_code] = @Ori" +
-                "ginal_debit_code)) AND ((@IsNull_credit_bill = 1 AND [credit_bill] IS NULL) OR (" +
-                "[credit_bill] = @Original_credit_bill)) AND ((@IsNull_credit_code = 1 AND [credi" +
-                "t_code] IS NULL) OR ([credit_code] = @Original_credit_code)) AND ((@IsNull_prima" +
-                "ry_cost = 1 AND [primary_cost] IS NULL) OR ([primary_cost] = @Original_primary_c" +
-                "ost)) AND ([tech_passport_id] = @Original_tech_passport_id) AND ((@IsNull_object" +
-                "_code = 1 AND [object_code] IS NULL) OR ([object_code] = @Original_object_code))" +
-                " AND ((@IsNull_norm_code = 1 AND [norm_code] IS NULL) OR ([norm_code] = @Origina" +
-                "l_norm_code)) AND ((@IsNull_full_recover = 1 AND [full_recover] IS NULL) OR ([fu" +
-                "ll_recover] = @Original_full_recover)) AND ((@IsNull_full_repair = 1 AND [full_r" +
-                "epair] IS NULL) OR ([full_repair] = @Original_full_repair)) AND ((@IsNull_coeffi" +
-                "cient = 1 AND [coefficient] IS NULL) OR ([coefficient] = @Original_coefficient))" +
-                " AND ((@IsNull_equip_type = 1 AND [equip_type] IS NULL) OR ([equip_type] = @Orig" +
-                "inal_equip_type)) AND ((@IsNull_equip_code = 1 AND [equip_code] IS NULL) OR ([eq" +
-                "uip_code] = @Original_equip_code)) AND ((@IsNull_wearout_sum = 1 AND [wearout_su" +
-                "m] IS NULL) OR ([wearout_sum] = @Original_wearout_sum)) AND ((@IsNull_expoit_dat" +
-                "e = 1 AND [expoit_date] IS NULL) OR ([expoit_date] = @Original_expoit_date)) AND" +
-                " ((@IsNull_order_date = 1 AND [order_date] IS NULL) OR ([order_date] = @Original" +
-                "_order_date)) AND ((@IsNull_order_number = 1 AND [order_number] IS NULL) OR ([or" +
-                "der_number] = @Original_order_number)) AND ((@IsNull_object_place = 1 AND [objec" +
-                "t_place] IS NULL) OR ([object_place] = @Original_object_place)) AND ((@IsNull_sp" +
-                "ec_meet = 1 AND [spec_meet] IS NULL) OR ([spec_meet] = @Original_spec_meet)) AND" +
-                " ((@IsNull_need_refine = 1 AND [need_refine] IS NULL) OR ([need_refine] = @Origi" +
-                "nal_need_refine)) AND ((@IsNull_results = 1 AND [results] IS NULL) OR ([results]" +
-                " = @Original_results)) AND ((@IsNull_conclusion = 1 AND [conclusion] IS NULL) OR" +
-                " ([conclusion] = @Original_conclusion)) AND ((@IsNull_spec_list = 1 AND [spec_li" +
-                "st] IS NULL) OR ([spec_list] = @Original_spec_list)) AND ([comm_head_id] = @Orig" +
-                "inal_comm_head_id) AND ([first_member_id] = @Original_first_member_id) AND ([sec" +
-                "ond_member_id] = @Original_second_member_id) AND ([accepted_id] = @Original_acce" +
-                "pted_id) AND ([handover_id] = @Original_handover_id) AND ([booker_id] = @Origina" +
-                "l_booker_id));\r\nSELECT number, firm_id, issue_date, user_id, operation_id, sende" +
-                "r_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cos" +
-                "t, tech_passport_id, object_code, norm_code, full_recover, full_repair, coeffici" +
-                "ent, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number," +
-                " object_place, description, spec_meet, need_refine, results, conclusion, spec_li" +
-                "st, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, b" +
-                "ooker_id FROM AcceptAct WHERE (number = @number)";
+                "[object_place] = @object_place, [description] = @description, [spec_meet] = @spe" +
+                "c_meet, [need_refine] = @need_refine, [results] = @results, [conclusion] = @conc" +
+                "lusion, [spec_list] = @spec_list, [comm_head_id] = @comm_head_id, [first_member_" +
+                "id] = @first_member_id, [second_member_id] = @second_member_id, [accepted_id] = " +
+                "@accepted_id, [handover_id] = @handover_id, [order_id] = @order_id WHERE (([numb" +
+                "er] = @Original_number) AND ([firm_id] = @Original_firm_id) AND ((@IsNull_issue_" +
+                "date = 1 AND [issue_date] IS NULL) OR ([issue_date] = @Original_issue_date)) AND" +
+                " ([user_id] = @Original_user_id) AND ([operation_id] = @Original_operation_id) A" +
+                "ND ([sender_id] = @Original_sender_id) AND ([receiver_id] = @Original_receiver_i" +
+                "d) AND ((@IsNull_debit_bill = 1 AND [debit_bill] IS NULL) OR ([debit_bill] = @Or" +
+                "iginal_debit_bill)) AND ((@IsNull_debit_code = 1 AND [debit_code] IS NULL) OR ([" +
+                "debit_code] = @Original_debit_code)) AND ((@IsNull_credit_bill = 1 AND [credit_b" +
+                "ill] IS NULL) OR ([credit_bill] = @Original_credit_bill)) AND ((@IsNull_credit_c" +
+                "ode = 1 AND [credit_code] IS NULL) OR ([credit_code] = @Original_credit_code)) A" +
+                "ND ((@IsNull_primary_cost = 1 AND [primary_cost] IS NULL) OR ([primary_cost] = @" +
+                "Original_primary_cost)) AND ([tech_passport_id] = @Original_tech_passport_id) AN" +
+                "D ((@IsNull_object_code = 1 AND [object_code] IS NULL) OR ([object_code] = @Orig" +
+                "inal_object_code)) AND ((@IsNull_norm_code = 1 AND [norm_code] IS NULL) OR ([nor" +
+                "m_code] = @Original_norm_code)) AND ((@IsNull_full_recover = 1 AND [full_recover" +
+                "] IS NULL) OR ([full_recover] = @Original_full_recover)) AND ((@IsNull_full_repa" +
+                "ir = 1 AND [full_repair] IS NULL) OR ([full_repair] = @Original_full_repair)) AN" +
+                "D ((@IsNull_coefficient = 1 AND [coefficient] IS NULL) OR ([coefficient] = @Orig" +
+                "inal_coefficient)) AND ((@IsNull_equip_type = 1 AND [equip_type] IS NULL) OR ([e" +
+                "quip_type] = @Original_equip_type)) AND ((@IsNull_equip_code = 1 AND [equip_code" +
+                "] IS NULL) OR ([equip_code] = @Original_equip_code)) AND ((@IsNull_wearout_sum =" +
+                " 1 AND [wearout_sum] IS NULL) OR ([wearout_sum] = @Original_wearout_sum)) AND ((" +
+                "@IsNull_expoit_date = 1 AND [expoit_date] IS NULL) OR ([expoit_date] = @Original" +
+                "_expoit_date)) AND ((@IsNull_object_place = 1 AND [object_place] IS NULL) OR ([o" +
+                "bject_place] = @Original_object_place)) AND ((@IsNull_spec_meet = 1 AND [spec_me" +
+                "et] IS NULL) OR ([spec_meet] = @Original_spec_meet)) AND ((@IsNull_need_refine =" +
+                " 1 AND [need_refine] IS NULL) OR ([need_refine] = @Original_need_refine)) AND ((" +
+                "@IsNull_results = 1 AND [results] IS NULL) OR ([results] = @Original_results)) A" +
+                "ND ((@IsNull_conclusion = 1 AND [conclusion] IS NULL) OR ([conclusion] = @Origin" +
+                "al_conclusion)) AND ((@IsNull_spec_list = 1 AND [spec_list] IS NULL) OR ([spec_l" +
+                "ist] = @Original_spec_list)) AND ([comm_head_id] = @Original_comm_head_id) AND (" +
+                "[first_member_id] = @Original_first_member_id) AND ([second_member_id] = @Origin" +
+                "al_second_member_id) AND ([accepted_id] = @Original_accepted_id) AND ([handover_" +
+                "id] = @Original_handover_id) AND ([order_id] = @Original_order_id));\r\nSELECT num" +
+                "ber, firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_b" +
+                "ill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, objec" +
+                "t_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_cod" +
+                "e, wearout_sum, expoit_date, object_place, description, spec_meet, need_refine, " +
+                "results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id," +
+                " accepted_id, handover_id, order_id FROM AcceptAct WHERE (number = @number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11231,8 +11572,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11245,7 +11584,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_firm_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issue_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -11283,10 +11622,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_wearout_sum", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_expoit_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_expoit_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_object_place", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_object_place", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_spec_meet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -11304,7 +11639,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_second_member_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_accepted_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_handover_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_booker_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "order_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -11321,7 +11656,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT number, firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, booker_id FROM dbo.AcceptAct";
+            this._commandCollection[0].CommandText = @"SELECT number, firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, order_id FROM dbo.AcceptAct";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -11330,7 +11665,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"UPDATE [dbo].[AcceptAct] SET [firm_id] = @firm_id, [issue_date] = @issue_date, [user_id] = @user_id, [operation_id] = @operation_id, [sender_id] = @sender_id, [receiver_id] = @receiver_id, [debit_bill] = @debit_bill, [debit_code] = @debit_code, [credit_bill] = @credit_bill, [credit_code] = @credit_code, [primary_cost] = @primary_cost, [tech_passport_id] = @tech_passport_id, [object_code] = @object_code, [norm_code] = @norm_code, [full_recover] = @full_recover, [full_repair] = @full_repair, [coefficient] = @coefficient, [equip_type] = @equip_type, [equip_code] = @equip_code, [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, [order_date] = @order_date, [order_number] = @order_number, [object_place] = @object_place, [description] = @description, [spec_meet] = @spec_meet, [need_refine] = @need_refine, [results] = @results, [conclusion] = @conclusion, [spec_list] = @spec_list, [comm_head_id] = @comm_head_id, [first_member_id] = @first_member_id, [second_member_id] = @second_member_id, [accepted_id] = @accepted_id, [handover_id] = @handover_id, [booker_id] = @booker_id WHERE [number] = @Original_number";
+            this._commandCollection[2].CommandText = @"UPDATE [dbo].[AcceptAct] SET [firm_id] = @firm_id, [issue_date] = @issue_date, [user_id] = @user_id, [operation_id] = @operation_id, [sender_id] = @sender_id, [receiver_id] = @receiver_id, [debit_bill] = @debit_bill, [debit_code] = @debit_code, [credit_bill] = @credit_bill, [credit_code] = @credit_code, [primary_cost] = @primary_cost, [tech_passport_id] = @tech_passport_id, [object_code] = @object_code, [norm_code] = @norm_code, [full_recover] = @full_recover, [full_repair] = @full_repair, [coefficient] = @coefficient, [equip_type] = @equip_type, [equip_code] = @equip_code, [wearout_sum] = @wearout_sum, [expoit_date] = @expoit_date, [object_place] = @object_place, [description] = @description, [spec_meet] = @spec_meet, [need_refine] = @need_refine, [results] = @results, [conclusion] = @conclusion, [spec_list] = @spec_list, [comm_head_id] = @comm_head_id, [first_member_id] = @first_member_id, [second_member_id] = @second_member_id, [accepted_id] = @accepted_id, [handover_id] = @handover_id, [order_id] = @order_id WHERE [number] = @Original_number";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firm_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "firm_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issue_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "issue_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11353,8 +11688,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equip_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "equip_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wearout_sum", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 15, 2, "wearout_sum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@expoit_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "expoit_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "order_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "order_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@object_place", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "object_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@spec_meet", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "spec_meet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11367,7 +11700,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@second_member_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "second_member_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accepted_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "accepted_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@handover_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "handover_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@booker_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "booker_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "order_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -11451,8 +11784,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> Original_equip_code, 
                     global::System.Nullable<decimal> Original_wearout_sum, 
                     global::System.Nullable<global::System.DateTime> Original_expoit_date, 
-                    global::System.Nullable<global::System.DateTime> Original_order_date, 
-                    global::System.Nullable<int> Original_order_number, 
                     string Original_object_place, 
                     string Original_spec_meet, 
                     string Original_need_refine, 
@@ -11464,7 +11795,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int Original_second_member_id, 
                     int Original_accepted_id, 
                     int Original_handover_id, 
-                    int Original_booker_id) {
+                    int Original_order_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_number));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_firm_id));
             if ((Original_issue_date.HasValue == true)) {
@@ -11597,76 +11928,60 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((Original_order_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((System.DateTime)(Original_order_date.Value));
-            }
-            else {
+            if ((Original_object_place == null)) {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_order_number.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((int)(Original_order_number.Value));
-            }
             else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_object_place));
+            }
+            if ((Original_spec_meet == null)) {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((Original_object_place == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_spec_meet));
+            }
+            if ((Original_need_refine == null)) {
                 this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_object_place));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_need_refine));
             }
-            if ((Original_spec_meet == null)) {
+            if ((Original_results == null)) {
                 this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_spec_meet));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_results));
             }
-            if ((Original_need_refine == null)) {
+            if ((Original_conclusion == null)) {
                 this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_need_refine));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_conclusion));
             }
-            if ((Original_results == null)) {
+            if ((Original_spec_list == null)) {
                 this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_results));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_spec_list));
             }
-            if ((Original_conclusion == null)) {
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_conclusion));
-            }
-            if ((Original_spec_list == null)) {
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_spec_list));
-            }
-            this.Adapter.DeleteCommand.Parameters[53].Value = ((int)(Original_comm_head_id));
-            this.Adapter.DeleteCommand.Parameters[54].Value = ((int)(Original_first_member_id));
-            this.Adapter.DeleteCommand.Parameters[55].Value = ((int)(Original_second_member_id));
-            this.Adapter.DeleteCommand.Parameters[56].Value = ((int)(Original_accepted_id));
-            this.Adapter.DeleteCommand.Parameters[57].Value = ((int)(Original_handover_id));
-            this.Adapter.DeleteCommand.Parameters[58].Value = ((int)(Original_booker_id));
+            this.Adapter.DeleteCommand.Parameters[49].Value = ((int)(Original_comm_head_id));
+            this.Adapter.DeleteCommand.Parameters[50].Value = ((int)(Original_first_member_id));
+            this.Adapter.DeleteCommand.Parameters[51].Value = ((int)(Original_second_member_id));
+            this.Adapter.DeleteCommand.Parameters[52].Value = ((int)(Original_accepted_id));
+            this.Adapter.DeleteCommand.Parameters[53].Value = ((int)(Original_handover_id));
+            this.Adapter.DeleteCommand.Parameters[54].Value = ((int)(Original_order_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11709,8 +12024,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> equip_code, 
                     global::System.Nullable<decimal> wearout_sum, 
                     global::System.Nullable<global::System.DateTime> expoit_date, 
-                    global::System.Nullable<global::System.DateTime> order_date, 
-                    global::System.Nullable<int> order_number, 
                     string object_place, 
                     string description, 
                     string spec_meet, 
@@ -11723,7 +12036,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int second_member_id, 
                     int accepted_id, 
                     int handover_id, 
-                    int booker_id) {
+                    int order_id) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(firm_id));
             if ((issue_date.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(issue_date.Value));
@@ -11825,66 +12138,54 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             else {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((order_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((System.DateTime)(order_date.Value));
-            }
-            else {
+            if ((object_place == null)) {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((order_number.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(order_number.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(object_place));
+            }
+            if ((description == null)) {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((object_place == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(description));
+            }
+            if ((spec_meet == null)) {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(object_place));
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(spec_meet));
             }
-            if ((description == null)) {
+            if ((need_refine == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(description));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(need_refine));
             }
-            if ((spec_meet == null)) {
+            if ((results == null)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(spec_meet));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(results));
             }
-            if ((need_refine == null)) {
+            if ((conclusion == null)) {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(need_refine));
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(conclusion));
             }
-            if ((results == null)) {
+            if ((spec_list == null)) {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(results));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(spec_list));
             }
-            if ((conclusion == null)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(conclusion));
-            }
-            if ((spec_list == null)) {
-                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(spec_list));
-            }
-            this.Adapter.InsertCommand.Parameters[30].Value = ((int)(comm_head_id));
-            this.Adapter.InsertCommand.Parameters[31].Value = ((int)(first_member_id));
-            this.Adapter.InsertCommand.Parameters[32].Value = ((int)(second_member_id));
-            this.Adapter.InsertCommand.Parameters[33].Value = ((int)(accepted_id));
-            this.Adapter.InsertCommand.Parameters[34].Value = ((int)(handover_id));
-            this.Adapter.InsertCommand.Parameters[35].Value = ((int)(booker_id));
+            this.Adapter.InsertCommand.Parameters[28].Value = ((int)(comm_head_id));
+            this.Adapter.InsertCommand.Parameters[29].Value = ((int)(first_member_id));
+            this.Adapter.InsertCommand.Parameters[30].Value = ((int)(second_member_id));
+            this.Adapter.InsertCommand.Parameters[31].Value = ((int)(accepted_id));
+            this.Adapter.InsertCommand.Parameters[32].Value = ((int)(handover_id));
+            this.Adapter.InsertCommand.Parameters[33].Value = ((int)(order_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11927,8 +12228,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> equip_code, 
                     global::System.Nullable<decimal> wearout_sum, 
                     global::System.Nullable<global::System.DateTime> expoit_date, 
-                    global::System.Nullable<global::System.DateTime> order_date, 
-                    global::System.Nullable<int> order_number, 
                     string object_place, 
                     string description, 
                     string spec_meet, 
@@ -11941,7 +12240,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int second_member_id, 
                     int accepted_id, 
                     int handover_id, 
-                    int booker_id, 
+                    int order_id, 
                     int Original_number, 
                     int Original_firm_id, 
                     global::System.Nullable<global::System.DateTime> Original_issue_date, 
@@ -11964,8 +12263,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> Original_equip_code, 
                     global::System.Nullable<decimal> Original_wearout_sum, 
                     global::System.Nullable<global::System.DateTime> Original_expoit_date, 
-                    global::System.Nullable<global::System.DateTime> Original_order_date, 
-                    global::System.Nullable<int> Original_order_number, 
                     string Original_object_place, 
                     string Original_spec_meet, 
                     string Original_need_refine, 
@@ -11977,7 +12274,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int Original_second_member_id, 
                     int Original_accepted_id, 
                     int Original_handover_id, 
-                    int Original_booker_id, 
+                    int Original_order_id, 
                     int number) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(firm_id));
             if ((issue_date.HasValue == true)) {
@@ -12080,269 +12377,241 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((order_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(order_date.Value));
-            }
-            else {
+            if ((object_place == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((order_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(order_number.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(object_place));
+            }
+            if ((description == null)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((object_place == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(description));
+            }
+            if ((spec_meet == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(object_place));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(spec_meet));
             }
-            if ((description == null)) {
+            if ((need_refine == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(description));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(need_refine));
             }
-            if ((spec_meet == null)) {
+            if ((results == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(spec_meet));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(results));
             }
-            if ((need_refine == null)) {
+            if ((conclusion == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(need_refine));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(conclusion));
             }
-            if ((results == null)) {
+            if ((spec_list == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(results));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(spec_list));
             }
-            if ((conclusion == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(conclusion));
-            }
-            if ((spec_list == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(spec_list));
-            }
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(comm_head_id));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(first_member_id));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(second_member_id));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(accepted_id));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(handover_id));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(booker_id));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_number));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_firm_id));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(comm_head_id));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(first_member_id));
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(second_member_id));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(accepted_id));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(handover_id));
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(order_id));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_number));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_firm_id));
             if ((Original_issue_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_issue_date.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_issue_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_user_id));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_operation_id));
-            this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_sender_id));
-            this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_receiver_id));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_user_id));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_operation_id));
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_sender_id));
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_receiver_id));
             if ((Original_debit_bill.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_debit_bill.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            if ((Original_debit_code.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_debit_bill.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_debit_code.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
-            if ((Original_debit_code.HasValue == true)) {
+            if ((Original_credit_bill.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Original_debit_code.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Original_credit_bill.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
-            if ((Original_credit_bill.HasValue == true)) {
+            if ((Original_credit_code.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_credit_bill.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_credit_code.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
-            if ((Original_credit_code.HasValue == true)) {
+            if ((Original_primary_cost.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_credit_code.Value));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((decimal)(Original_primary_cost.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
-            if ((Original_primary_cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((decimal)(Original_primary_cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
-            }
             if ((Original_tech_passport_id == null)) {
                 throw new global::System.ArgumentNullException("Original_tech_passport_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_tech_passport_id));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_tech_passport_id));
             }
             if ((Original_object_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_object_code.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            if ((Original_norm_code.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_object_code.Value));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((int)(Original_norm_code.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
-            if ((Original_norm_code.HasValue == true)) {
+            if ((Original_full_recover.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((int)(Original_norm_code.Value));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((double)(Original_full_recover.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
-            if ((Original_full_recover.HasValue == true)) {
+            if ((Original_full_repair.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((double)(Original_full_recover.Value));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((double)(Original_full_repair.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
-            if ((Original_full_repair.HasValue == true)) {
+            if ((Original_coefficient.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((double)(Original_full_repair.Value));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((double)(Original_coefficient.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
-            if ((Original_coefficient.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((double)(Original_coefficient.Value));
-            }
-            else {
+            if ((Original_equip_type == null)) {
                 this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
-            if ((Original_equip_type == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_equip_type));
+            }
+            if ((Original_equip_code.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((int)(Original_equip_code.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_equip_type));
-            }
-            if ((Original_equip_code.HasValue == true)) {
+            if ((Original_wearout_sum.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((int)(Original_equip_code.Value));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((decimal)(Original_wearout_sum.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
-            if ((Original_wearout_sum.HasValue == true)) {
+            if ((Original_expoit_date.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((decimal)(Original_wearout_sum.Value));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((System.DateTime)(Original_expoit_date.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
-            if ((Original_expoit_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((System.DateTime)(Original_expoit_date.Value));
-            }
-            else {
+            if ((Original_object_place == null)) {
                 this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
-            if ((Original_order_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((System.DateTime)(Original_order_date.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_object_place));
+            }
+            if ((Original_spec_meet == null)) {
                 this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
-            if ((Original_order_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((int)(Original_order_number.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_spec_meet));
+            }
+            if ((Original_need_refine == null)) {
                 this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
-            if ((Original_object_place == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_need_refine));
+            }
+            if ((Original_results == null)) {
                 this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_object_place));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_results));
             }
-            if ((Original_spec_meet == null)) {
+            if ((Original_conclusion == null)) {
                 this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_spec_meet));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_conclusion));
             }
-            if ((Original_need_refine == null)) {
+            if ((Original_spec_list == null)) {
                 this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_need_refine));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_spec_list));
             }
-            if ((Original_results == null)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_results));
-            }
-            if ((Original_conclusion == null)) {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_conclusion));
-            }
-            if ((Original_spec_list == null)) {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_spec_list));
-            }
-            this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(Original_comm_head_id));
-            this.Adapter.UpdateCommand.Parameters[90].Value = ((int)(Original_first_member_id));
-            this.Adapter.UpdateCommand.Parameters[91].Value = ((int)(Original_second_member_id));
-            this.Adapter.UpdateCommand.Parameters[92].Value = ((int)(Original_accepted_id));
-            this.Adapter.UpdateCommand.Parameters[93].Value = ((int)(Original_handover_id));
-            this.Adapter.UpdateCommand.Parameters[94].Value = ((int)(Original_booker_id));
-            this.Adapter.UpdateCommand.Parameters[95].Value = ((int)(number));
+            this.Adapter.UpdateCommand.Parameters[83].Value = ((int)(Original_comm_head_id));
+            this.Adapter.UpdateCommand.Parameters[84].Value = ((int)(Original_first_member_id));
+            this.Adapter.UpdateCommand.Parameters[85].Value = ((int)(Original_second_member_id));
+            this.Adapter.UpdateCommand.Parameters[86].Value = ((int)(Original_accepted_id));
+            this.Adapter.UpdateCommand.Parameters[87].Value = ((int)(Original_handover_id));
+            this.Adapter.UpdateCommand.Parameters[88].Value = ((int)(Original_order_id));
+            this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(number));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12385,8 +12654,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> equip_code, 
                     global::System.Nullable<decimal> wearout_sum, 
                     global::System.Nullable<global::System.DateTime> expoit_date, 
-                    global::System.Nullable<global::System.DateTime> order_date, 
-                    global::System.Nullable<int> order_number, 
                     string object_place, 
                     string description, 
                     string spec_meet, 
@@ -12399,7 +12666,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int second_member_id, 
                     int accepted_id, 
                     int handover_id, 
-                    int booker_id, 
+                    int order_id, 
                     int Original_number, 
                     int Original_firm_id, 
                     global::System.Nullable<global::System.DateTime> Original_issue_date, 
@@ -12422,8 +12689,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> Original_equip_code, 
                     global::System.Nullable<decimal> Original_wearout_sum, 
                     global::System.Nullable<global::System.DateTime> Original_expoit_date, 
-                    global::System.Nullable<global::System.DateTime> Original_order_date, 
-                    global::System.Nullable<int> Original_order_number, 
                     string Original_object_place, 
                     string Original_spec_meet, 
                     string Original_need_refine, 
@@ -12435,8 +12700,8 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int Original_second_member_id, 
                     int Original_accepted_id, 
                     int Original_handover_id, 
-                    int Original_booker_id) {
-            return this.Update(firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, order_date, order_number, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, booker_id, Original_number, Original_firm_id, Original_issue_date, Original_user_id, Original_operation_id, Original_sender_id, Original_receiver_id, Original_debit_bill, Original_debit_code, Original_credit_bill, Original_credit_code, Original_primary_cost, Original_tech_passport_id, Original_object_code, Original_norm_code, Original_full_recover, Original_full_repair, Original_coefficient, Original_equip_type, Original_equip_code, Original_wearout_sum, Original_expoit_date, Original_order_date, Original_order_number, Original_object_place, Original_spec_meet, Original_need_refine, Original_results, Original_conclusion, Original_spec_list, Original_comm_head_id, Original_first_member_id, Original_second_member_id, Original_accepted_id, Original_handover_id, Original_booker_id, Original_number);
+                    int Original_order_id) {
+            return this.Update(firm_id, issue_date, user_id, operation_id, sender_id, receiver_id, debit_bill, debit_code, credit_bill, credit_code, primary_cost, tech_passport_id, object_code, norm_code, full_recover, full_repair, coefficient, equip_type, equip_code, wearout_sum, expoit_date, object_place, description, spec_meet, need_refine, results, conclusion, spec_list, comm_head_id, first_member_id, second_member_id, accepted_id, handover_id, order_id, Original_number, Original_firm_id, Original_issue_date, Original_user_id, Original_operation_id, Original_sender_id, Original_receiver_id, Original_debit_bill, Original_debit_code, Original_credit_bill, Original_credit_code, Original_primary_cost, Original_tech_passport_id, Original_object_code, Original_norm_code, Original_full_recover, Original_full_repair, Original_coefficient, Original_equip_type, Original_equip_code, Original_wearout_sum, Original_expoit_date, Original_object_place, Original_spec_meet, Original_need_refine, Original_results, Original_conclusion, Original_spec_list, Original_comm_head_id, Original_first_member_id, Original_second_member_id, Original_accepted_id, Original_handover_id, Original_order_id, Original_number);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12489,8 +12754,6 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     global::System.Nullable<int> equip_code, 
                     global::System.Nullable<decimal> wearout_sum, 
                     string expoit_date, 
-                    string order_date, 
-                    global::System.Nullable<int> order_number, 
                     string object_place, 
                     string description, 
                     string spec_meet, 
@@ -12503,7 +12766,7 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     int second_member_id, 
                     int accepted_id, 
                     int handover_id, 
-                    int booker_id, 
+                    int order_id, 
                     int Original_number) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(firm_id));
@@ -12607,67 +12870,55 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             else {
                 command.Parameters[20].Value = ((string)(expoit_date));
             }
-            if ((order_date == null)) {
+            if ((object_place == null)) {
                 command.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[21].Value = ((string)(order_date));
+                command.Parameters[21].Value = ((string)(object_place));
             }
-            if ((order_number.HasValue == true)) {
-                command.Parameters[22].Value = ((int)(order_number.Value));
-            }
-            else {
+            if ((description == null)) {
                 command.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((object_place == null)) {
+            else {
+                command.Parameters[22].Value = ((string)(description));
+            }
+            if ((spec_meet == null)) {
                 command.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[23].Value = ((string)(object_place));
+                command.Parameters[23].Value = ((string)(spec_meet));
             }
-            if ((description == null)) {
+            if ((need_refine == null)) {
                 command.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[24].Value = ((string)(description));
+                command.Parameters[24].Value = ((string)(need_refine));
             }
-            if ((spec_meet == null)) {
+            if ((results == null)) {
                 command.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[25].Value = ((string)(spec_meet));
+                command.Parameters[25].Value = ((string)(results));
             }
-            if ((need_refine == null)) {
+            if ((conclusion == null)) {
                 command.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[26].Value = ((string)(need_refine));
+                command.Parameters[26].Value = ((string)(conclusion));
             }
-            if ((results == null)) {
+            if ((spec_list == null)) {
                 command.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[27].Value = ((string)(results));
+                command.Parameters[27].Value = ((string)(spec_list));
             }
-            if ((conclusion == null)) {
-                command.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[28].Value = ((string)(conclusion));
-            }
-            if ((spec_list == null)) {
-                command.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[29].Value = ((string)(spec_list));
-            }
-            command.Parameters[30].Value = ((int)(comm_head_id));
-            command.Parameters[31].Value = ((int)(first_member_id));
-            command.Parameters[32].Value = ((int)(second_member_id));
-            command.Parameters[33].Value = ((int)(accepted_id));
-            command.Parameters[34].Value = ((int)(handover_id));
-            command.Parameters[35].Value = ((int)(booker_id));
-            command.Parameters[36].Value = ((int)(Original_number));
+            command.Parameters[28].Value = ((int)(comm_head_id));
+            command.Parameters[29].Value = ((int)(first_member_id));
+            command.Parameters[30].Value = ((int)(second_member_id));
+            command.Parameters[31].Value = ((int)(accepted_id));
+            command.Parameters[32].Value = ((int)(handover_id));
+            command.Parameters[33].Value = ((int)(order_id));
+            command.Parameters[34].Value = ((int)(Original_number));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12683,6 +12934,365 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 }
             }
             return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class OrdersTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public OrdersTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Orders";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("date", "date");
+            tableMapping.ColumnMappings.Add("message", "message");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Orders] WHERE (([id] = @Original_id) AND ((@IsNull_date = 1 AN" +
+                "D [date] IS NULL) OR ([date] = @Original_date)) AND ((@IsNull_message = 1 AND [m" +
+                "essage] IS NULL) OR ([message] = @Original_message)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_message", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_message", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Orders] ([date], [message]) VALUES (@date, @message);\r\nSELECT " +
+                "id, date, message FROM Orders WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@message", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Orders] SET [date] = @date, [message] = @message WHERE (([id] = @Original_id) AND ((@IsNull_date = 1 AND [date] IS NULL) OR ([date] = @Original_date)) AND ((@IsNull_message = 1 AND [message] IS NULL) OR ([message] = @Original_message)));
+SELECT id, date, message FROM Orders WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@message", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_message", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_message", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "message", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::curs_work.Properties.Settings.Default.CarAccountConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, date, message FROM dbo.Orders";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CarAccountDataSet.OrdersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CarAccountDataSet.OrdersDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            CarAccountDataSet.OrdersDataTable dataTable = new CarAccountDataSet.OrdersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CarAccountDataSet.OrdersDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CarAccountDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Orders");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, global::System.Nullable<global::System.DateTime> Original_date, string Original_message) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_date.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_date.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_message == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_message));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> date, string message) {
+            if ((date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((message == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(message));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<global::System.DateTime> date, string message, int Original_id, global::System.Nullable<global::System.DateTime> Original_date, string Original_message, int id) {
+            if ((date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((message == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(message));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_id));
+            if ((Original_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_message == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_message));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<global::System.DateTime> date, string message, int Original_id, global::System.Nullable<global::System.DateTime> Original_date, string Original_message) {
+            return this.Update(date, message, Original_id, Original_date, Original_message, Original_id);
         }
     }
     
@@ -12717,6 +13327,8 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
         private UsersTableAdapter _usersTableAdapter;
         
         private AcceptActTableAdapter _acceptActTableAdapter;
+        
+        private OrdersTableAdapter _ordersTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -12875,6 +13487,20 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public OrdersTableAdapter OrdersTableAdapter {
+            get {
+                return this._ordersTableAdapter;
+            }
+            set {
+                this._ordersTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -12932,6 +13558,10 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                             && (this._acceptActTableAdapter.Connection != null))) {
                     return this._acceptActTableAdapter.Connection;
                 }
+                if (((this._ordersTableAdapter != null) 
+                            && (this._ordersTableAdapter.Connection != null))) {
+                    return this._ordersTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -12973,6 +13603,9 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                     count = (count + 1);
                 }
                 if ((this._acceptActTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._ordersTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -13019,6 +13652,15 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._usersTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._ordersTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Orders.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._ordersTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13115,6 +13757,14 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._usersTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._ordersTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Orders.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._ordersTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13221,6 +13871,14 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._carModelsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._ordersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Orders.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ordersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -13342,6 +14000,11 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
             }
             if (((this._acceptActTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._acceptActTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
+            if (((this._ordersTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._ordersTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -13467,6 +14130,15 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                         adaptersWithAcceptChangesDuringUpdate.Add(this._acceptActTableAdapter.Adapter);
                     }
                 }
+                if ((this._ordersTableAdapter != null)) {
+                    revertConnections.Add(this._ordersTableAdapter, this._ordersTableAdapter.Connection);
+                    this._ordersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._ordersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._ordersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._ordersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._ordersTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -13564,6 +14236,10 @@ SELECT id, email, password, first_name, last_name, middle_name, position FROM Us
                 if ((this._acceptActTableAdapter != null)) {
                     this._acceptActTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._acceptActTableAdapter]));
                     this._acceptActTableAdapter.Transaction = null;
+                }
+                if ((this._ordersTableAdapter != null)) {
+                    this._ordersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ordersTableAdapter]));
+                    this._ordersTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
