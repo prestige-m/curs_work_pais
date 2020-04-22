@@ -34,7 +34,6 @@ namespace curs_work
         int debitCode = 4;
         int creditBill = 152;
         int creditCode = 1;
-        //int firm_id = Convert.ToInt32(comboBox11.SelectedValue);
         decimal primary_cost = 832680.60M;
         int cypher = 1048567;
         int cypher_factory = 4879;

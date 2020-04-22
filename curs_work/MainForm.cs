@@ -12,10 +12,14 @@ namespace curs_work
 {
     public partial class MainForm : Form
     {
-        public MainForm(string welcomeMessage)
+        sign_in parent = null;
+        public MainForm(string welcomeMessage, string login, sign_in parent)
         {
             InitializeComponent();
             message.Text = welcomeMessage;
+            bool isAdmin = login.Split('@')[0] == "admin";
+            userMgmtItem.Visible = isAdmin;
+            this.parent = parent;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -68,6 +72,28 @@ namespace curs_work
         private void документАктПриняттяОсновнихЗасобівToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Act form = new Act();
+            form.Show();
+        }
+
+        private void userMgmtItem_Click(object sender, EventArgs e)
+        {
+            Users form = new Users();
+            form.Show();
+        }
+
+        private void exitMenuItem_Click(object sender, EventArgs e)
+        {
+            parent.Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Close();
+        }
+
+        private void outputMenuItem_Click(object sender, EventArgs e)
+        {
+            OutForm form = new OutForm();
             form.Show();
         }
     }

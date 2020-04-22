@@ -43,10 +43,18 @@
             this.showAllBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.searchDate = new System.Windows.Forms.DateTimePicker();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.techPassportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carAccountDataSet = new curs_work.CarAccountDataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.operationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,7 +68,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label26 = new System.Windows.Forms.Label();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.firmsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label35 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -110,47 +122,35 @@
             this.label16 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.acceptActBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carAccountDataSet = new curs_work.CarAccountDataSet();
-            this.acceptActTableAdapter = new curs_work.CarAccountDataSetTableAdapters.AcceptActTableAdapter();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.searchDate = new System.Windows.Forms.DateTimePicker();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.acceptActBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.acceptActTableAdapter = new curs_work.CarAccountDataSetTableAdapters.AcceptActTableAdapter();
             this.usersTableAdapter = new curs_work.CarAccountDataSetTableAdapters.UsersTableAdapter();
-            this.firmsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firmsTableAdapter = new curs_work.CarAccountDataSetTableAdapters.FirmsTableAdapter();
-            this.operationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.operationsTableAdapter = new curs_work.CarAccountDataSetTableAdapters.OperationsTableAdapter();
             this.firmsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.firmsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.techPassportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.techPassportsTableAdapter = new curs_work.CarAccountDataSetTableAdapters.TechPassportsTableAdapter();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter = new curs_work.CarAccountDataSetTableAdapters.OrdersTableAdapter();
-            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label36 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techPassportsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carAccountDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.operationsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acceptActBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carAccountDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acceptActBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.techPassportsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -287,6 +287,41 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Пошук";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(333, 28);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(105, 14);
+            this.label31.TabIndex = 91;
+            this.label31.Text = "Дата документу";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(21, 28);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(115, 14);
+            this.label30.TabIndex = 90;
+            this.label30.Text = "Номер документу";
+            // 
+            // searchDate
+            // 
+            this.searchDate.Location = new System.Drawing.Point(333, 52);
+            this.searchDate.Name = "searchDate";
+            this.searchDate.Size = new System.Drawing.Size(256, 20);
+            this.searchDate.TabIndex = 90;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBox.Location = new System.Drawing.Point(24, 52);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(9, 4, 9, 4);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(257, 23);
+            this.searchBox.TabIndex = 90;
+            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressInt);
+            // 
             // deleteBtn
             // 
             this.deleteBtn.Location = new System.Drawing.Point(196, 522);
@@ -299,14 +334,23 @@
             // 
             // comboBox4
             // 
-            this.comboBox4.DataSource = this.techPassportsBindingSource;
-            this.comboBox4.DisplayMember = "Номер";
+            this.comboBox4.DisplayMember = "number";
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(154, 271);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(256, 22);
             this.comboBox4.TabIndex = 28;
-            this.comboBox4.ValueMember = "Код";
+            this.comboBox4.ValueMember = "id";
+            // 
+            // techPassportsBindingSource
+            // 
+            this.techPassportsBindingSource.DataMember = "TechPassports";
+            this.techPassportsBindingSource.DataSource = this.carAccountDataSet;
+            // 
+            // carAccountDataSet
+            // 
+            this.carAccountDataSet.DataSetName = "CarAccountDataSet";
+            this.carAccountDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox2
             // 
@@ -319,6 +363,11 @@
             this.comboBox2.TabIndex = 30;
             this.comboBox2.ValueMember = "id";
             // 
+            // operationsBindingSource
+            // 
+            this.operationsBindingSource.DataMember = "Operations";
+            this.operationsBindingSource.DataSource = this.carAccountDataSet;
+            // 
             // comboBox5
             // 
             this.comboBox5.DataSource = this.usersBindingSource1;
@@ -330,6 +379,11 @@
             this.comboBox5.TabIndex = 29;
             this.comboBox5.ValueMember = "id";
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.carAccountDataSet;
             // 
             // textBox2
             // 
@@ -539,6 +593,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Форма";
             // 
+            // comboBox12
+            // 
+            this.comboBox12.DataSource = this.ordersBindingSource;
+            this.comboBox12.DisplayMember = "id";
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Location = new System.Drawing.Point(557, 112);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(256, 22);
+            this.comboBox12.TabIndex = 89;
+            this.comboBox12.ValueMember = "id";
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.carAccountDataSet;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(505, 117);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 14);
+            this.label26.TabIndex = 88;
+            this.label26.Text = "Наказ";
+            // 
             // comboBox11
             // 
             this.comboBox11.DataSource = this.firmsBindingSource;
@@ -550,6 +629,11 @@
             this.comboBox11.TabIndex = 87;
             this.comboBox11.ValueMember = "id";
             this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
+            // 
+            // firmsBindingSource
+            // 
+            this.firmsBindingSource.DataMember = "Firms";
+            this.firmsBindingSource.DataSource = this.carAccountDataSet;
             // 
             // label35
             // 
@@ -1021,6 +1105,11 @@
             this.comboBox1.TabIndex = 13;
             this.comboBox1.ValueMember = "id";
             // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.carAccountDataSet;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1031,97 +1120,22 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Номер документу:";
             // 
-            // comboBox12
-            // 
-            this.comboBox12.DataSource = this.ordersBindingSource;
-            this.comboBox12.DisplayMember = "id";
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(557, 112);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(256, 22);
-            this.comboBox12.TabIndex = 89;
-            this.comboBox12.ValueMember = "id";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(505, 117);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(44, 14);
-            this.label26.TabIndex = 88;
-            this.label26.Text = "Наказ";
-            // 
             // acceptActBindingSource
             // 
             this.acceptActBindingSource.DataMember = "AcceptAct";
             this.acceptActBindingSource.DataSource = this.carAccountDataSet;
             // 
-            // carAccountDataSet
-            // 
-            this.carAccountDataSet.DataSetName = "CarAccountDataSet";
-            this.carAccountDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // acceptActTableAdapter
             // 
             this.acceptActTableAdapter.ClearBeforeFill = true;
-            // 
-            // searchBox
-            // 
-            this.searchBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchBox.Location = new System.Drawing.Point(24, 52);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(9, 4, 9, 4);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(257, 23);
-            this.searchBox.TabIndex = 90;
-            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressInt);
-            // 
-            // searchDate
-            // 
-            this.searchDate.Location = new System.Drawing.Point(333, 52);
-            this.searchDate.Name = "searchDate";
-            this.searchDate.Size = new System.Drawing.Size(256, 20);
-            this.searchDate.TabIndex = 90;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(21, 28);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(115, 14);
-            this.label30.TabIndex = 90;
-            this.label30.Text = "Номер документу";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(333, 28);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(105, 14);
-            this.label31.TabIndex = 91;
-            this.label31.Text = "Дата документу";
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.carAccountDataSet;
             // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // firmsBindingSource
-            // 
-            this.firmsBindingSource.DataMember = "Firms";
-            this.firmsBindingSource.DataSource = this.carAccountDataSet;
-            // 
             // firmsTableAdapter
             // 
             this.firmsTableAdapter.ClearBeforeFill = true;
-            // 
-            // operationsBindingSource
-            // 
-            this.operationsBindingSource.DataMember = "Operations";
-            this.operationsBindingSource.DataSource = this.carAccountDataSet;
             // 
             // operationsTableAdapter
             // 
@@ -1137,28 +1151,13 @@
             this.firmsBindingSource2.DataMember = "Firms";
             this.firmsBindingSource2.DataSource = this.carAccountDataSet;
             // 
-            // techPassportsBindingSource
-            // 
-            this.techPassportsBindingSource.DataMember = "TechPassports";
-            this.techPassportsBindingSource.DataSource = this.carAccountDataSet;
-            // 
             // techPassportsTableAdapter
             // 
             this.techPassportsTableAdapter.ClearBeforeFill = true;
             // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.carAccountDataSet;
-            // 
             // ordersTableAdapter
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersBindingSource1
-            // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.carAccountDataSet;
             // 
             // usersBindingSource2
             // 
@@ -1177,11 +1176,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1273, 31);
+            this.button1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(1256, 28);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(167, 39);
             this.button1.TabIndex = 30;
-            this.button1.Text = "Print";
+            this.button1.Text = "Друк";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1203,22 +1203,22 @@
             this.Load += new System.EventHandler(this.Act_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techPassportsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carAccountDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.operationsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acceptActBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carAccountDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acceptActBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.techPassportsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

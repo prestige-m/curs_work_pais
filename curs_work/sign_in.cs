@@ -52,10 +52,10 @@ namespace curs_work
                         middle_name = row[5].ToString();
                         string message = $"Вітаємо, {last_name} {first_name}";
 
-                        mainForm = new MainForm(message);
+                        mainForm = new MainForm(message, emailField.Text, this);
                         mainForm.Show();
-                        this.Visible = false;
                         is_user_found = true;
+                        this.Visible = false;
                         break;
                     }
                 }

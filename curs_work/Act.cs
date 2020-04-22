@@ -21,7 +21,7 @@ namespace curs_work
             "TechPassports.cypher as 'Інвентарний шифр', TechPassports.factory_cypher as 'Заводський шифр', doc.object_code as 'Код об’єкту', doc.norm_code as 'Код відрахувань'," +
             "doc.full_recover as 'Норма повного відновлення', doc.full_repair as 'Норми на кап. ремонт', doc.coefficient as 'Поправочний коефіцієнт', doc.equip_type as 'Тип устаткування'," +
             "doc.equip_code as 'Код устаткування', doc.wearout_sum as 'Сума зносу', TechPassports.release_year as 'Рік випуску', doc.expoit_date as 'Початок експлуатації', " +
-            "TechPassports.number as 'Номер паспорту', Users.position as 'Розпорядження від',  [Orders].[date] as 'Дата розпорядження', " + //Orders.id as 'Номер розпорядження',
+            "TechPassports.number as 'Номер паспорту', Users.position as 'Розпорядження від',  [Orders].[date] as 'Дата розпорядження', " +
             "doc.object_place as 'Місце об’єкту', CarTypes.name as 'Найменування об’єкту', Firms.name as 'передається від',  doc.description as 'Хар-ка об’єкта'," +
             "doc.spec_meet as 'Відповідність тех. умовам', doc.need_refine as 'Доробка', doc.results as 'Підсумки іспитів об’єкта', doc.conclusion as 'Висновок комісії'," +
             "doc.spec_list as 'перелік тех. інформації', (SELECT SUBSTRING(Users.first_name, 1, 1)+'. '+SUBSTRING(Users.middle_name, 1, 1) +'. '+Users.last_name as comm_head_name FROM Users " + "" +
@@ -59,6 +59,9 @@ namespace curs_work
             table.Rows.Clear();
             adapter.Update(table);
             adapter.Fill(table);
+
+            string sql_query = "SELECT * FROM TechPassports WHERE TechPassports.id NOT IN (SELECT tech_passport_id FROM AcceptAct)";
+            SetComboData(sql_query, ref comboBox4);
         }
 
         private void Engines_Load(object sender, EventArgs e)
@@ -304,6 +307,9 @@ namespace curs_work
             SelectBox8();
             SelectBox9();
             SelectBox10();
+
+            string query = "SELECT * FROM TechPassports WHERE TechPassports.id NOT IN (SELECT tech_passport_id FROM AcceptAct)";
+            SetComboData(query, ref comboBox4);
         }
 
         private void SetComboData(string query, ref ComboBox sender)
