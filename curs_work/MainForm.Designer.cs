@@ -41,9 +41,9 @@
             this.документТехпаспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.документАктПриняттяОсновнихЗасобівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.userMgmtItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,17 +158,6 @@
             this.outputMenuItem.Text = "Вихідна інформація";
             this.outputMenuItem.Click += new System.EventHandler(this.outputMenuItem_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(73, 109);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(527, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Облік прийняття транспортних засобів на підприємстві";
-            // 
             // userMgmtItem
             // 
             this.userMgmtItem.Name = "userMgmtItem";
@@ -182,6 +171,17 @@
             this.exitMenuItem.Size = new System.Drawing.Size(54, 20);
             this.exitMenuItem.Text = "Вихід";
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(73, 109);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(529, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Облік прийнятих транспортних засобів на підприємстві";
             // 
             // MainForm
             // 

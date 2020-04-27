@@ -33,8 +33,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.searchDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -101,14 +101,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Пошук";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(79, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(298, 20);
-            this.dateTimePicker1.TabIndex = 92;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -118,6 +110,14 @@
             this.label1.Size = new System.Drawing.Size(23, 14);
             this.label1.TabIndex = 93;
             this.label1.Text = "По";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(79, 28);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(298, 20);
+            this.dateTimePicker1.TabIndex = 92;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dataGridView2
             // 
@@ -192,8 +192,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OutForm";
-            this.Text = "Вихідна інформація";
-            this.Load += new System.EventHandler(this.OutForm_Load);
+            this.Text = "Облік прийнятих та неприйнятих транспортних засобів";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

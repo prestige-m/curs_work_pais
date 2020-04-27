@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -26,7 +19,7 @@ namespace curs_work
             chart1.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
             chart1.ChartAreas[0].BackColor = Color.Wheat;
 
-            chart1.Titles.Add("Діаграма прийнятих транспортних засобів");
+            chart1.Titles.Add("Діаграма прийнятих транспортних засобів за типом");
             chart1.Titles[0].Font = new Font("Utopia", 16);
 
             chart1.Series.Add(new Series("ColumnSeries")
@@ -35,6 +28,10 @@ namespace curs_work
             });
             chart1.Series["ColumnSeries"].Points.DataBindXY(xValues, yValues);
             chart1.ChartAreas[0].Area3DStyle.Enable3D = true;
+            if (xValues.Length == 0)
+            {
+                label1.Text = "Дані не знайдено!";
+            }
         }
     }
 }

@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace curs_work
 {
     public partial class OutForm : Form
     {
-        private static string db_query = "SELECT TechPassports.id AS Код, TechPassports.car_type_id AS Тип, TechPassports.car_model_id AS Модель, TechPassports.number AS Номер,  "+
-                                    " TechPassports.release_year AS [Рік випуску], TechPassports.max_weight AS Вага, TechPassports.engine_id AS Двигун, TechPassports.color_id AS Колір, " + 
-                                    " TechPassports.cypher as Шифр, TechPassports.factory_cypher as [Заводський шифр] FROM TechPassports ";
+        private static string db_query = "SELECT TechPassports.id AS Код, CarTypes.name AS Тип, CarModels.name AS Модель, TechPassports.number AS Номер,  " +
+                                    " TechPassports.release_year AS [Рік випуску], TechPassports.max_weight AS Вага, Engines.name AS Двигун, Colors.name AS Колір, " + 
+                                    " TechPassports.cypher as Шифр, TechPassports.factory_cypher as [Заводський шифр] FROM TechPassports " +
+                                    " INNER JOIN CarModels ON CarModels.id = TechPassports.car_model_id " +
+                                    " INNER JOIN CarTypes ON CarTypes.id = TechPassports.car_type_id " +
+                                    " INNER JOIN Engines ON Engines.id = TechPassports.engine_id " +
+                                    " INNER JOIN Colors ON Colors.id = TechPassports.color_id ";
 
         private string sql1 = db_query + " WHERE TechPassports.id IN (SELECT tech_passport_id FROM AcceptAct)";
         private string sql2 = db_query + " WHERE TechPassports.id NOT IN (SELECT tech_passport_id FROM AcceptAct)";
@@ -65,10 +65,6 @@ namespace curs_work
             e.Graphics.DrawImage(bitmap, 0, 0);
         }
 
-        private void OutForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void друкToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -87,9 +83,11 @@ namespace curs_work
         {
             List<string> titles = new List<string>();
             List<int> values = new List<int>();
+            string startTime = dateTimePicker1.Value.ToShortDateString();
+            string endTime = searchDate.Value.ToShortDateString();
 
             string query = $"SELECT COUNT(*), CarTypes.name FROM TechPassports INNER JOIN CarTypes ON CarTypes.id = TechPassports.car_type_id " +
-                " WHERE TechPassports.id IN (SELECT tech_passport_id FROM AcceptAct) GROUP BY CarTypes.name";
+                 $" WHERE TechPassports.id IN (SELECT tech_passport_id FROM AcceptAct WHERE issue_date BETWEEN '{startTime}' AND '{endTime}') GROUP BY CarTypes.name";
             List<object[]> data = DatabaseConnection.ExecuteReader(query);
 
             foreach (var row in data)
